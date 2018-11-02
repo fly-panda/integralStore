@@ -1,9 +1,62 @@
 /**app.wxss**/
 page {
+  font-family:Tahoma,Arial,Helvetica,sans-serif;
+  background: #f4f4f4;
   font-size: 14px;
-  min-height: 100%;
-  color: #333;
+  color:#353535;
 }
+
 .input-placeholder {
   color: #999;
+}
+
+.clear::after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+button::after{
+  border:none;
+}
+
+.press{
+  opacity: 0.5;
+}
+.disable{
+  opacity: 0.2;
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+}
+.between{
+  justify-content: space-between;
+}
+.center{
+  align-items: center;
+}
+.bottom{
+  align-items: flex-end;
+}
+.flexColumn{
+  display: flex;
+  flex-direction:column;
+}
+.tip{
+  color: #b2b2b2;
+  font-size: 12px;
+}
+.navigator-hover {
+  background-color: rgba(255, 255, 255, 1);
+  opacity:1;
+}
+.none{
+  display: none;
+}
+.block{
+  display: block;
 }
