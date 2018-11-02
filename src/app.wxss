@@ -1,0 +1,9 @@
+/**app.wxss**/
+page {
+  font-size: 14px;
+  min-height: 100%;
+  color: #333;
+}
+.input-placeholder {
+  color: #999;
+}

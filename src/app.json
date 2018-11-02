@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/marketManagement/marketManagement",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "wechat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#b8babd",
+    "selectedColor": "#11b37a",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/icon-records.png",
+        "selectedIconPath": "images/tabBar/icon-records-active.png",
+        "text": "来货备案"
+      },
+      {
+        "pagePath": "pages/marketManagement/marketManagement",
+        "iconPath": "images/tabBar/icon-manage.png",
+        "selectedIconPath": "images/tabBar/icon-manage-active.png",
+        "text": "市场管理"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/tabBar/icon-my.png",
+        "selectedIconPath": "images/tabBar/icon-my-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

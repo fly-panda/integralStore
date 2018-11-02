@@ -1,0 +1,4 @@
+<navigation-bar title="我的" isShowBack="{{ false }}"></navigation-bar>
+<view>
+  我的
+</view>

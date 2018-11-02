@@ -1,0 +1,18 @@
+<block wx:if="{{navigationBarHeight}}">
+  <view class="navigation-bar {{ navBorderBottom ? 'border-bottom' : ''  }}" style="background:{{backgroundColor}};height:{{navigationBarHeight}}px;">
+    <view class="box" style="height:{{navigationBarHeight}}px;">
+      <view class="back" catchtap="back" wx:if="{{ isShowBack }}">
+        <!-- <image src="/images/icon/back.png"></image> -->
+        <view class='iconfont icon-jiantouzuo' style='color: {{ backColor }};font-size:16px;font-weight: 600;'></view>
+      </view>
+      <view class="index" catchtap="index" wx:if="{{ isIndex }}">
+        <!-- <image src="/images/icon/index.png"></image> -->
+        <view class='iconfont icon-home' style='color: {{ homeColor }};font-size: 20px;'></view>
+      </view>
+      <view class="navigation-title">
+        <text style='color:{{textColor}};'>{{title}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ isPlaceholder }}" style="height:{{navigationBarHeight}}px"></view>
+</block>

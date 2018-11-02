@@ -1,0 +1,4 @@
+<navigation-bar title="首页" isShowBack="{{ false }}"></navigation-bar>
+<view>
+  首页
+</view>

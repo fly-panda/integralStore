@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "市场管理",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}
