@@ -11,20 +11,20 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#b8babd",
-    "selectedColor": "#11b37a",
+    "color": "#838383",
+    "selectedColor": "#C7A25F",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/tabBar/icon-records.png",
-        "selectedIconPath": "images/tabBar/icon-records-active.png",
+        "iconPath": "images/tabBar/icon-tab1.png",
+        "selectedIconPath": "images/tabBar/icon-tab1-active.png",
         "text": "主页"
       },
       {
         "pagePath": "pages/user/user",
-        "iconPath": "images/tabBar/icon-my.png",
-        "selectedIconPath": "images/tabBar/icon-my-active.png",
+        "iconPath": "images/tabBar/icon-tab2.png",
+        "selectedIconPath": "images/tabBar/icon-tab2-active.png",
         "text": "我的"
       }
     ]
