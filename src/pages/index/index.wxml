@@ -1,7 +1,6 @@
-<!-- <navigation-bar title="首页" 
+<navigation-bar title="掌灸积分商城" 
                 isShowBack="{{ false }}"
-                backgroundColor="linear-gradient(0deg, #2C2D31 1%, #101013 100%)"
-                navBorderBottom="{{ false }}"></navigation-bar> -->
+                navBorderBottom="{{ false }}"></navigation-bar>
 <view>
   <!-- banner -->
   <view class='banner'>
