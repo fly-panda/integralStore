@@ -64,15 +64,21 @@ page{
   margin-top:2pt;
   position: relative;
 }
-.num::after{
-  content: ">";
-  position: absolute;
-  right:16pt;
+.num .icoCls,.num .icoClss{
+  font-size:20px;
   color:rgba(160,160,160,0.60);
-}
-.nums::after{
+  letter-spacing:0;
+  line-height:20px;
+
+  position: absolute;
   right:0;
+  top:0;
+  transform:rotate(180deg);
 }
+.num .icoClss{
+  right:16pt;
+}
+
 .lineCls{
   width:1pt;
   height:45pt;
@@ -83,6 +89,7 @@ page{
   display: flex;
   border-bottom: 1pt solid #F1F1F1;
   align-items: center;
+  padding-left: 5pt;
 }
 .myCls .txt{
   padding-left: 12pt;
@@ -94,7 +101,7 @@ page{
   color:rgba(160,160,160,0.60);
   letter-spacing:0;
   line-height:20px;
-
+  transform:rotate(180deg);
 }
 .myCls>view image{
   width:18pt;

@@ -24,29 +24,35 @@
     <view class="integral">
       <view class="flex1">
         <view class="integralTitle">现金积分</view>
-        <view bindtap="jumpCash" class="num">{{cash}}</view>
+        <view bindtap="jumpCash" class="num">
+          {{cash}}
+          <text class="icoClss iconfont icon-jiantouzuo"></text>
+        </view>
       </view>
       <view class="lineCls"></view>
       <view class="flex1">
         <view class="integralTitle">普通积分</view>
-        <view bindtap="jumpOrdinary" class="num nums">{{ordinary}}</view>
+        <view bindtap="jumpOrdinary" class="num nums">
+          {{ordinary}}
+          <text class="icoCls iconfont icon-jiantouzuo"></text>
+        </view>
       </view>
     </view>
     <view class="myCls">
       <view bindtap="myTeam">
         <image src="{{icon1}}"></image>
         <text class="txt">我的团队</text>
-        <text>></text>
+        <text class="iconfont icon-jiantouzuo"></text>
       </view>
       <view bindtap="myDan">
         <image src="{{icon2}}"></image>
         <text class="txt">我的订单</text>
-        <text>></text>
+        <text class="iconfont icon-jiantouzuo"></text>
       </view>
       <view bindtap="userAcc">
         <image src="{{icon3}}"></image>
         <text class="txt">个人设置</text>
-        <text>></text>
+        <text class="iconfont icon-jiantouzuo"></text>
       </view>
     </view>
   </view>
