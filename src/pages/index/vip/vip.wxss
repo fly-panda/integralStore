@@ -1,1 +1,49 @@
 /* pages/index/vip/vip.wxss */
+page {
+  background: #eee;
+}
+
+swiper {
+  width: 100%;
+  height: 428rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 428rpx;
+}
+
+.info {
+  background: #fff;
+  padding: 20rpx 32rpx 32rpx 32rpx;
+  margin-bottom: 24rpx;
+}
+
+.info .name {
+  margin-bottom: 20rpx;
+  font-size: 18px;
+}
+
+.info .jf {
+  font-size: 20rpx;
+  color: #a1a1a1;
+}
+
+.info .prize {
+  font-size: 18px;
+  color: #E4141D;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.info .icon {
+  font-size: 12px;
+}
+
+.info .tip {
+  font-size: 14px;
+}
+
+.content {
+  background: #fff;
+}

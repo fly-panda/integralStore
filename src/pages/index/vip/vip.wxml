@@ -1,2 +1,22 @@
-<!--pages/index/vip/vip.wxml-->
-<text>高端会员</text>
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{ indicatorColor }}" indicator-active-color="{{ indicatorActiveColor }}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='info'>
+    <view class='name'>VIP</view>
+    <view class='tip'>价值1299的红酒，获得20%的销售返利</view>
+    <view class='prize'><text class='icon'>￥</text><text>399</text></view>
+    <view class='jf'>返积分：798</view>
+  </view>
+
+  <view class='content'>
+    <view class='title-content'>商品介绍</view>
+    <view></view>
+  </view>
+
+</view>
