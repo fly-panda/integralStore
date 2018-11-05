@@ -1,0 +1,102 @@
+page{
+  background: #FFFFFF;
+}
+.heads{
+  display: flex;
+  padding: 16pt 16pt 60pt 16pt;
+  background-image: linear-gradient(-10deg, #40392D 0%, #020100 100%);
+}
+.headImgCls image{
+  width:46pt;
+  height:46pt;
+  border-radius: 50%;
+}
+.erweima image{
+  width:31pt;
+  height:31pt;
+}
+.userMsg{
+  flex: 1;
+}
+.userMsg>view{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #FBE0AA;
+  letter-spacing: -0.04px;
+  justify-content:space-around;
+  margin:0 20pt;
+}
+.userMsg>view .nameCls{
+  font-size: 12px;
+}
+.erweima{
+  align-self: flex-end;
+}
+.listCls{
+  background: #FFFFFF;
+  border-radius: 10px 10px 2px 2px;
+  margin-top: -20pt;
+  padding:25pt 16pt 0 16pt;
+  
+}
+.integral{
+  display: flex;
+}
+.integral>.flex1{
+  flex:1;
+}
+.integral>.flex1:last-child{
+  padding-left: 16pt;
+}
+.integralTitle{
+  font-size: 10px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.num{
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-top:2pt;
+  position: relative;
+}
+.num::after{
+  content: ">";
+  position: absolute;
+  right:16pt;
+  color:rgba(160,160,160,0.60);
+}
+.nums::after{
+  right:0;
+}
+.lineCls{
+  width:1pt;
+  height:45pt;
+  background: #F1F1F1;
+}
+.myCls>view{
+  height: 48pt;
+  display: flex;
+  border-bottom: 1pt solid #F1F1F1;
+  align-items: center;
+}
+.myCls .txt{
+  padding-left: 12pt;
+  flex: 1;
+  color: #000000;
+}
+.myCls text:last-child{
+  font-size:20px;
+  color:rgba(160,160,160,0.60);
+  letter-spacing:0;
+  line-height:20px;
+
+}
+.myCls>view image{
+  width:18pt;
+  height:18pt;
+}
