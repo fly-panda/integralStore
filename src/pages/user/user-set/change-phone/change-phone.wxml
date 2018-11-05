@@ -1,2 +1,16 @@
-<!--pages/user/user-set/change-phone/change-phone.wxml-->
-<text>换绑手机号</text>
+<navigation-bar title="换绑手机号" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<view>
+  <form bindsubmit="login">
+    <view class='cell flexRow center'>
+      <image class='icon-phone' src='{{ imgUrl }}images/ico_shouji_dis@2x.png'></image>
+      <input type='number' placeholder='请输入手机号码' name="phoneNum" bindinput='getPhoneNum'></input>
+    </view>
+    <view class='cell flexRow center'>
+      <image class='icon-code' src='{{ imgUrl }}images/ico_yanzhengma_dis@2x.png'></image>
+      <input type='number' placeholder='请输入验证码' name="code" bindinput='getCodeInput'></input>      
+      <view class='get-code' catchtap='getCode' style='color: {{ codeStatus ? "" : "#E1C179" }}'>{{ txtMsg }}</view>
+    </view>
+    <button formType="submit" disabled='{{ submitDisabled }}'>确认修改</button>
+  </form>
+</view>

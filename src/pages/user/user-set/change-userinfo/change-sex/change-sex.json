@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "修改性别",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

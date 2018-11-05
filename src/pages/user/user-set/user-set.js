@@ -1,13 +1,21 @@
 // pages/user/user-set/user-set.js
+const app = getApp();
+const config = require('../../../utils/config.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrl: config.imgUrl
   },
-
+  link(e) {
+    let url = e.currentTarget.dataset.url
+    wx.navigateTo({
+      url
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

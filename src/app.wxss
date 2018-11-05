@@ -62,3 +62,14 @@ button::after{
 .block{
   display: block;
 }
+
+.button-hover {
+  background: #E1C179;
+  color: #fff;
+  opacity: .8;  
+}
+
+button[disabled]:not([type]) {
+  background: #CACACE;
+  color: #fff;
+}

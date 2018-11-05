@@ -5,9 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    titleTxt: '修改用户名',
+    inputValue: 'Block',
+    disabledButton: true
   },
-
+  clearInput() {
+    this.setData({
+      inputValue: ''
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

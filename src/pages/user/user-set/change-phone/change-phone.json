@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "换绑手机号",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

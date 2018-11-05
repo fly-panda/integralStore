@@ -1,2 +1,15 @@
-<!--pages/user/user-set/change-userinfo/change-username/change-username.wxml-->
-<text>修改用户名</text>
+<navigation-bar title="{{ titleTxt }}" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+
+<view>
+  <view class='flexRow center between cell'>
+    <input type='text' value='{{ inputValue }}'></input>
+    <view class='clearInput' catchtap='clearInput'>X</view>
+  </view>
+  <view class='tip'>
+    4-20个字符，可由中英文、数字、”-”、组成
+  </view>
+  <button disabled='{{ disabledButton }}'>
+    确认修改
+  </button>
+</view>

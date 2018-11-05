@@ -1,1 +1,85 @@
-/* pages/user/user-set/change-phone/change-phone.wxss */
+/* pages/login/login.wxss */
+page {
+  background: #f6f6f6;
+}
+form {
+  display: block;
+}
+
+form .cell {
+  position: relative;
+  background: #fff; 
+  padding: 0 40rpx;
+  padding-top: 60rpx;
+}
+
+form .cell::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  width: 660rpx;
+  height: 1px;
+  background: #f1f1f1;
+}
+
+form .cell .icon-phone {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+form .cell .icon-code {
+  width: 32rpx;
+  height: 26rpx;
+}
+
+form input {
+  flex: 1;
+  height: 80rpx;
+  margin-left: 12rpx;
+  font-size: 16px;
+}
+
+.get-code {
+  width: 188rpx;
+  height: 56rpx;
+  border: 1rpx solid #CACACE;
+  font-size: 13px;
+  color: #CACACE;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+
+button {
+  margin-top: 166rpx;
+  width: 606rpx;
+  border-radius: 12rpx;  
+  height: 72rpx;
+  line-height: 72rpx;
+  background: #E1C179;
+  color: #fff;
+  font-size: 14px;
+}
+
+.button-hover {
+  background: #E1C179;
+  color: #fff;
+  opacity: .8;  
+}
+
+button[disabled]:not([type]) {
+  background: #CACACE;
+  color: #fff;
+}
+
+.sign-up {
+  background: #F8F8F8;
+  border: 1rpx solid #EBEBEB;
+  border-radius: 12rpx;
+  font-size: 16px;
+  color: #9B9B9B;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}

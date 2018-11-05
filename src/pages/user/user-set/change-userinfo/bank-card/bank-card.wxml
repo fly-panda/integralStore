@@ -1,2 +1,19 @@
-<!--pages/user/user-set/change-userinfo/bank-card/bank-card.wxml-->
-<text>银行卡</text>
+<navigation-bar title="银行卡" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<form bindsubmit="submitInfo">
+  <view class='title'>请输入持卡人的银行卡号</view>
+  <view class='cell flexRow center'>
+    <view class='txt'>卡号</view>
+    <input type='umber' placeholder='请填写正确的银行卡号' name="cardNum"></input>
+  </view>
+  <view class='title'>请输入开户行信息</view>
+  <view class='cell flexRow center border-bottom'>
+    <view class='txt'>姓名</view>
+    <input type='umber' placeholder='杨**（请输入完整姓名）' name="name"></input>
+  </view>
+  <view class='cell flexRow center'>
+    <view class='txt'>开户行</view>
+    <input type='umber' placeholder='请输入开户行信息' name="bankInfo"></input>
+  </view>
+  <button formType="submit" disabled='{{ submitDisabled }}'>登录</button>  
+</form>

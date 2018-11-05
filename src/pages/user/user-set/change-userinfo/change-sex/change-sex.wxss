@@ -1,1 +1,45 @@
-/* pages/user/user-set/change-userinfo/change-sex/change-sex.wxss */
+/* pages/user/user-set/user-set.wxss */
+page {
+  background: #f6f6f6;
+}
+
+.box {
+  background: #fff;
+  padding: 0 32rpx;
+  padding-bottom: 40rpx;
+}
+
+.box .cell {
+  border-bottom: 1rpx solid #f1f1f1;
+  box-sizing: border-box;
+  padding: 44rpx 0 26rpx 0;
+}
+
+.box .cell .txt {
+  flex: 1;
+  color: #4A4A4A;
+}
+
+.out {
+  margin-top: 24rpx;
+  background: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #363636;
+}
+
+.icon-jiantouzuo {
+  transform: rotate(180deg);
+  color: rgba(160,160,160,0.60);
+}
+
+.content {
+  color: #A7A7A7;
+  font-size: 18rpx;
+  margin-right: 26rpx;
+}
+
+.icon-duihao {
+  color: #E1C179;
+}

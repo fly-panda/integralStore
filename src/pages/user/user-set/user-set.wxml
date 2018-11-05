@@ -1,2 +1,31 @@
-<!--pages/user/user-set/user-set.wxml-->
-<text>个人设置</text>
+<navigation-bar title="个人设置" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<view>
+  <view class='box'>
+    <view class='cell flexRow center' catchtap='link' 
+          data-url='/pages/user/user-set/change-phone/change-phone'>
+      <view class='icon'>
+        <image src='{{ imgUrl }}/images/gerenshezhi copy@2x.png' class='icon-phone'></image>
+      </view>
+      <view class='txt'>换绑手机</view>
+      <view class="iconfont icon-jiantouzuo"></view>
+    </view>
+    <view class='cell flexRow center' catchtap='link'
+          data-url="/pages/user/user-set/change-userinfo/change-userinfo">
+      <view class='icon'>
+        <image src='{{ imgUrl }}/images/ico_yonghuxinxi_dis@2x.png' class='icon-userInfo'></image>
+      </view>
+      <view class='txt'>更改用户基本信息</view>
+      <view class="iconfont icon-jiantouzuo"></view>      
+    </view>
+    <view class='cell flexRow center' catchtap='link'
+          data-url="/pages/user/user-set/change-address/change-address">
+      <view class='icon'>
+        <image src='{{ imgUrl }}/images/ico_genggaidizhi_@2x.png' class='icon-address'></image>
+      </view>
+      <view class='txt'>更改收货地址</view>
+      <view class="iconfont icon-jiantouzuo"></view>      
+    </view>
+  </view>
+  <view class='out' catchtap='link' data-url="/pages/login/login">退出登录</view>
+</view>

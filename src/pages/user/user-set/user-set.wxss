@@ -1,1 +1,59 @@
 /* pages/user/user-set/user-set.wxss */
+.icon {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-phone {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.icon-userInfo {
+  width: 34rpx;
+  height: 30rpx;
+}
+
+.icon-address {
+  width: 24rpx;
+  height: 32rpx;
+}
+
+page {
+  background: #f6f6f6;
+}
+
+.box {
+  background: #fff;
+  padding: 0 32rpx;
+  padding-bottom: 40rpx;
+}
+
+.box .cell {
+  border-bottom: 1rpx solid #f1f1f1;
+  box-sizing: border-box;
+  padding: 48rpx 0 24rpx 0;
+}
+
+.box .cell .txt {
+  flex: 1;
+  margin-left: 20rpx;
+  color: #4A4A4A;
+}
+
+.out {
+  margin-top: 24rpx;
+  background: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #363636;
+}
+
+.icon-jiantouzuo {
+  transform: rotate(180deg);
+  color: rgba(160,160,160,0.60);
+}

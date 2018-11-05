@@ -1,2 +1,18 @@
-<!--pages/user/user-set/change-userinfo/change-sex/change-sex.wxml-->
-<text>修改性别</text>
+<navigation-bar title="修改性别" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<view>
+  <view class='box'>
+    <view class='cell flexRow center'>
+      <view class='txt'>男</view>
+      <view class="iconfont icon-duihao"></view>
+    </view>
+    <view class='cell flexRow center'>
+      <view class='txt'>女</view>
+      <view class="iconfont icon-duihao"></view>
+    </view>
+    <view class='cell flexRow center'>
+      <view class='txt'>保密</view>
+      <view class="iconfont icon-duihao"></view>
+    </view>
+  </view>
+</view>

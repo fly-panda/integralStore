@@ -1,1 +1,51 @@
 /* pages/user/user-set/change-userinfo/change-username/change-username.wxss */
+page {
+  background: #f6f6f6;
+}
+
+.cell {
+  background: #fff;
+  padding: 28rpx 32rpx;
+}
+
+.clearInput {
+  background: #d8d8d8;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 14rpx;
+  color: #fff;
+}
+
+input {
+  flex: 1;
+  color: #ADAEB0;
+}
+
+.tip {
+  padding: 12rpx 32rpx 0 32rpx;
+  font-size: 22rpx;
+}
+
+button {
+  background: #E1C179;
+  border-radius: 12rpx;
+  color: #fff;
+  font-size: 14px;
+  width: 606rpx;
+  height: 72rpx;
+  margin-top: 32rpx;
+}
+
+.button-hover {
+  background: #E1C179;
+  color: #fff;
+  opacity: .8;  
+}
+
+button[disabled]:not([type]) {
+  background: #CACACE;
+  color: #fff;
+}

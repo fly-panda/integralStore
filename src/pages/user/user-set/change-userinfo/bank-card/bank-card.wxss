@@ -1,1 +1,40 @@
 /* pages/user/user-set/change-userinfo/bank-card/bank-card.wxss */
+page {
+  background: #f6f6f6;
+}
+
+.cell {
+  background: #fff;
+  padding: 24rpx 32rpx;
+  position: relative;
+}
+
+.border-bottom::after {
+  position: absolute;
+  content: '';
+  right: 32rpx;
+  bottom: 0;
+  width: 690rpx;
+  height: 1px;
+  background: #f1f1f1;
+}
+
+form .title {
+  padding: 20rpx 32rpx;
+  color: #888;
+}
+
+.txt {
+  width: 76px;
+}
+
+button {
+  width: 606rpx;
+  margin-top: 80rpx;
+  border-radius: 12rpx;  
+  font-size: 14px;
+  height: 72rpx;
+  line-height: 72rpx;
+  background: #E1C179;
+  color: #fff;
+}
