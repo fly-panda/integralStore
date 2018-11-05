@@ -57,7 +57,19 @@ video {
   border-bottom: 1rpx solid #f6f6f6;
 }
 
+.vip .name {
+  font-size: 14px;
+}
+
 .mid {
   flex: 1;
   margin-left: 44rpx;
+}
+
+.prize {
+  height: 106rpx;
+}
+
+.prize .icon {
+  font-size: 12px;
 }

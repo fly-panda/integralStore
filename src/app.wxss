@@ -47,7 +47,7 @@ button::after{
   flex-direction:column;
 }
 .tip{
-  color: #b2b2b2;
+  color: #6B6B6B;
   font-size: 12px;
 }
 .navigator-hover {

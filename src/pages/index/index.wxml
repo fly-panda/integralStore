@@ -26,7 +26,7 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between' 
+      <view class='item flexRow between center' 
             catchtap='vipDetail'
             wx:for="{{ vipData }}"
             wx:key="{{ index }}">
@@ -36,7 +36,7 @@
           <text class='tip'>{{ item.tip }}</text>
         </view>
         <view class='prize'>
-          <text>￥</text>
+          <text class='icon'>￥</text>
           <text class='num'>{{ item.prize }}</text>
         </view>
       </view>

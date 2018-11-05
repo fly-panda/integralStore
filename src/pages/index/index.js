@@ -40,7 +40,12 @@ Page({
   },
   commodity() {
     wx.navigateTo({
-      url: '/pages/index/commodity/commodity',
+      url: '/pages/index/commodity/commodity'
+    })
+  },
+  vipDetail() {
+    wx.navigateTo({
+      url: '/pages/index/vip/vip'
     })
   },
   onLoad: function () {
