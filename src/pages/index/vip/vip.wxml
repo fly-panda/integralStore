@@ -5,6 +5,9 @@
         <image src="{{item}}" class="slide-image" width="355" height="150" />
       </swiper-item>
     </block>
+    <view class='back' catchtap='backPage'>
+      <view class='iconfont icon-jiantouzuo'></view>
+    </view>
   </swiper>
 
   <view class='info'>
@@ -16,7 +19,12 @@
 
   <view class='content'>
     <view class='title-content'>商品介绍</view>
-    <view></view>
+    <view class='txt'>
+      内容
+    </view>
+    <view class='btn'>
+      去购买 >
+    </view>
   </view>
 
 </view>
