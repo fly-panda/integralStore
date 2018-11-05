@@ -1,4 +1,40 @@
-<navigation-bar title="首页" isShowBack="{{ false }}"></navigation-bar>
+<!-- <navigation-bar title="首页" isShowBack="{{ false }}"></navigation-bar> -->
 <view>
-  首页
+  <!-- banner -->
+  <view class='banner'>
+    <video src="{{ videoSrc }}"></video>
+  </view>
+  <!-- 高端商品 -->
+  <view class='commodity'>
+    <view class='title'>高端商品</view>
+    <view class='content flexRow center between'>
+      <view class='item'>
+        <image class='img' src=''></image>
+        <view class='name'>舒适露</view>
+        <view class='tip'>舒筋活络，消除疲劳</view>
+      </view>
+      <view class='item'>
+        <image class='img' src=''></image>
+        <view class='name'>舒适露</view>
+        <view class='tip'>舒筋活络，消除疲劳</view>
+      </view>
+    </view>
+  </view>
+  <!-- 高端会员 -->
+  <view class='vip'>
+    <view class='title'>高端会员</view>
+    <view class='content'>
+      <view class='item flexRow between'>
+        <image class='icon'></image>
+        <view class='mid'>
+          <view class='name'>vip</view>
+          <view class='tip'>1111</view>
+        </view>
+        <view class='prize'>
+          <text>￥</text>
+          <text class='num'>399</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

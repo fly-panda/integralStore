@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-
+    videoSrc: '/'
   },
   onLoad: function () {
 

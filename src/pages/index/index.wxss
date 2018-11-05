@@ -1,0 +1,64 @@
+page {
+  background: #fff;
+}
+video {
+  width: 100%;
+  height: 364rpx;
+}
+
+.commodity {
+  padding: 32rpx;
+}
+
+.vip {
+  padding: 32rpx;
+}
+
+.title {
+  position: relative;
+  padding-left: 20rpx;
+  font-size: 16px;
+  color: #363636;
+}
+
+.title::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -15rpx;
+  content: '';
+  width: 6rpx;
+  height: 30rpx;
+  background: #fb5f0a;
+}
+
+.commodity .content {
+  margin-top: 24rpx;
+}
+
+.commodity .content .img {
+  width: 332rpx;
+  height: 344rpx;
+  background: #eee;
+}
+
+.commodity .content .name {
+  margin-top: 20rpx;
+}
+
+.vip .icon {
+  width: 88rpx;
+  height: 88rpx;
+  background: #eee;
+}
+
+.vip .item {
+  padding: 24rpx 0;
+  padding-left: 36rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.mid {
+  flex: 1;
+  margin-left: 44rpx;
+}
