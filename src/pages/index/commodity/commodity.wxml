@@ -17,7 +17,9 @@
     </block>
   </swiper>
   <view class='content'>
-    <view class='item'></view>
+    <view class='item'>
+      111
+    </view>
   </view>
   <view class='vip'>
     <view class='title'>高端会员</view>
