@@ -1,2 +1,21 @@
-<!--pages/sign-up/sign-up.wxml-->
-<text>注册</text>
+<navigation-bar title="登录" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+<view>
+  <form bindsubmit="signUp">
+    <view class='cell flexRow center'>
+      <image class='icon-phone' src='{{ imgUrl }}images/ico_shouji_dis@2x.png'></image>
+      <input type='number' placeholder='请输入手机号码' name="phoneNum" bindinput='getPhoneNum'></input>
+    </view>
+    <view class='cell flexRow center'>
+      <image class='icon-code' src='{{ imgUrl }}images/ico_yanzhengma_dis@2x.png'></image>
+      <input type='number' placeholder='请输入验证码' name="code" bindinput='getCodeInput'></input>      
+      <view class='get-code' catchtap='getCode' style='color: {{ codeStatus ? "" : "#E1C179" }}'>{{ txtMsg }}</view>
+    </view>
+    <view class='cell flexRow center'>
+      <image class='icon-user' src='{{ imgUrl }}images/ico_tuijianren_dis@2x.png'></image>
+      <input type='number' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
+    </view>
+    <button formType="submit" disabled='{{ submitDisabled }}'>注册</button>
+  </form>
+</view>
