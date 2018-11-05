@@ -1,4 +1,6 @@
-<!-- <navigation-bar title="我的" isShowBack="{{ false }}"></navigation-bar> -->
+<navigation-bar title="掌灸积分商城" 
+                isShowBack="{{ false }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
 <view>
   <view class="heads">
     <view class="headImgCls">

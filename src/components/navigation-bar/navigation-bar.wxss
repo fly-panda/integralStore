@@ -9,6 +9,8 @@
 	bottom: 0;
 	z-index: 1000;
 	box-sizing: border-box;
+  background-image: linear-gradient(-180deg, rgba(48,29,92,0.01) 0%, #311E4A 100%);
+  background-image: linear-gradient(0deg, #2C2D31 1%, #101013 100%);
 }
 
 .border-bottom {

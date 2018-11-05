@@ -34,7 +34,122 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "高端会员",
+					"pathName": "pages/index/vip/vip",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "高端商品",
+					"pathName": "pages/index/commodity/commodity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/sign-up/sign-up",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/confirmation-oder/confirmation-oder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "现金积分",
+					"pathName": "pages/user/cash-integration/cash-integration",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/user/my-order/my-order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的团队",
+					"pathName": "pages/user/my-team/my-team",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "普通积分",
+					"pathName": "pages/user/normal-integration/normal-integration",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人设置",
+					"pathName": "pages/user/user-set/user-set",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "更改收货地址",
+					"pathName": "pages/user/user-set/change-address/change-address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "换绑手机号",
+					"pathName": "pages/user/user-set/change-phone/change-phone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "更改用户基本信息",
+					"pathName": "pages/user/user-set/change-userinfo/change-userinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "银行卡",
+					"pathName": "pages/user/user-set/change-userinfo/bank-card/bank-card",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改昵称",
+					"pathName": "pages/user/user-set/change-userinfo/change-nickname/change-nickname",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改性别",
+					"pathName": "pages/user/user-set/change-userinfo/change-sex/change-sex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改用户名",
+					"pathName": "pages/user/user-set/change-userinfo/change-username/change-username",
+					"query": ""
+				}
+			]
 		}
 	}
 }
