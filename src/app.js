@@ -7,7 +7,6 @@ let statusBarHeight = sysInfo.statusBarHeight !== undefined ? sysInfo.statusBarH
 
 let navigationBarHeight = statusBarHeight + 44;
 
-
 App({
   onLaunch: function () {
     // 展示本地存储能力

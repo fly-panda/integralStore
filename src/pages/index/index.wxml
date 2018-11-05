@@ -1,4 +1,7 @@
-<!-- <navigation-bar title="首页" isShowBack="{{ false }}"></navigation-bar> -->
+<navigation-bar title="首页" 
+                isShowBack="{{ false }}"
+                backgroundColor="linear-gradient(0deg, #2C2D31 1%, #101013 100%)"
+                navBorderBottom="{{ false }}"></navigation-bar>
 <view>
   <!-- banner -->
   <view class='banner'>

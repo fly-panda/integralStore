@@ -12,7 +12,7 @@ Component({
     },
     textColor: {
       type: String,
-      value: '#000'
+      value: '#fff'
     },
     title: {
       type: String,

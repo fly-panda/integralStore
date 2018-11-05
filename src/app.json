@@ -1,14 +1,31 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/marketManagement/marketManagement",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/index/commodity/commodity",
+    "pages/index/vip/vip",
+    "pages/user/my-order/my-order",
+    "pages/login/login",
+    "pages/sign-up/sign-up",
+    "pages/user/my-team/my-team",
+    "pages/user/user-set/user-set",
+    "pages/user/user-set/change-phone/change-phone",
+    "pages/user/user-set/change-address/change-address",
+    "pages/user/user-set/change-userinfo/change-userinfo",
+    "pages/user/user-set/change-userinfo/change-nickname/change-nickname",
+    "pages/user/user-set/change-userinfo/change-username/change-username",
+    "pages/user/user-set/change-userinfo/change-sex/change-sex",
+    "pages/user/user-set/change-userinfo/bank-card/bank-card",
+    "pages/user/cash-integration/cash-integration",
+    "pages/user/normal-integration/normal-integration",
+    "pages/confirmation-oder/confirmation-oder"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "wechat",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#838383",

@@ -1,2 +1,0 @@
-<navigation-bar title="tabbar" isShowBack="{{ false }}"></navigation-bar> 
-<view>tabbar</view>
