@@ -1,2 +1,22 @@
-<!--pages/user/my-order/my-order.wxml-->
-<text>我的订单</text>
+<navigation-bar title="我的订单" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+
+<view>
+  <view class="list-view"
+    wx:for="{{ listData }}"
+    wx:key="{{ index }}">
+    <view class="img-view">
+      <image src="{{orderImg}}"></image>
+    </view>
+    <view class="flex1">
+      <view class="titleCls">{{item.title}}</view>
+      <view class="typeCls">付款方式：{{item.type}}</view>
+      <view class="statusCls">发货状态：{{item.status}}</view>
+      <view class="flexCls">
+        <view>已付款￥{{item.price}}</view>
+        <view>付款时间{{item.date}}</view>
+      </view>
+    </view>
+  </view>
+</view>

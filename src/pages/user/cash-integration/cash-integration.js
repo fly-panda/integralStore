@@ -1,11 +1,21 @@
-// pages/user/cash-integration/cash-integration.js
+const config = require('../../../utils/config.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    bgImg: config.imgUrl +"images/head-bg.png",
+    integral:125,//当前积分
+    hbImg: config.imgUrl + "images/ico_hongbao_dis@2x.png",
+    listData:[
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" },
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
+      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" }
+    ]
   },
 
   /**

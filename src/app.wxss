@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "iconfont.wxss";
+
 page {
   font-family:Tahoma,Arial,Helvetica,sans-serif;
   /* background: #f4f4f4; */

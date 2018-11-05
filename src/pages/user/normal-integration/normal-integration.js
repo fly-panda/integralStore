@@ -1,13 +1,54 @@
-// pages/user/normal-integration/normal-integration.js
+const config = require('../../../utils/config.js');
+const reg = /^1\d{10}$/;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    bgImg: config.imgUrl + "images/head-bg.png",
+    normal: 125,//当前积分
+    hbImg: config.imgUrl + "images/ico_hongbao_dis@2x.png",
+    integra:"",
+    phones:""
   },
-
+  integra(e){
+    this.data.integra = e.detail.value;
+  },
+  phones(e) {
+    this.data.phones = e.detail.value;
+  },
+  confirm(){
+    let self=this.data;
+    console.log(self.integra)
+    if (self.integra==""){
+      wx.showToast({
+        title: "请输入积分",
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }
+    if (self.phones == "") {
+      wx.showToast({
+        title: "请输入手机号",
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }else{
+      if (!reg.test(self.phones)){
+        wx.showToast({
+          title: "手机号格式有误，请重新输入",
+          icon: "none",
+          duration: 2000
+        })
+        return false;
+      }else{
+        console.log("可以提交")
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

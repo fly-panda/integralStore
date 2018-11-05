@@ -1,2 +1,25 @@
-<!--pages/user/normal-integration/normal-integration.wxml-->
-<text>普通积分</text>
+<navigation-bar title="普通积分" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+<view>
+  <view class="headbg">
+   <!-- style="background:url('{{bgImg}}')" -->
+    <text>当前积分</text>
+    <view>
+      {{normal}}
+    </view>
+  </view>
+  <view class="inp-list">
+    <view>
+      <text>转让普通积分：</text>
+      <input type="number" bindinput="integra" placeholder='请输入普通积分'></input>
+    </view>
+     <view>
+      <text>授权人手机号：</text>
+      <input type="number" bindinput="phones" placeholder='请输入手机号码'></input>
+    </view>
+  </view>
+</view>
+<view class="list-btn">
+  <view bindtap="confirm">确认转让</view>
+</view>

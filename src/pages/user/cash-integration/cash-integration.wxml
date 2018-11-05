@@ -1,2 +1,30 @@
-<!--pages/user/cash-integration/cash-integration.wxml-->
-<text>现金积分</text>
+<navigation-bar title="现金积分" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+<view>
+  <view class="headbg">
+   <!-- style="background:url('{{bgImg}}')" -->
+    <text>当前积分</text>
+    <view>
+      {{integral}}
+    </view>
+  </view>
+  <view class="list-view">
+    <view class="views-cont"
+      wx:for="{{ listData }}"
+      wx:key="{{ index }}">
+      <view class="left">
+        <view class="titleCls">{{item.title}}</view>
+        <view class="priceCls">您获得现金{{item.price}}元</view>
+        <view class="dateCls">{{item.date}}</view>
+      </view>
+      <view class="right">
+        <image src="{{hbImg}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="list-btn">
+  <view>转让现金</view>
+  <view>提现到卡</view>
+</view>

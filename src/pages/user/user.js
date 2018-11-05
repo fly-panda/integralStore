@@ -1,28 +1,28 @@
 // pages/user/user.js
+const config = require('../../utils/config.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    headImg: "http://47.93.13.54:333/zhangjiu/images/ico_touxiang@2x.png",
-    ewmImg: "http://47.93.13.54:333/zhangjiu/images/ico_erweima@2x.png",
+    headImg: config.imgUrl+"images/ico_touxiang@2x.png",
+    ewmImg: config.imgUrl +"images/ico_erweima@2x.png",
     userName:"杨先生",
-    isLogin:false,
+    isLogin:true,
     cash:0,//现金积分
     ordinary:0,//普通积分
-    icon1: "http://47.93.13.54:333/zhangjiu/images/ico_wodetuandui_dis@2x.png",
-    icon2: "http://47.93.13.54:333/zhangjiu/images/ico_wodedingdan_dis@2x.png",
-    icon3: "http://47.93.13.54:333/zhangjiu/images/Group 7@2x.png",
+    icon1: config.imgUrl +"images/ico_wodetuandui_dis@2x.png",
+    icon2: config.imgUrl +"images/ico_wodedingdan_dis@2x.png",
+    icon3: config.imgUrl +"images/Group 7@2x.png",
   },
   jumpLogin() {
-    console.log("去登录")
-    // wx.navigateTo({
-    //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-    // })
+    wx.navigateTo({
+      // url: '/pages/index/login/login',
+    })
   },
   jumpMa(){
-    if (!this.isLogin){
+    if (this.data.isLogin){
       wx.showToast({
         title:"请登录",
         icon:"none",
@@ -35,33 +35,34 @@ Page({
     }
   },
   jumpOrdinary(){
-    if (!this.isLogin) {
+    if (!this.data.isLogin) {
       wx.showToast({
         title: "请登录",
         icon: "none",
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/normal-integration/normal-integration',
+      })
     }
   },
   jumpCash(){
-    if (!this.isLogin) {
+    console.log(!this.data.isLogin)
+    if (!this.data.isLogin) {
       wx.showToast({
         title: "请登录",
         icon: "none",
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/cash-integration/cash-integration',
+      })
     }
   },
   myTeam(){
-    if (!this.isLogin) {
+    if (!this.data.isLogin) {
       wx.showToast({
         title: "请登录",
         icon: "none",
@@ -74,7 +75,7 @@ Page({
     }
   },
   myDan() {
-    if (!this.isLogin) {
+    if (!this.data.isLogin) {
       wx.showToast({
         title: "请登录",
         icon: "none",
@@ -87,7 +88,7 @@ Page({
     }
   },
   userAcc() {
-    if (!this.isLogin) {
+    if (!this.data.isLogin) {
       wx.showToast({
         title: "请登录",
         icon: "none",
