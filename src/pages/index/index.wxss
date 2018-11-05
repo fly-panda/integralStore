@@ -49,7 +49,6 @@ video {
 .vip .icon {
   width: 88rpx;
   height: 88rpx;
-  background: #eee;
 }
 
 .vip .item {

@@ -1,7 +1,7 @@
-<navigation-bar title="首页" 
+<!-- <navigation-bar title="首页" 
                 isShowBack="{{ false }}"
                 backgroundColor="linear-gradient(0deg, #2C2D31 1%, #101013 100%)"
-                navBorderBottom="{{ false }}"></navigation-bar>
+                navBorderBottom="{{ false }}"></navigation-bar> -->
 <view>
   <!-- banner -->
   <view class='banner'>
@@ -11,7 +11,7 @@
   <view class='commodity'>
     <view class='title'>高端商品</view>
     <view class='content flexRow center between'>
-      <view class='item'>
+      <view class='item' catchtap='commodity'>
         <image class='img' src=''></image>
         <view class='name'>舒适露</view>
         <view class='tip'>舒筋活络，消除疲劳</view>
@@ -27,15 +27,18 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between'>
-        <image class='icon'></image>
+      <view class='item flexRow between' 
+            catchtap='vipDetail'
+            wx:for="{{ vipData }}"
+            wx:key="{{ index }}">
+        <image class='icon' src='{{ item.imgUrl }}'></image>
         <view class='mid'>
-          <view class='name'>vip</view>
-          <view class='tip'>1111</view>
+          <view class='name' style='color: {{ item.color }};'>{{ item.title }}</view>
+          <text class='tip'>{{ item.tip }}</text>
         </view>
         <view class='prize'>
           <text>￥</text>
-          <text class='num'>399</text>
+          <text class='num'>{{ item.prize }}</text>
         </view>
       </view>
     </view>
