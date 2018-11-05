@@ -1,2 +1,41 @@
-<!--pages/index/commodity/commodity.wxml-->
-<text>高端商品</text>
+<navigation-bar title="高端商品" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<view>
+  <view class='txt-title'>
+    巨掌牌 舒适露的功效原理
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" 
+          autoplay="{{autoplay}}" 
+          interval="{{interval}}" 
+          duration="{{duration}}"
+          indicator-color="{{ indicatorColor }}"
+          indicator-active-color="{{ indicatorActiveColor }}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='content'>
+    <view class='item'></view>
+  </view>
+  <view class='vip'>
+    <view class='title'>高端会员</view>
+    <view class='content'>
+      <view class='item flexRow between center' 
+            catchtap='vipDetail'
+            wx:for="{{ vipData }}"
+            wx:key="{{ index }}">
+        <image class='icon' src='{{ item.imgUrl }}'></image>
+        <view class='mid'>
+          <view class='name' style='color: {{ item.color }};'>{{ item.title }}</view>
+          <text class='tip'>{{ item.tip }}</text>
+        </view>
+        <view class='prize'>
+          <text class='icon'>￥</text>
+          <text class='num'>{{ item.prize }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -30,6 +30,10 @@ Component({
       type: Boolean,
       value: true
     },
+    backColor: {
+      type: String,
+      value: '#fff'
+    },
     isPlaceholder: {
       type: Boolean,
       value: true

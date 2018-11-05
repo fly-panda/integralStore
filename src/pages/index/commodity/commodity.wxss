@@ -1,1 +1,58 @@
 /* pages/index/commodity/commodity.wxss */
+page {
+  background: #fff;
+}
+
+.txt-title {
+  font-weight: 600;
+  padding: 28rpx 30rpx 24rpx;
+}
+
+swiper {
+  width: 100%;
+  height: 428rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 428rpx;
+}
+
+.vip {
+  padding: 32rpx;
+}
+
+.vip .title {
+  position: relative;
+  padding-left: 20rpx;
+  font-size: 16px;
+  color: #363636;
+}
+
+.vip .icon {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.vip .item {
+  padding: 24rpx 0;
+  padding-left: 36rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.vip .name {
+  font-size: 14px;
+}
+
+.vip .mid {
+  flex: 1;
+  margin-left: 44rpx;
+}
+
+.vip .prize {
+  height: 106rpx;
+}
+
+.vip .prize .icon {
+  font-size: 12px;
+}
