@@ -4,7 +4,7 @@ Component({
   properties: {
     backgroundColor: {
       type: String,
-      value: '#fff'
+      value: 'linear-gradient(0deg, #2C2D31 1%, #101013 100%)'
     },
     borderColor: {
       type: String,
