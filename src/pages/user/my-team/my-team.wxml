@@ -2,7 +2,14 @@
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}">
 </navigation-bar>
-<view class='container flexRow center'>
+
+<view class='noData' wx:if="{{ leftData.length < 0 }}">
+  <image src='{{ imgUrl }}/images/ico_kongzhuangtai_dis@2x.png'></image>
+  <view class='tip'>空空如也！</view>
+  <button class='add'>去添加</button>
+</view>
+
+<view class='container flexRow center' wx:else>
   <scroll-view class='left' scroll-y style='height: {{ scrollViewHeight }}px;'>
     <view class='title'>直接推荐</view>
     <view class='list'>

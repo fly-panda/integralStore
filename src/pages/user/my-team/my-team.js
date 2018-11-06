@@ -1,6 +1,7 @@
 // pages/user/my-team/my-team.js
 const app = getApp();
 const sysInfo = wx.getSystemInfoSync();
+const config = require('../../../utils/config.js');
 
 Page({
 
@@ -8,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl: config.imgUrl,
     scrollViewHeight: '',
     leftData: [
       {

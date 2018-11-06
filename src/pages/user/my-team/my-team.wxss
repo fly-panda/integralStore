@@ -59,3 +59,33 @@ scroll-view .title {
   height: 30rpx;
   background: #E1C179;
 }
+
+.noData {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noData image {
+  width: 204rpx;
+  height: 170rpx;
+  margin-bottom: 146rpx;
+}
+
+.noData .add {
+  margin-top: 170rpx;
+  width: 250rpx;
+  height: 88rpx;
+  background: #E1C179;
+  color: #fff;
+  border-radius: 12rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 14px;
+}
