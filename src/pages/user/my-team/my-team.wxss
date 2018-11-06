@@ -1,1 +1,61 @@
 /* pages/user/my-team/my-team.wxss */
+scroll-view {
+  width: 50%;
+}
+
+.left {
+  background: #f6f6f6;
+}
+
+scroll-view .title {
+  height: 68rpx;
+  color: #363636;
+  line-height: 68rpx;
+  width: 100%;
+  padding-left: 32rpx;
+  font-weight: 600;
+}
+
+.list .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 116rpx;
+  box-sizing: border-box;
+  padding-left: 32rpx;
+  position: relative;
+}
+
+.list .item .top {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  color: #9B9B9B;
+  font-size: 18rpx;
+  margin-top: 4rpx;
+}
+
+.name {
+  color: #363636;
+  margin-right: 6rpx;
+}
+
+.job {
+  font-size: 12px;
+}
+
+.select {
+  background: #fff;
+}
+.select::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 50%;
+  margin-top: -15rpx;
+  width: 6rpx;
+  height: 30rpx;
+  background: #E1C179;
+}
