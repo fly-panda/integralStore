@@ -1,2 +1,31 @@
-<!--pages/confirmation-oder/confirmation-oder.wxml-->
-<text>确认订单</text>
+<navigation-bar title="确认订单" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+<view>
+  <view class='address-box'>
+    <view class='top flexRow center'>
+      <view class='name'>张先生</view>
+      <view class='phone'>131****1111</view>
+      <view class='tag'>默认</view>
+    </view>
+    <view class='flexRow between'> 
+      <view class='address-info'>
+        北京市朝阳区朝阳北路雅城一里天鹅湾小区一区2-1-402
+      </view>
+      <view class='iconfont icon-jiantou-copy-copy1'></view>
+    </view>
+  </view>
+  <view class='shop'>
+    <view class='info flexRow between center'>
+      <image src='{{ imgUrl }}images/ico_vip_dis@2x.png'></image>
+      <view class='mid'>
+        <text class='txt'>价值1299的红酒一瓶\n获得20%的销售返利</text>
+        <view class='prize'>
+          <text>￥</text><text>399</text>
+        </view>
+      </view>
+      <view class='num'>X1</view>
+    </view>
+    <view class='jf'>返积分：798</view>
+  </view>
+</view>

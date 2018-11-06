@@ -1,11 +1,14 @@
 // pages/confirmation-oder/confirmation-oder.js
+const app = getApp();
+const config = require('../../utils/config.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrl: config.imgUrl
   },
 
   /**

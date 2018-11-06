@@ -1,1 +1,87 @@
 /* pages/confirmation-oder/confirmation-oder.wxss */
+page {
+  background: #f6f6f6;
+}
+
+.address-box {
+  background: #fff;
+  margin: 30rpx;
+  padding: 60rpx 60rpx 40rpx 60rpx;
+  box-shadow: 0 2px 7px 0 rgba(122,118,118,0.09);
+}
+
+.address-box .top {
+  margin-bottom: 4rpx;
+  font-size: 12px;
+  color: #333;
+}
+
+.tag {
+  width: 72rpx;
+  height: 32rpx;
+  background: #333;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 32rpx;
+}
+
+.phone {
+  margin: 0 40rpx;
+}
+
+.address-info {
+  color: #9C9C9C;
+  font-size: 12px;
+  width: 460rpx;
+}
+
+.icon-jiantou-copy-copy1 {
+  font-size: 12px;
+  color: #9C9C9C;  
+}
+
+.shop {
+  background: #fff;
+  margin: 0 30rpx;
+  box-shadow: 0 2px 7px 0 rgba(122,118,118,0.09);  
+  padding: 0 40rpx;
+}
+
+.shop image {
+  width: 68rpx;
+  height: 54rpx;
+}
+.shop .info {
+  padding: 24rpx 0;
+  padding-left: 24rpx;
+}
+
+.shop .jf {
+  border-top: 1rpx solid #f1f1f1;
+  color: #333;
+  padding: 24rpx 0;
+}
+
+.shop .info .mid {
+  flex: 1;
+  margin-left: 60rpx;
+}
+
+.shop .info .mid .txt {
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.shop .info .num {
+  height: 154rpx;
+  color: #9C9C9C;
+}
+
+.prize {
+  font-size: 18px;
+  color: #E4141D;
+}
+.prize text:first-child {
+  font-size: 20rpx;
+}
