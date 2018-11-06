@@ -1,2 +1,26 @@
-<!--pages/user/user-set/change-address/change-address.wxml-->
-<text>更改收货地址</text>
+<navigation-bar title="更改地址" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+</navigation-bar>
+<form bindsubmit="submitInfo">
+  <view class='cell'>
+    <view class='right'>收货人：</view>
+    <input type='text' placeholder='收货人姓名' name='name'></input>
+  </view>
+  <view class='cell'>
+    <view class='right'>手机号码：</view>
+    <input type='number' placeholder='请输入手机号码' name='phone'></input>
+  </view>
+  <view class='cell'>
+    <view class='right'>所在地址：</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}{{region[1]}}{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class='cell'>
+    <view class='right'>详细地址：</view>
+    <input type='number' placeholder='请输入详细地址' name='address'></input>
+  </view>
+
+  <button type="submit">保存</button>
+</form>

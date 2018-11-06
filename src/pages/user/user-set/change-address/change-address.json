@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "更改地址",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

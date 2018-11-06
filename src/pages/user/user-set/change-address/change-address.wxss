@@ -1,1 +1,46 @@
 /* pages/user/user-set/change-address/change-address.wxss */
+.cell {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.cell {
+  margin: 0 30rpx;
+  padding: 40rpx 0 20rpx 0;
+}
+
+input {
+  flex: 1;
+}
+
+picker {
+  flex: 1;
+}
+
+.right {
+  color: #363636;
+  width: 70px;
+}
+
+button {
+  margin-top: 600rpx;
+  width: 606rpx;
+  border-radius: 12rpx;  
+  height: 72rpx;
+  line-height: 72rpx;
+  background: #E1C179;
+  color: #fff;
+  font-size: 14px;
+}
+
+.button-hover {
+  background: #E1C179;
+  color: #fff;
+  opacity: .8;  
+}
+
+button[disabled]:not([type]) {
+  background: #CACACE;
+  color: #fff;
+}
