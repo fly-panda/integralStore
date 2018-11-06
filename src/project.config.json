@@ -148,6 +148,12 @@
 					"name": "修改用户名",
 					"pathName": "pages/user/user-set/change-userinfo/change-username/change-username",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的二维码",
+					"pathName": "pages/user/my-code/my-code",
+					"query": ""
 				}
 			]
 		}

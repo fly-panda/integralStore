@@ -2,8 +2,7 @@
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
 <view>
-  <view class="headbg">
-   <!-- style="background:url('{{bgImg}}')" -->
+  <view class="headbg" style="background:url('{{bgImg}}');" >
     <text>当前积分</text>
     <view>
       {{normal}}

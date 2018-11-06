@@ -18,6 +18,7 @@
     "pages/user/user-set/change-userinfo/bank-card/bank-card",
     "pages/user/cash-integration/cash-integration",
     "pages/user/normal-integration/normal-integration",
+    "pages/user/my-code/my-code",
     "pages/confirmation-oder/confirmation-oder"
   ],
   "window": {

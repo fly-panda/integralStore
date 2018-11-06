@@ -14,24 +14,24 @@ Page({
     ordinary:0,//普通积分
     icon1: config.imgUrl +"images/ico_wodetuandui_dis@2x.png",
     icon2: config.imgUrl +"images/ico_wodedingdan_dis@2x.png",
-    icon3: config.imgUrl +"images/Group 7@2x.png",
+    icon3: config.imgUrl +"images/group.png",
   },
   jumpLogin() {
     wx.navigateTo({
-      // url: '/pages/index/login/login',
+      url: '/pages/login/login',
     })
   },
   jumpMa(){
-    if (this.data.isLogin){
+    if (!this.data.isLogin){
       wx.showToast({
         title:"请登录",
         icon:"none",
         duration:2000
       })
     }else{
-       // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/my-code/my-code',
+      })
     }
   },
   jumpOrdinary(){
@@ -69,9 +69,9 @@ Page({
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/my-team/my-team',
+      })
     }
   },
   myDan() {
@@ -82,9 +82,9 @@ Page({
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/my-order/my-order',
+      })
     }
   },
   userAcc() {
@@ -95,9 +95,9 @@ Page({
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   // url: '/pages/index/cargoApplyFor/cargoApplyFor',
-      // })
+      wx.navigateTo({
+        url: '/pages/user/user-set/user-set',
+      })
     }
   },
   /**

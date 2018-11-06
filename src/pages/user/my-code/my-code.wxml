@@ -1,0 +1,20 @@
+<navigation-bar title="我的二维码" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}">
+</navigation-bar>
+<view class="cont-view">
+  <view>
+    <view class="user-msg">
+      <view class="head-img">
+        <image src="{{headImg}}"></image>
+      </view>
+      <view class="msg">
+        <view class="name-cls">{{username}}</view>
+        <view class="address-cls">{{address}}</view>
+      </view>
+    </view>
+    <view class="codes">
+       <image src="{{codeImg}}"></image> 
+    </view>
+  </view>
+</view>

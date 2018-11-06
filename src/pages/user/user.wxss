@@ -3,17 +3,17 @@ page{
 }
 .heads{
   display: flex;
-  padding: 16pt 16pt 50pt 16pt;
+  padding: 32rpx 32rpx 100rpx 32rpx;
   background-image: linear-gradient(-10deg, #40392D 0%, #020100 100%);
 }
 .headImgCls image{
-  width:46pt;
-  height:46pt;
+  width:92rpx;
+  height:92rpx;
   border-radius: 50%;
 }
 .erweima image{
-  width:31pt;
-  height:31pt;
+  width:62rpx;
+  height:62rpx;
 }
 .userMsg{
   flex: 1;
@@ -26,7 +26,7 @@ page{
   color: #FBE0AA;
   letter-spacing: -0.04px;
   justify-content:space-around;
-  margin:0 20pt;
+  margin:0 40rpx;
 }
 .userMsg>view .nameCls{
   font-size: 12px;
@@ -36,9 +36,9 @@ page{
 }
 .listCls{
   background: #FFFFFF;
-  border-radius: 10px 10px 2px 2px;
-  margin-top: -20pt;
-  padding:25pt 16pt 0 16pt;
+  border-radius: 20rpx 20rpx 4rpx 4rpx;
+  margin-top: -40rpx;
+  padding:50rpx 32rpx 0 32rpx;
   
 }
 .integral{
@@ -48,7 +48,7 @@ page{
   flex:1;
 }
 .integral>.flex1:last-child{
-  padding-left: 16pt;
+  padding-left: 32rpx;
 }
 .integralTitle{
   font-size: 10px;
@@ -61,7 +61,7 @@ page{
   color: #000000;
   letter-spacing: 0;
   line-height: 20px;
-  margin-top:2pt;
+  margin-top:4rpx;
   position: relative;
 }
 .num .icoCls,.num .icoClss{
@@ -76,20 +76,20 @@ page{
   transform:rotate(180deg);
 }
 .num .icoClss{
-  right:16pt;
+  right:32rpx;
 }
 
 .lineCls{
   width:1pt;
-  height:45pt;
+  height:90rpx;
   background: #F1F1F1;
 }
 .myCls>view{
-  height: 48pt;
+  height: 94rpx;
   display: flex;
   border-bottom: 1pt solid #F1F1F1;
   align-items: center;
-  padding-left: 5pt;
+  padding-left: 10rpx;
 }
 .myCls .txt{
   padding-left: 12pt;
@@ -104,6 +104,6 @@ page{
   transform:rotate(180deg);
 }
 .myCls>view image{
-  width:18pt;
-  height:18pt;
+  width:36rpx;
+  height:36rpx;
 }

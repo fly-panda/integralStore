@@ -7,22 +7,22 @@ page{
 .list-view{
   display: flex;
   background: #FFFFFF;
-  padding: 14pt 16pt;
-  margin-top:12pt;
+  padding: 28rpx 32rpx;
+  margin-top:24rpx;
 }
 .list-view:first-child{
   margin-top:0;
 }
 .flex1{
   flex:1;
-  margin-left: 26pt;
+  margin-left: 52rpx;
 }
 .list-view image{
-  width:60pt;
-  height:60pt;
+  width:120rpx;
+  height:120rpx;
 }
 .list-view .img-view{
-  padding: 8pt;
+  padding: 16rpx;
 }
 .flexCls{
   display: flex;
@@ -40,7 +40,7 @@ page{
   letter-spacing: -0.04px;
 }
 .flex1>view{
-  margin-top: 4pt;
+  margin-top: 8rpx;
 }
 .titleCls{
   font-size: 14px;

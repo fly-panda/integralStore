@@ -1,8 +1,8 @@
 .headbg{
-  height:153pt;
+  height:306rpx;
   background-image: linear-gradient(-10deg, #2E2E2E 0%, #020100 100%);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size:100% 100%!important; 
   text-align: center;
 }
 page{
@@ -14,7 +14,7 @@ page{
   font-size: 9px;
   color: #D5C394;
   letter-spacing: -0.04px;
-  margin-top:10pt;
+  margin-top:20rpx;
 
 }
 .headbg view{
@@ -22,19 +22,19 @@ page{
   font-size: 64px;
   color: #FBE0AA;
   letter-spacing: -0.28px;
-  margin-top:13pt;
+  margin-top:26rpx;
 }
 .list-view{
-  padding: 2pt 16pt 51pt 16pt;
+  padding: 4rpx 32rpx 102rpx 32rpx;
   background: #F6F6F6;
   border-radius: 2px;
 }
 .views-cont{
   display: flex;
   background: #FFFFFF;
-  padding: 0 29pt 0 31pt;
-  margin-top:12px;
-  height:80pt;
+  padding: 0 58rpx 0 62rpx;
+  margin-top:24rpx;
+  height:160rpx;
 
 }
 .views-cont .left{
@@ -44,23 +44,23 @@ page{
   font-size: 12px;
   color: #000000;
   letter-spacing: -0.05px;
-  margin-top:17pt;
+  margin-top:34rpx;
 }
 .left .priceCls{
   font-size: 14px;
   color: #EA3525;
   letter-spacing: -0.06px;
-  margin-top:2pt;
+  margin-top:4rpx;
 }
 .left .dateCls{
   font-size: 9px;
   color: #A1A1A1;
   letter-spacing: -0.04px;
-  margin-top:7pt;
+  margin-top:14rpx;
 }
 .views-cont .right image{
-  width:90pt;
-  height:80pt;
+  width:180rpx;
+  height:160rpx;
 }
 .list-btn{
   width:100%;
@@ -71,7 +71,7 @@ page{
 }
 .list-btn>view{
   width:50%;
-  height: 49px;
+  height: 98rpx;
   font-size: 14px;
   letter-spacing: -0.06px;
   text-align: center;

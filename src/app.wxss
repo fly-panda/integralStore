@@ -2,7 +2,7 @@
 @import "iconfont.wxss";
 
 page {
-  font-family:Tahoma,Arial,Helvetica,sans-serif;
+  font-family: PingFang-SC-Medium;
   /* background: #f4f4f4; */
   font-size: 14px;
   color:#353535;
