@@ -8,9 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: config.imgUrl
+    imgUrl: config.imgUrl,
+    payType: 0, // 支付方式 0-微信支付，1-现金支付
+    isUserJf: false 
   },
-
+  selectPayType(e) {
+    let type = e.currentTarget.dataset.type
+    
+    this.setData({
+      payType: type
+    })
+  },
+  selectJf() {
+    let isUserJf = !this.data.isUserJf
+    this.setData({
+      isUserJf
+    })
+  },
+  changeAddress() {
+    wx.navigateTo({
+      url: '/pages/user/user-set/change-address/change-address',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
