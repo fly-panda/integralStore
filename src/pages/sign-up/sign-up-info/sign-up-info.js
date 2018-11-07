@@ -1,13 +1,22 @@
-// pages/sign-up/sign-up-info/sign-up-info.js
+const app = getApp();
+const https = require('../../../utils/https.js');
+const config = require('../../../utils/config.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    region: ['地址', '信', '息'],
+    items: [
+      { value: '先生', name: '0', checked: 'true' },
+      { value: '女士', name: '1' },      
+    ]
+  },
+  submitInfo(e) {
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -60,7 +69,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  // onShareAppMessage: function () {
+  onShareAppMessage: function () {
 
-  // }
+  }
 })

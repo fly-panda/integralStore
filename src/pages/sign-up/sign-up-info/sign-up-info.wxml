@@ -1,3 +1,34 @@
-<navigation-bar title="个人信息" 
-                isShowBack="{{ true }}"
-                navBorderBottom="{{ false }}"></navigation-bar>
+<navigation-bar title="个人信息" isShowBack="{{ true }}" navBorderBottom="{{ false }}"></navigation-bar>
+<form bindsubmit="submitInfo">
+  <view class='cell'>
+    <view class='right'>昵称</view>
+    <input type='text' placeholder='名字' name='name'></input>
+  </view>
+  <view class='cell'>
+    <view class='right'>性别</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <view>{{item.value}}</view>
+        <radio value="{{item.name}}" checked="{{item.checked}}" />
+      </label>
+    </radio-group>
+  </view>
+  <!-- <view class='cell'>
+    <view class='right'>手机号码：</view>
+    <input type='number' placeholder='请输入手机号码' name='phone'></input>
+  </view> -->
+  <view class='cell'>
+    <view class='right'>选择地址：</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}{{region[1]}}{{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class='cell'>
+    <view class='right'>详细地址：</view>
+    <input type='number' placeholder='街道门牌信息' name='address'></input>
+  </view>
+
+  <button type="submit">授权并注册</button>
+</form>
