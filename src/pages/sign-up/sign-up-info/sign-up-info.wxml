@@ -1,0 +1,3 @@
+<navigation-bar title="个人信息" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>

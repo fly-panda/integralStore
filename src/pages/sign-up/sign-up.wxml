@@ -16,6 +16,6 @@
       <image class='icon-user' src='{{ imgUrl }}images/ico_tuijianren_dis@2x.png'></image>
       <input type='number' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
     </view>
-    <button formType="submit" disabled='{{ submitDisabled }}'>注册</button>
+    <button formType="submit" disabled='{{ submitDisabled }}'>下一步</button>
   </form>
 </view>

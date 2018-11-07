@@ -19,7 +19,8 @@
     "pages/user/cash-integration/cash-integration",
     "pages/user/normal-integration/normal-integration",
     "pages/user/my-code/my-code",
-    "pages/confirmation-oder/confirmation-oder"
+    "pages/confirmation-oder/confirmation-oder",
+    "pages/sign-up/sign-up-info/sign-up-info"
   ],
   "window": {
     "backgroundTextStyle": "light",

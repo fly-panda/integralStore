@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -154,6 +154,11 @@
 					"name": "我的二维码",
 					"pathName": "pages/user/my-code/my-code",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册时填写个人信息",
+					"pathName": "pages/sign-up/sign-up-info/sign-up-info"
 				}
 			]
 		}
