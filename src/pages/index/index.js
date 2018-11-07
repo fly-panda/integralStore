@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 const config = require('../../utils/config.js');
+const sysInfo = wx.getSystemInfoSync();
 
 Page({
   data: {
@@ -49,6 +50,9 @@ Page({
     })
   },
   onLoad: function () {
-
+    let scrollViewHeight = sysInfo.screenHeight - app.globalData.navigationBarHeight
+    this.setData({
+      scrollViewHeight
+    })
   }
 })

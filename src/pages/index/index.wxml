@@ -1,7 +1,7 @@
 <navigation-bar title="掌灸积分商城" 
                 isShowBack="{{ false }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
-<view>
+<view class='page'>
   <!-- banner -->
   <view class='banner'>
     <video src="{{ videoSrc }}"></video>
