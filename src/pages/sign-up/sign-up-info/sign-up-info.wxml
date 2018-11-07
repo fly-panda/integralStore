@@ -1,13 +1,13 @@
 <navigation-bar title="个人信息" isShowBack="{{ true }}" navBorderBottom="{{ false }}"></navigation-bar>
-<form bindsubmit="submitInfo">
+<form>
   <view class='cell'>
     <view class='right'>昵称</view>
-    <input type='text' placeholder='名字' name='name'></input>
+    <input type='text' placeholder='名字' name='name' bindinput='getInputValue' data-type="name"></input>
   </view>
   <view class='cell'>
     <view class='right'>性别</view>
     <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio" wx:for="{{items}}">
+      <label class="radio" wx:for="{{items}}" wx:key="{{ index }}">
         <view>{{item.value}}</view>
         <radio value="{{item.name}}" checked="{{item.checked}}" />
       </label>
@@ -20,15 +20,15 @@
   <view class='cell'>
     <view class='right'>选择地址：</view>
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-      <view class="picker">
+      <view class="picker" style='color: {{ region[0] == "地址" ? "#999" : "#030303"}};'>
         {{region[0]}}{{region[1]}}{{region[2]}}
       </view>
     </picker>
   </view>
   <view class='cell'>
     <view class='right'>详细地址：</view>
-    <input type='number' placeholder='街道门牌信息' name='address'></input>
+    <input type='number' placeholder='街道门牌信息' name='address' data-type="address" bindinput='getInputValue'></input>
   </view>
 
-  <button type="submit">授权并注册</button>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled='{{ buttonDisabled }}'>授权并注册</button>
 </form>

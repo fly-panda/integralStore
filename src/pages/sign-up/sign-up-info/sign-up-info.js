@@ -7,14 +7,57 @@ Page({
   /**
    * 页面的初始数据
    */
+  name: '',
+  address: '',
   data: {
     region: ['地址', '信', '息'],
     items: [
       { value: '先生', name: '0', checked: 'true' },
       { value: '女士', name: '1' },      
-    ]
+    ],
+    buttonDisabled: true
   },
-  submitInfo(e) {
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+    if (this.name && this.address && this.data.region.join('') != '地址信息') {
+      this.setData({
+        buttonDisabled: false
+      })
+    }
+  },
+  getInputValue(e) {
+    let type = e.currentTarget.dataset.type 
+    let value = e.detail.value.trim()
+    console.log(value)
+    if(type == 'name') {
+      this.name = value
+    }
+    if(type == 'address') {
+      this.address = value
+    }
+
+    if (this.name && this.address && this.data.region.join('') != '地址信息') {
+      this.setData({
+        buttonDisabled: false
+      })
+    }
+
+  },
+  getUserInfo(e) {
+    console.log(e)
+    // 授权
+    if (e.detail.errMsg == "getUserInfo:ok") {
+
+    }
+    // 未授权
+    if (e.detail.errMsg == "getUserInfo:fail auth deny") {
+
+    }
+  },
+  submitInfo() {
 
   },
   /**

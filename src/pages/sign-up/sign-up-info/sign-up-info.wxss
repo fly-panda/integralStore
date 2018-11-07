@@ -61,8 +61,9 @@ radio .wx-radio-input {
 }
 
 /* 选中后的样式 （可根据设计稿需求自己修改） */
-
 radio .wx-radio-input.wx-radio-input-checked::before {
+  position: absolute;
+  top: 14rpx;
   border-radius: 50%;
   width: 48rpx;
   height: 48rpx;
