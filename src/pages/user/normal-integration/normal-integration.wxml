@@ -1,6 +1,9 @@
 <navigation-bar title="普通积分" 
                 isShowBack="{{ true }}"
-                navBorderBottom="{{ false }}"></navigation-bar>
+                navBorderBottom="{{ false }}"
+                textColor="#FBE0AA"
+                ></navigation-bar>
+                <!-- backgroundColor="rgba(0,0,0,0)" -->
 <view>
   <view class="headbg" style="background:url('{{bgImg}}');" >
     <text>当前积分</text>

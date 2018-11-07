@@ -5,9 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    listData:[
+      { key: "1", value: "男" },
+      { key: "2", value: "女" },
+      { key: "0", value: "保密" }
+    ]
   },
-
+  readKey(e) {
+    var $data = e.currentTarget.dataset;
+    console.log($data)  
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -2,17 +2,20 @@
 </navigation-bar>
 <view>
   <view class='box'>
-    <view class='cell flexRow center'>
-      <view class='txt'>男</view>
+    <view class='cell flexRow center'
+      wx:for="{{ listData }}"
+      wx:key="{{ index }}" 
+      bindtap="readKey">
+      <view class='txt'>{{item.value}}</view>
       <view class="iconfont icon-duihao"></view>
     </view>
-    <view class='cell flexRow center'>
+    <!-- <view class='cell flexRow center'>
       <view class='txt'>女</view>
       <view class="iconfont icon-duihao"></view>
     </view>
     <view class='cell flexRow center'>
       <view class='txt'>保密</view>
       <view class="iconfont icon-duihao"></view>
-    </view>
+    </view> -->
   </view>
 </view>
