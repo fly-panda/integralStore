@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgImgUrl: config.imgUrl + "/images/ico_kongzhuangtai_dis@2x.png",
     orderImg: config.imgUrl + "images/ico_tianshihehuoren_dis@2x.png",
     listData:[
       {title:"天使合伙人",type:"微信支付+积分",status:"已发货",price:"1300",date:"2018/10/31"},

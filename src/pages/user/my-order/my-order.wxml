@@ -1,8 +1,12 @@
 <navigation-bar title="我的订单" 
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
-
-<view>
+<view class='noData' wx:if="{{ listData.length == 0 }}">
+  <image src='{{ bgImgUrl }}'></image>
+  <view class='tip'>空空如也！</view>
+  <button class='add'>去逛逛</button>
+</view>
+<view wx:else>
   <view class="list-view"
     wx:for="{{ listData }}"
     wx:key="{{ index }}">

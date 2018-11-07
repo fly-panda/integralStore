@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: config.imgUrl,
+    imgUrl: config.imgUrl +"/images/ico_kongzhuangtai_dis@2x.png",
     scrollViewHeight: '',
     leftData: [
       {
