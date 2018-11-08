@@ -1,1 +1,58 @@
-/* pages/user/cash-integration/withdraw/withdraw.wxss */
+page{
+  background: #F6F6F6;
+  border-radius: 2px;
+ 
+}
+.cont-view{
+  padding: 32rpx;
+}
+.cont-view>view{
+  background: #FFFFFF;
+  width:100%;
+  height: 670rpx;
+  font-size: 14px;
+color: #070707;
+letter-spacing: -0.06px;
+}
+.card-num{
+  background: #FBFBFB;
+  border-radius: 2px;
+  display: flex;
+  padding: 3.3% 8%;
+}
+.num-view{
+  flex:1;
+  margin-left: 5.3%;
+  font-size: 14px;
+  color: #070707;
+  letter-spacing: -0.06px;
+  margin-top: 2rpx;
+}
+.icoCls{
+  transform:rotate(-180deg);
+  float:right;
+
+}
+.name-cls{
+  padding:0 20rpx;
+  margin-top: 1.5%;
+  color: #9B9B9B;
+}
+.price-cls{
+  padding: 4.2% 8%;
+}
+.inp-cls{
+  height: 11.5%;
+  display: flex;
+  background: red;
+  align-items:stretch;
+}
+.inp-cls>text{
+  font-size: 36px;
+  color: #070707;
+  letter-spacing: -0.16px;
+  line-height: 36px;
+}
+.inp-cls>input{
+  flex:1;
+}

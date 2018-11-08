@@ -2,4 +2,25 @@
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
 
-<view>提现到卡</view>
+<view class="cont-view">
+  <view>
+    <view class="card-num">
+      <view>到账银行卡</view>
+      <view class="num-view">
+        <view>
+          <text>{{cardNum}}</text>
+          <text class="icoCls iconfont icon-jiantouzuo"></text>
+        </view>
+        <view class="name-cls">{{names}}</view>
+      </view>
+    </view>
+    <view class="price-cls">
+      <view>提现金额</view>
+      <view class="inp-cls">
+        <text>￥</text>
+        <input type='number' placeholder='' name="phoneNum" ></input>
+      </view>
+      <!-- bindinput='getPhoneNum' -->
+    </view>
+  </view>
+</view>
