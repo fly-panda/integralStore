@@ -43,3 +43,6 @@ page {
 .icon-duihao {
   color: #E1C179;
 }
+.txtColor{
+  color:#FBE0AA;
+}

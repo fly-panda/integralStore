@@ -4,10 +4,11 @@
   <view class='box'>
     <view class='cell flexRow center'
       wx:for="{{ listData }}"
-      wx:key="{{ index }}" 
+      wx:key="{{ index }}"
+      data-id="{{item.key}}"
       bindtap="readKey">
       <view class='txt'>{{item.value}}</view>
-      <view class="iconfont icon-duihao"></view>
+      <view class="iconfont icon-duihao {{typeId==item.key?'txtColor':''}}"></view>
     </view>
     <!-- <view class='cell flexRow center'>
       <view class='txt'>女</view>
