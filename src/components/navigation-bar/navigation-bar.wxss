@@ -10,6 +10,18 @@
 	z-index: 1000;
 	box-sizing: border-box;
 }
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.bg image {
+  width: 100%;
+  height: 100%;
+}
 
 .border-bottom {
   border-bottom: 1rpx solid #eee;  
@@ -19,6 +31,7 @@
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
+  z-index: 10;
 }
 .navigation-title{
 	position: absolute;

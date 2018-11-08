@@ -4,7 +4,7 @@ Component({
   properties: {
     backgroundColor: {
       type: String,
-      value: 'linear-gradient(0deg, #2C2D31 1%, #101013 100%)'
+      value: '#000'
     },
     borderColor: {
       type: String,
@@ -43,6 +43,10 @@ Component({
       value: '#333'
     },
     navBorderBottom: {
+      type: Boolean,
+      value: false
+    },
+    isShowBg: {
       type: Boolean,
       value: true
     }
