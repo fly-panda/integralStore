@@ -13,7 +13,11 @@ Page({
       { title: "天使合伙人", type: "微信支付+积分", status: "已发货", price: "1300", date: "2018/10/31" },
     ]
   },
-
+  goto(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

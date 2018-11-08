@@ -1,6 +1,6 @@
 <navigation-bar title="掌灸积分商城" 
                 isShowBack="{{ false }}"
-                textColor="#FBE0AA"
+                backgroundColor="rgba(0,0,0,0)"
                 navBorderBottom="{{ false }}"></navigation-bar>
 <view>
   <view class="heads">

@@ -3,8 +3,9 @@ page{
 }
 .heads{
   display: flex;
-  padding: 32rpx 32rpx 100rpx 32rpx;
+  padding: 160rpx 32rpx 100rpx 32rpx;
   background-image: linear-gradient(-10deg, #40392D 0%, #020100 100%);
+  margin-top:-128rpx;
 }
 .headImgCls image{
   width:92rpx;
@@ -37,7 +38,7 @@ page{
 .listCls{
   background: #FFFFFF;
   border-radius: 20rpx 20rpx 4rpx 4rpx;
-  margin-top: -40rpx;
+  margin-top: -30rpx;
   padding:50rpx 32rpx 0 32rpx;
   
 }

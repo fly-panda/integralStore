@@ -1,0 +1,5 @@
+<navigation-bar title="提现到卡" 
+                isShowBack="{{ true }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
+
+<view>提现到卡</view>

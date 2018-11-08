@@ -17,6 +17,8 @@
     "pages/user/user-set/change-userinfo/change-sex/change-sex",
     "pages/user/user-set/change-userinfo/bank-card/bank-card",
     "pages/user/cash-integration/cash-integration",
+    "pages/user/cash-integration/assign-cash/assign-cash",
+    "pages/user/cash-integration/withdraw/withdraw",
     "pages/user/normal-integration/normal-integration",
     "pages/user/my-code/my-code",
     "pages/confirmation-oder/confirmation-oder",

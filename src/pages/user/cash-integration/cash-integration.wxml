@@ -1,13 +1,16 @@
 <navigation-bar title="现金积分" 
                 isShowBack="{{ true }}"
-                textColor="#FBE0AA"
+                backgroundColor="rgba(0,0,0,0)"
                 navBorderBottom="{{ false }}"></navigation-bar>
 <view>
   <view class="headbg" style="background:url('{{bgImg}}')">
-    <text>当前积分</text>
     <view>
-      {{integral}}
+      <text>当前积分</text>
+      <view>
+        {{integral}}
+      </view>
     </view>
+    
   </view>
   <view class="list-view">
     <view class="views-cont"
@@ -25,6 +28,6 @@
   </view>
 </view>
 <view class="list-btn">
-  <view>转让现金</view>
-  <view>提现到卡</view>
+  <view bindtap="goAssign">转让现金</view>
+  <view bindtap="goWithdraw">提现到卡</view>
 </view>

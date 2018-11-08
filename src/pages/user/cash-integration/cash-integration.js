@@ -17,7 +17,16 @@ Page({
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" }
     ]
   },
-
+  goAssign(){
+    wx.navigateTo({
+      url: '/pages/user/cash-integration/assign-cash/assign-cash',
+    })
+  },
+  goWithdraw(){
+    wx.navigateTo({
+      url: '/pages/user/cash-integration/withdraw/withdraw',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

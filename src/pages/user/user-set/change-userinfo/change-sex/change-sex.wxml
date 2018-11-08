@@ -8,7 +8,7 @@
       data-id="{{item.key}}"
       bindtap="readKey">
       <view class='txt'>{{item.value}}</view>
-      <view class="iconfont icon-duihao {{typeId==item.key?'txtColor':''}}"></view>
+      <view class="iconfont {{typeId==item.key?'txtColor icon-duihao':''}}"></view>
     </view>
     <!-- <view class='cell flexRow center'>
       <view class='txt'>女</view>

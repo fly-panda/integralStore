@@ -1,23 +1,13 @@
-<navigation-bar title="普通积分" 
+<navigation-bar title="转让现金积分" 
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"
-                backgroundColor="rgba(0,0,0,0)"
                 ></navigation-bar>
                 
 <view>
-  <view class="headbg" style="background:url('{{bgImg}}');" >
-    <view>
-      <text>当前积分</text>
-      <view>
-        {{normal}}
-      </view>
-    </view>
-    
-  </view>
   <view class="inp-list">
     <view>
-      <text>转让普通积分：</text>
-      <input type="number" bindinput="integra" placeholder='请输入普通积分'></input>
+      <text>转让现金积分：</text>
+      <input type="number" bindinput="integra" placeholder='请输入金额'></input>
     </view>
      <view>
       <text>接收人手机号：</text>
