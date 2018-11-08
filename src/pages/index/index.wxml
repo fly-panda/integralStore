@@ -1,10 +1,8 @@
-<navigation-bar title="掌灸积分商城" 
-                isShowBack="{{ false }}"
-                navBorderBottom="{{ false }}"></navigation-bar>
+<navigation-bar title="掌灸积分商城" isShowBack="{{ false }}" navBorderBottom="{{ false }}"></navigation-bar>
 <view class='page'>
   <!-- banner -->
   <view class='banner'>
-    <video src="{{ videoSrc }}"></video>
+    <video src="{{ videoSrc }}" autoplay="{{ false }}" show-fullscreen-btn="{{ false }}" enable-progress-gesture="{{ false }}"></video>
   </view>
   <!-- 高端商品 -->
   <view class='commodity'>
@@ -26,10 +24,7 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between center' 
-            catchtap='vipDetail'
-            wx:for="{{ vipData }}"
-            wx:key="{{ index }}">
+      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}">
         <image class='icon' src='{{ item.imgUrl }}'></image>
         <view class='mid'>
           <view class='name' style='color: {{ item.color }};'>{{ item.title }}</view>

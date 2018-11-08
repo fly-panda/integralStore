@@ -1,0 +1,26 @@
+<block wx:if="{{navigationBarHeight}}">
+  <!-- <cover-view class="back" catchtap="back" wx:if="{{ isShowBack }}">
+    <cover-image src='/images/icon-back.png'></cover-image>
+  </cover-view> -->
+  <cover-view class="navigation-bar {{ navBorderBottom ? 'border-bottom' : ''  }}" style="height:{{navigationBarHeight}}px;">
+    <cover-view class="box" style="height:{{navigationBarHeight}}px;">
+      <cover-view wx:if="{{ isShowBg }}" class='bg'>
+        <cover-image style='height: {{ navigationBarHeight }}px;' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541653648729&di=e045850e177e6687169b6d860a1e3b2b&imgtype=0&src=http%3A%2F%2Fimg06.tooopen.com%2Fimages%2F20160803%2Ftooopen_sy_173903462297.jpg'></cover-image>
+      </cover-view>
+      <cover-view class="back" bindtap="back" wx:if="{{ isShowBack }}">
+        <!-- <cover-view class='iconfont icon-jiantouzuo' style='color: {{ backColor }};font-size:16px;font-weight: 600;'></cover-view> -->
+        <cover-image src='/images/icon-back.png'></cover-image>
+      </cover-view>
+      <!-- <cover-view class="index" catchtap="index" wx:if="{{ isIndex }}">
+        <cover-view class='iconfont icon-home' style='color: {{ homeColor }};font-size: 20px;'></cover-view>
+      </cover-view> -->
+      <cover-view class="navigation-title">
+        <cover-view style='color:{{textColor}};'>{{title}}</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <!-- <cover-view class='bg' wx:if="{{ isShowBg }}" style='height: {{ navigationBarHeight }}px;'>
+    <cover-image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541653648729&di=e045850e177e6687169b6d860a1e3b2b&imgtype=0&src=http%3A%2F%2Fimg06.tooopen.com%2Fimages%2F20160803%2Ftooopen_sy_173903462297.jpg'></cover-image>
+  </cover-view> -->
+  <cover-view wx:if="{{ isPlaceholder }}" style="height:{{navigationBarHeight}}px;"></cover-view>
+</block>

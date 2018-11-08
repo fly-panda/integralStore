@@ -6,7 +6,7 @@ const sysInfo = wx.getSystemInfoSync();
 
 Page({
   data: {
-    videoSrc: '/',
+    videoSrc: 'https://ziker-static.yun.pingan.com/static/share/wx-app/static-resource/imgs/huiduoduo/MidAutumnFestival/3b477cf8.mp4',
     imgUr: config.imgUrl,
     vipData: [
       {

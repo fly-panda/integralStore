@@ -1,17 +1,16 @@
-const verson = require('../../utils/versionCompare.js');
 const app = getApp();
 
 Component({
   properties: {
     backgroundColor: {
       type: String,
-      value: 'linear-gradient(0deg, #2C2D31 1%, #101013 100%);'
+      value: '#000'
+    },
+    borderColor: {
+      type: String,
+      value: '#eee'
     },
     textColor: {
-      type: String,
-      value: '#fff'
-    },
-    backColor: {
       type: String,
       value: '#fff'
     },
@@ -27,17 +26,29 @@ Component({
       type: Boolean,
       value: true
     },
+    isJiantou: {
+      type: Boolean,
+      value: true
+    },
+    backColor: {
+      type: String,
+      value: '#fff'
+    },
     isPlaceholder: {
       type: Boolean,
       value: true
     },
-    homeColor: {
+    titleColor: {
       type: String,
-      value: '#fff'
+      value: '#333'
     },
     navBorderBottom: {
       type: Boolean,
       value: false
+    },
+    isShowBg: {
+      type: Boolean,
+      value: true
     }
   },
   data: {
@@ -50,6 +61,7 @@ Component({
       })
     },
     back() {
+      console.log(11111)
       // 获取前一个页面，调用onLoad和onReady方法
       let pageList = getCurrentPages();
       let pageLength = pageList.length;
@@ -69,20 +81,20 @@ Component({
   },
   ready() {
     // 判断微信版本适配状态栏，要求最低版本6.6.0
-    let versonStatus = verson.isSysVersionEqualOrHigher('6.6.0');
+    // let versonStatus = verson.isSysVersionEqualOrHigher('6.6.0');
     
-    if (versonStatus) {
+    // if (versonStatus) {
       // 获取设备信息
       let paddingTop = app.globalData.statusBarHeight + 12;
       this.setData({
         navigationBarHeight: app.globalData.navigationBarHeight,
         paddingTop
       })
-    } else {
-      this.setData({
-        versionStatus: false
-      })
-    }
+    // } else {
+    //   this.setData({
+    //     versionStatus: false
+    //   })
+    // }
 
   }
 })
