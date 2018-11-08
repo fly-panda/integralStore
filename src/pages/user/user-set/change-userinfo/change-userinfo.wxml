@@ -2,12 +2,12 @@
 </navigation-bar>
 <view>
   <view class='box'>
-    <view class='cell flexRow center' catchtap='link'      data-url='/pages/user/user-set/change-userinfo/change-username/change-username'>
+    <!-- <view class='cell flexRow center' catchtap='link'      data-url='/pages/user/user-set/change-userinfo/change-username/change-username'>
       <view class='txt'>用户名</view>
       <view class='content'>杨先生</view>
       <view class="iconfont icon-jiantouzuo"></view>
-    </view>
-    <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/change-nickname/change-nickname">
+    </view> -->
+    <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/change-username/change-username">
       <view class='txt'>昵称</view>
       <view class='content'>tom</view>
       <view class="iconfont icon-jiantouzuo"></view>

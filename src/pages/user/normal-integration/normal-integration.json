@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "普通积分",
+  "backgroundColor": "#000",  
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar"
   }
