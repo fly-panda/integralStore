@@ -7,7 +7,8 @@ const sysInfo = wx.getSystemInfoSync();
 Page({
   data: {
     videoSrc: 'https://ziker-static.yun.pingan.com/static/share/wx-app/static-resource/imgs/huiduoduo/MidAutumnFestival/3b477cf8.mp4',
-    imgUr: config.imgUrl,
+    imgUrl: config.imgUrl,
+    navImgUrl: config.imgUrl + "images/Background_dis@2x.png",
     vipData: [
       {
         imgUrl: config.imgUrl + 'images/ico_vip_dis@2x.png',
@@ -51,8 +52,11 @@ Page({
   },
   onLoad: function () {
     let scrollViewHeight = sysInfo.screenHeight - app.globalData.navigationBarHeight
+    let navImgUrl = app.globalData.navigationBarHeight == 64 ? config.imgUrl + "images/Background_dis@2x.png" : config.imgUrl + "images/Background_dis Copy@2x.png"
+
     this.setData({
-      scrollViewHeight
+      scrollViewHeight,
+      navImgUrl
     })
   }
 })

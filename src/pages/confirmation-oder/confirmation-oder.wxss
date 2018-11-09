@@ -4,7 +4,7 @@ page {
 }
 
 .address-box {
-  background: #fff;
+  background-color: #fff;
   margin: 30rpx;
   padding: 60rpx 60rpx 40rpx 60rpx;
   box-shadow: 0 2px 7px 0 rgba(122,118,118,0.09);

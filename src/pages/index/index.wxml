@@ -1,4 +1,7 @@
-<navigation-bar title="掌灸积分商城" isShowBack="{{ false }}" navBorderBottom="{{ false }}"></navigation-bar>
+<navigation-bar title="掌灸积分商城" 
+                isShowBack="{{ false }}"
+                navBorderBottom="{{ false }}"
+                imgUrl="{{ navImgUrl }}"></navigation-bar>
 <view class='page'>
   <!-- banner -->
   <view class='banner'>

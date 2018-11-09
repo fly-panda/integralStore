@@ -49,6 +49,10 @@ Component({
     isShowBg: {
       type: Boolean,
       value: true
+    },
+    imgUrl: {
+      type: String,
+      value: ''
     }
   },
   data: {
