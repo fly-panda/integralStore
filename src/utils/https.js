@@ -1,4 +1,4 @@
-const apiURL = 'https://www.badazhou.com';
+const apiURL = 'https://zj.meych.com/api/';
 
 const wxRequest = function (param) {
 

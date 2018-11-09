@@ -1,19 +1,18 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const https = require('./https.js')
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+// 获取验证码
+const getPhoneCode = (mobile) => {
+  return new Promise((resolve, reject) => {
+    https.wxRequest({
+      url: 'api/reg_get_checkcode/?' + mobile,
+      method: 'GET',
+      success: res => { resolve(res) },
+      fail: res => { reject(res) }
+    })
+  })
 }
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
 
 module.exports = {
-  formatTime: formatTime
+  getPhoneCode
 }
