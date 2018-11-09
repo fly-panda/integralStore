@@ -1,4 +1,4 @@
-const apiURL = 'https://zj.meych.com/api/';
+const apiURL = 'https://zj.meych.com/api';
 
 const wxRequest = function (param) {
 

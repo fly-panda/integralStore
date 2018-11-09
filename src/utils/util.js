@@ -4,8 +4,9 @@ const https = require('./https.js')
 const getPhoneCode = (mobile) => {
   return new Promise((resolve, reject) => {
     https.wxRequest({
-      url: 'api/reg_get_checkcode/?' + mobile,
+      url: 'reg_get_checkcode/',
       method: 'GET',
+      data: {mobile},
       success: res => { resolve(res) },
       fail: res => { reject(res) }
     })

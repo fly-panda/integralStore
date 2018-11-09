@@ -1,6 +1,8 @@
 // pages/login/login.js
 const app = getApp();
 const config = require('../../utils/config.js');
+const utils = require('../../utils/util.js');
+
 const rgexpPhone = /^1\d{10}$/
 
 
@@ -39,6 +41,12 @@ Page({
         })
         return
       }
+
+
+
+      utils.getPhoneCode(this.phoneNum).then((res) => {
+        console.log(res)
+      }) 
 
 
 
