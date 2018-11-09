@@ -37,7 +37,7 @@ const wxRequest = function (param) {
 
   wx.request({
     url: url,
-    method: method,
+    method: 'GET',
     data: param.data || {},
     header: header,
     success(res) {

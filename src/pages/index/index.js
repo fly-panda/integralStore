@@ -3,6 +3,7 @@
 const app = getApp()
 const config = require('../../utils/config.js');
 const sysInfo = wx.getSystemInfoSync();
+const https = require('../../utils/https.js');
 
 Page({
   data: {
@@ -57,6 +58,25 @@ Page({
     this.setData({
       scrollViewHeight,
       navImgUrl
+    })
+    this.getData()
+  },
+  getData() {
+    https.wxRequest({
+      url: 'index_show/',
+      data: {},
+      success: res => {
+        console.log(res)
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue) {
+            let vipData = []
+            
+          }
+        }
+      },
+      fail: res => {
+
+      }
     })
   }
 })
