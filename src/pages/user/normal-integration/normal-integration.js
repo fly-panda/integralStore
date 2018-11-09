@@ -6,9 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgImg: config.imgUrl + "images/head-bg.png",
+    bgImg: config.imgUrl + "head-bg.png",
     normal: 125,//当前积分
-    hbImg: config.imgUrl + "images/ico_hongbao_dis@2x.png",
+    hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     integra:"",
     phones:""
   },

@@ -6,15 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    headImg: config.imgUrl+"images/ico_touxiang@2x.png",
-    ewmImg: config.imgUrl +"images/ico_erweima@2x.png",
+    headImg: config.imgUrl+"ico_touxiang@2x.png",
+    ewmImg: config.imgUrl +"ico_erweima@2x.png",
     userName:"杨先生",
     isLogin:true,
     cash:0,//现金积分
     ordinary:0,//普通积分
-    icon1: config.imgUrl +"images/ico_wodetuandui_dis@2x.png",
-    icon2: config.imgUrl +"images/ico_wodedingdan_dis@2x.png",
-    icon3: config.imgUrl +"images/group.png",
+    icon1: config.imgUrl +"ico_wodetuandui_dis@2x.png",
+    icon2: config.imgUrl +"ico_wodedingdan_dis@2x.png",
+    icon3: config.imgUrl +"group.png",
   },
   jumpLogin() {
     wx.navigateTo({

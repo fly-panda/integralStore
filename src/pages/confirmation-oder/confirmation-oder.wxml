@@ -2,7 +2,7 @@
 <view>
   <view class='address-box' 
         catchtap='changeAddress'
-        style='background-image: url({{ imgUrl }}images/head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
+        style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
       <view class='name'>张先生</view>
       <view class='phone'>131****1111</view>
@@ -17,7 +17,7 @@
   </view>
   <view class='shop'>
     <view class='info flexRow between center'>
-      <image src='{{ imgUrl }}images/ico_vip_dis@2x.png'></image>
+      <image src='{{ imgUrl }}ico_vip_dis@2x.png'></image>
       <view class='mid'>
         <text class='txt'>价值1299的红酒一瓶\n获得20%的销售返利</text>
         <view class='prize'>
@@ -35,24 +35,24 @@
       <view class='txt'>使用积分</view>
       <view class='flexRow center'>
         <view class='jifen'>当前积分600，可用积分120</view>
-        <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}images/ico_shiyongjifen_pre@2x.png'></image>
-        <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}images/ico_shiyongjifen_nor@2x.png'></image>
+        <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}ico_shiyongjifen_pre@2x.png'></image>
+        <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}/ico_shiyongjifen_nor@2x.png'></image>
       </view>
     </view>
     <view>
       <view class='pay-type' catchtap='selectPayType' data-type="0">
-        <image class='wx-pay' src='{{ imgUrl }}images/ico_weixinzhifu_dis@2x.png'></image>
+        <image class='wx-pay' src='{{ imgUrl }}ico_weixinzhifu_dis@2x.png'></image>
         <text>微信支付</text>
-        <image wx:if="{{ payType == 0 }}"  class='radio' src='{{ imgUrl }}images/ico_xuanze_pre@2x.png'></image>
-        <image wx:else class='radio' src='{{ imgUrl }}images/ico_xuanze_nor@2x.png'></image>        
+        <image wx:if="{{ payType == 0 }}"  class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
+        <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>        
       </view>
       <view class='pay-type' catchtap='selectPayType' data-type="1">
-        <image class='xj-pay' src='{{ imgUrl }}images/ico_xianjinzhifu_dis@2x.png'></image>
+        <image class='xj-pay' src='{{ imgUrl }}ico_xianjinzhifu_dis@2x.png'></image>
         <text>现金支付</text>
         <view class='flexRow center'>
           <view class='yue'>当前可用现金余额100元</view>
-          <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}images/ico_xuanze_pre@2x.png'></image>      
-          <image wx:else class='radio' src='{{ imgUrl }}images/ico_xuanze_nor@2x.png'></image>
+          <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>      
+          <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
         </view>         
       </view>
     </view>

@@ -4,16 +4,16 @@
 <view>
   <form bindsubmit="signUp">
     <view class='cell flexRow center'>
-      <image class='icon-phone' src='{{ imgUrl }}images/ico_shouji_dis@2x.png'></image>
+      <image class='icon-phone' src='{{ imgUrl }}ico_shouji_dis@2x.png'></image>
       <input type='number' placeholder='请输入手机号码' name="phoneNum" bindinput='getPhoneNum'></input>
     </view>
     <view class='cell flexRow center'>
-      <image class='icon-code' src='{{ imgUrl }}images/ico_yanzhengma_dis@2x.png'></image>
+      <image class='icon-code' src='{{ imgUrl }}ico_yanzhengma_dis@2x.png'></image>
       <input type='number' placeholder='请输入验证码' name="code" bindinput='getCodeInput'></input>      
       <view class='get-code' catchtap='getCode' style='color: {{ codeStatus ? "" : "#E1C179" }}'>{{ txtMsg }}</view>
     </view>
     <view class='cell flexRow center'>
-      <image class='icon-user' src='{{ imgUrl }}images/ico_tuijianren_dis@2x.png'></image>
+      <image class='icon-user' src='{{ imgUrl }}ico_tuijianren_dis@2x.png'></image>
       <input type='number' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
     </view>
     <button formType="submit" disabled='{{ submitDisabled }}'>下一步</button>

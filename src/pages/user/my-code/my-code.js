@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    headImg: config.imgUrl + "images/ico_touxiang@2x.png",
-    codeImg: config.imgUrl + "images/ico_erweima@2x.png",
+    headImg: config.imgUrl + "ico_touxiang@2x.png",
+    codeImg: config.imgUrl + "ico_erweima@2x.png",
     username: "杨先生",
     address: "北京朝阳"
 

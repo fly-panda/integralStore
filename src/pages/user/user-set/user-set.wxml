@@ -5,7 +5,7 @@
     <view class='cell flexRow center' catchtap='link' 
           data-url='/pages/user/user-set/change-phone/change-phone'>
       <view class='icon'>
-        <image src='{{ imgUrl }}/images/gerenshezhi copy@2x.png' class='icon-phone'></image>
+        <image src='{{ imgUrl }}gerenshezhi copy@2x.png' class='icon-phone'></image>
       </view>
       <view class='txt'>换绑手机</view>
       <view class="iconfont icon-jiantouzuo"></view>
@@ -13,7 +13,7 @@
     <view class='cell flexRow center' catchtap='link'
           data-url="/pages/user/user-set/change-userinfo/change-userinfo">
       <view class='icon'>
-        <image src='{{ imgUrl }}/images/ico_yonghuxinxi_dis@2x.png' class='icon-userInfo'></image>
+        <image src='{{ imgUrl }}ico_yonghuxinxi_dis@2x.png' class='icon-userInfo'></image>
       </view>
       <view class='txt'>更改用户基本信息</view>
       <view class="iconfont icon-jiantouzuo"></view>      
@@ -21,7 +21,7 @@
     <view class='cell flexRow center' catchtap='link'
           data-url="/pages/user/user-set/change-address/change-address">
       <view class='icon'>
-        <image src='{{ imgUrl }}/images/ico_genggaidizhi_@2x.png' class='icon-address'></image>
+        <image src='{{ imgUrl }}ico_genggaidizhi_@2x.png' class='icon-address'></image>
       </view>
       <view class='txt'>更改收货地址</view>
       <view class="iconfont icon-jiantouzuo"></view>      
