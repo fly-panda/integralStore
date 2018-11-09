@@ -28,14 +28,14 @@
             catchtap='vipDetail'
             wx:for="{{ vipData }}"
             wx:key="{{ index }}">
-        <image class='icon' src='{{ item.imgUrl }}'></image>
+        <image class='icon' src='{{ item.levellogo }}'></image>
         <view class='mid'>
-          <view class='name' style='color: {{ item.color }};'>{{ item.title }}</view>
-          <text class='tip'>{{ item.tip }}</text>
+          <view class='name' style='color: {{ item.color }};'>{{ item.levelname }}</view>
+          <text class='tip'>{{ item.descr }}</text>
         </view>
         <view class='prize'>
           <text class='icon'>￥</text>
-          <text class='num'>{{ item.prize }}</text>
+          <text class='num'>{{ item.price }}</text>
         </view>
       </view>
     </view>

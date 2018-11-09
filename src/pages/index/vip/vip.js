@@ -1,4 +1,7 @@
 // pages/index/vip/vip.js
+
+const https = require('../../../utils/https.js');
+
 Page({
 
   /**
@@ -15,7 +18,9 @@ Page({
     indicatorActiveColor: '#fff',
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    info: {},
+    isShowLoading: true
   },
   backPage() {
     wx.navigateBack(-1)
@@ -24,7 +29,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let levelid = options.levelid ? options.levelid : ''
+    wx.showLoading({
+      title: '加载中',
+    })
+    https.wxRequest({
+      url: 'level_show/',
+      data: {
+        levelid
+      },
+      success: res => {
+        console.log(res)
+        if (res.statusCode == '200') {
+          wx.hideLoading()
+          if (res.data.returnvalue) {
+            let info = res.data
 
+            this.setData({
+              info,
+              isShowLoading: false
+            })
+          }
+        }
+      }
+    })
   },
 
   /**

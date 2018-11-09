@@ -2,7 +2,8 @@
                 isShowBack="{{ false }}"
                 navBorderBottom="{{ false }}"
                 imgUrl="{{ navImgUrl }}"></navigation-bar>
-<view class='page'>
+<view wx:if="{{ isShowLoading }}"></view>
+<view wx:else class='page'>
   <!-- banner -->
   <view class='banner'>
     <video src="{{ videoSrc }}" autoplay="{{ false }}" show-fullscreen-btn="{{ false }}" enable-progress-gesture="{{ false }}"></video>
@@ -11,15 +12,14 @@
   <view class='commodity'>
     <view class='title'>高端商品</view>
     <view class='content flexRow center between'>
-      <view class='item' catchtap='commodity'>
-        <image class='img' src=''></image>
-        <view class='name'>舒适露</view>
-        <view class='tip'>舒筋活络，消除疲劳</view>
-      </view>
-      <view class='item'>
-        <image class='img' src=''></image>
-        <view class='name'>舒适露</view>
-        <view class='tip'>舒筋活络，消除疲劳</view>
+      <view class='item' 
+            catchtap='commodity' 
+            wx:for="{{ prodlist }}" 
+            wx:key="{{ index }}"
+            data-prodcode="{{ item.prodcode }}">
+        <image class='img' src='{{ item.prodimg }}'></image>
+        <view class='name'>{{ item.prodname }}</view>
+        <view class='tip'>{{ item.jddescr }}</view>
       </view>
     </view>
   </view>
@@ -27,15 +27,19 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}">
-        <image class='icon' src='{{ item.imgUrl }}'></image>
+      <view class='item flexRow between center' 
+            catchtap='vipDetail' 
+            wx:for="{{ vipData }}" 
+            wx:key="{{ index }}"
+            data-levelid="{{ item.levelid }}">
+        <image class='icon' src='{{ item.levellogo }}'></image>
         <view class='mid'>
-          <view class='name' style='color: {{ item.color }};'>{{ item.title }}</view>
-          <text class='tip'>{{ item.tip }}</text>
+          <view class='name' style='color: {{ item.color }};'>{{ item.levelname }}</view>
+          <text class='tip'>{{ item.descr }}</text>
         </view>
         <view class='prize'>
           <text class='icon'>￥</text>
-          <text class='num'>{{ item.prize }}</text>
+          <text class='num'>{{ item.price }}</text>
         </view>
       </view>
     </view>
