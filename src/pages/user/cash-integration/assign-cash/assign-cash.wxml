@@ -16,5 +16,5 @@
   </view>
 </view>
 <view class="list-btn">
-  <view bindtap="confirm">确认转让</view>
+  <button bindtap="confirm">确认转让</button>
 </view>

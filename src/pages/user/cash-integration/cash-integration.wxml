@@ -28,6 +28,6 @@
   </view>
 </view>
 <view class="list-btn">
-  <view bindtap="goAssign">转让现金</view>
-  <view bindtap="goWithdraw">提现到卡</view>
+  <button type="default" bindtap="goAssign">转让现金</button>
+  <button type="default" bindtap="goWithdraw">提现到卡</button>
 </view>

@@ -18,7 +18,17 @@ page {
   height: 1px;
   background: #f1f1f1;
 }
-
+.flexRow input{
+  flex:1;
+}
+.bor-bg{
+  width:34rpx;
+  height:34rpx;
+  border-radius: 50%;
+  color:#fff;
+  background: #D8D8D8;
+  text-align: center;
+}
 form .title {
   padding: 20rpx 32rpx;
   color: #888;

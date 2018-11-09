@@ -37,7 +37,7 @@ page{
   display: flex;
   padding: 34rpx 0;
 }
-.list-btn>view{
+.list-btn>button{
   margin: 0 auto;
   width:80%;
   font-size: 14px;

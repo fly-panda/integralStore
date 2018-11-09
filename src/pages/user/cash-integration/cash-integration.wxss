@@ -73,19 +73,20 @@ page{
   left:0;
   display: flex;
 }
-.list-btn>view{
+.list-btn>button{
   width:50%;
   height: 98rpx;
   font-size: 14px;
   letter-spacing: -0.06px;
   text-align: center;
   line-height: 49px;
+  border-radius: 0;
 }
-.list-btn>view:first-child{
+.list-btn>button:first-child{
   background: #FFFFFF;
   color: #E1C179;
 }
-.list-btn>view:last-child{
+.list-btn>button:last-child{
   background: #E1C179;
   color: #FFFFFF;
 }

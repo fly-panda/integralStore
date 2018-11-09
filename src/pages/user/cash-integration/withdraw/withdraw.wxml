@@ -18,9 +18,15 @@
       <view>提现金额</view>
       <view class="inp-cls">
         <text>￥</text>
-        <input type='number' placeholder='' name="phoneNum" ></input>
+        <input type='number' bindinput='getPrice' value="{{price}}" placeholder='' name="phoneNum" ></input>
       </view>
-      <!-- bindinput='getPhoneNum' -->
+      <view class="balance-cls">
+        现金余额￥
+        <text>{{balance}}</text>
+      </view>
+    </view>
+    <view class="btn-view">
+      <button type="default" bindtap='txFun'>提现</button>
     </view>
   </view>
 </view>

@@ -4,7 +4,9 @@
   <view class='title'>请输入持卡人的银行卡号</view>
   <view class='cell flexRow center'>
     <view class='txt'>卡号</view>
-    <input type='umber' placeholder='请填写正确的银行卡号' name="cardNum"></input>
+    <input type='umber' placeholder='请填写正确的银行卡号' name="cardNum" value="{{cardNum}}"></input>
+    <view class="bor-bg" wx:if="{{cardNum!=''}}" bindtap='clearFun'><text class='iconfont icon-cha'></text></view>
+    
   </view>
   <view class='title'>请输入开户行信息</view>
   <view class='cell flexRow center border-bottom'>
