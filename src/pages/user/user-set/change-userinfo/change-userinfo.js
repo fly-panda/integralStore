@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: config.imgUrl
+    imgUrl: config.imgUrl,
+    username:"",
+    sex:""
   },
   link(e) {
     let url = e.currentTarget.dataset.url
@@ -34,7 +36,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync("userObj");
+    this.setData({
+      username: userObj.nickname,
+      sex: userObj.sex == 0 ? '男' : (userObj.sex == 1 ? '女' : '保密')
+    })
   },
 
   /**

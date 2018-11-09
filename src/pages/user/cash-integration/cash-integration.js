@@ -6,7 +6,7 @@ Page({
    */
   data: {
     bgImg: config.imgUrl +"head-bg.png",
-    integral:125,//当前积分
+    integral:0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     listData:[
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
@@ -45,7 +45,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync("userObj");
+    this.setData({
+      integral: userObj.nowyue
+    })
+    console.log(userObj)
   },
 
   /**

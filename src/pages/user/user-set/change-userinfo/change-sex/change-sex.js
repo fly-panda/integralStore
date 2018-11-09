@@ -6,9 +6,9 @@ Page({
    */
   data: {
     listData:[
-      { key: "1", value: "男" },
-      { key: "2", value: "女" },
-      { key: "0", value: "保密" }
+      { key: "0", value: "男" },
+      { key: "1", value: "女" },
+      { key: "-1", value: "保密" }
     ],
     typeId:""
   },
@@ -37,7 +37,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync("userObj");
+    this.setData({
+      typeId: userObj.sex
+    })
+    console.log(this.data.typeId)
   },
 
   /**

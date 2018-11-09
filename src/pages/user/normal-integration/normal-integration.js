@@ -7,7 +7,7 @@ Page({
    */
   data: {
     bgImg: config.imgUrl + "head-bg.png",
-    normal: 125,//当前积分
+    normal: 0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     integra:"",
     phones:""
@@ -67,7 +67,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj=wx.getStorageSync("userObj");
+    this.setData({
+      normal:userObj.nowintegral
+    })
   },
 
   /**

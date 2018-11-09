@@ -9,12 +9,12 @@
     </view> -->
     <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/change-username/change-username">
       <view class='txt'>昵称</view>
-      <view class='content'>tom</view>
+      <view class='content'>{{username}}</view>
       <view class="iconfont icon-jiantouzuo"></view>
     </view>
     <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/change-sex/change-sex">
       <view class='txt'>性别</view>
-      <view class='content'>保密</view>
+      <view class='content'>{{sex}}</view>
       <view class="iconfont icon-jiantouzuo"></view>
     </view>
     <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/bank-card/bank-card">

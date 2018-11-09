@@ -9,7 +9,7 @@
   <view class='tip'>
     4-20个字符，可由中英文、数字、”-”、组成
   </view>
-  <button disabled='{{ disabledButton }}'>
+  <button disabled='{{ inputValue=="" }}'>
     确认修改
   </button>
 </view>

@@ -6,7 +6,7 @@ Page({
    */
   data: {
     titleTxt: '修改用户名',
-    inputValue: 'Block',
+    inputValue: '',
     disabledButton: true
   },
   clearInput() {
@@ -32,7 +32,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync("userObj");
+    this.setData({
+      inputValue: userObj.nickname
+    })
   },
 
   /**
