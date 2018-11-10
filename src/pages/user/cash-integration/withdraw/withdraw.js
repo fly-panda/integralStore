@@ -10,10 +10,28 @@ Page({
     balance: "230",//余额
     price: "",
   },
+  getPrice(e){
+    this.setData({
+      price: e.detail.value
+    })
+  },
+  setCard(){
+    wx.navigateTo({
+      url: '/pages/user/user-set/change-userinfo/bank-card/bank-card',
+    })
+  },
   txFun() {
     if (this.data.price == "") {
       wx.showToast({
         title: "请输入提现金额",
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }
+    if (this.data.price > this.data.balance){
+      wx.showToast({
+        title: "余额不足",
         icon: "none",
         duration: 2000
       })
@@ -39,7 +57,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync("userObj");
+    this.setData({
+      names: userObj.cardname,
+      balance: userObj.nowyue,//余额
+    })
   },
 
   /**

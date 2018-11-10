@@ -6,7 +6,7 @@
   <view>
     <view class="card-num">
       <view>到账银行卡</view>
-      <view class="num-view">
+      <view class="num-view" bindtap='setCard'>
         <view>
           <text>{{cardNum}}</text>
           <text class="icoCls iconfont icon-jiantouzuo"></text>

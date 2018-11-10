@@ -8,6 +8,7 @@ Page({
     bgImg: config.imgUrl +"head-bg.png",
     integral:0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
+    isCard:"",
     listData:[
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
@@ -23,9 +24,16 @@ Page({
     })
   },
   goWithdraw(){
-    wx.navigateTo({
-      url: '/pages/user/cash-integration/withdraw/withdraw',
-    })
+    if (this.data.isCard==""){
+      wx.navigateTo({
+        url: '/pages/user/user-set/change-userinfo/bank-card/bank-card',
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/user/cash-integration/withdraw/withdraw',
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -47,9 +55,9 @@ Page({
   onShow: function () {
     let userObj = wx.getStorageSync("userObj");
     this.setData({
-      integral: userObj.nowyue
+      integral: userObj.nowyue,
+      isCard: userObj.cardnumber
     })
-    console.log(userObj)
   },
 
   /**

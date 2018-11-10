@@ -1,5 +1,6 @@
 // pages/user/user-set/user-set.js
 const app = getApp();
+const https = require('../../../../utils/https.js');
 const config = require('../../../../utils/config.js');
 
 Page({
@@ -36,11 +37,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let userObj = wx.getStorageSync("userObj");
-    this.setData({
-      username: userObj.nickname,
-      sex: userObj.sex == 0 ? '男' : (userObj.sex == 1 ? '女' : '保密')
-    })
+    let query = {
+      clientbm: 15627
+    }
+    https.wxRequest({
+      url: "/member_basic_info/",
+      data: query,
+      success: res => {
+        let r = res.data;
+        this.setData({
+          userName: r.nickname,
+          headImg: r.photo,
+          cash: r.nowyue,//现金积分
+          ordinary: r.nowintegral,//普通积分
+        });
+        wx.setStorageSync("userObj", r);
+        let userObj = wx.getStorageSync("userObj");
+        this.setData({
+          username: userObj.nickname,
+          sex: userObj.sex == 0 ? '男' : (userObj.sex == 1 ? '女' : '保密')
+        });
+      }
+    });
+    
+
   },
 
   /**

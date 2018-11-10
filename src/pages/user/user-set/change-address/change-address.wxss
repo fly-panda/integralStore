@@ -16,6 +16,7 @@ input {
 
 picker {
   flex: 1;
+  height: 28rpx;
 }
 
 .right {

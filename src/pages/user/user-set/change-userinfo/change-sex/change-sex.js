@@ -1,4 +1,5 @@
-// pages/user/user-set/change-userinfo/change-sex/change-sex.js
+// pages/user/user-set/change-userinfo/change-sex/change-sex.
+const https = require('../../../../../utils/https.js');
 Page({
 
   /**
@@ -6,18 +7,42 @@ Page({
    */
   data: {
     listData:[
-      { key: "0", value: "男" },
-      { key: "1", value: "女" },
-      { key: "-1", value: "保密" }
+      { key: 0, value: "男" },
+      { key: 1, value: "女" },
+      { key: 2, value: "保密" }
     ],
-    typeId:""
+    typeId:2
   },
   readKey(e) {
     var $data = e.currentTarget.dataset;
     this.setData({
       typeId: $data.id
     })
+    this.updateSex();
     console.log($data)  
+  },
+  updateSex(){
+    let query = {
+      clientbm: 15627,
+      sex: this.data.typeId
+    }
+    https.wxRequest({
+      url: "/member_modify_sex/",
+      data: query,
+      success: res => {
+        let r = res.data;
+        if (r.returnvalue) {
+          wx.showToast({
+            title: "成功",
+            icon: "none",
+            duration: 2000
+          })
+        }
+        wx.navigateTo({
+          url: '/pages/user/user-set/change-userinfo/change-userinfo',
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

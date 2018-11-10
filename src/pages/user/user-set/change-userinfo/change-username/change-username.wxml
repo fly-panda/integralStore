@@ -3,13 +3,13 @@
 
 <view>
   <view class='flexRow center between cell'>
-    <input type='text' value='{{ inputValue }}'></input>
-    <view class='clearInput' catchtap='clearInput'>X</view>
+    <input type='text' value='{{ inputValue }}' bindinput='getInputValue'></input>
+    <view class='clearInput' catchtap='clearInput' wx:if="{{inputValue!=''}}">X</view>
   </view>
   <view class='tip'>
     4-20个字符，可由中英文、数字、”-”、组成
   </view>
-  <button disabled='{{ inputValue=="" }}'>
+  <button bindtap='updateName' disabled='{{ inputValue=="" }}'>
     确认修改
   </button>
 </view>

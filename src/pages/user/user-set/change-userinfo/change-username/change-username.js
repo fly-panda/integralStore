@@ -1,4 +1,5 @@
 // pages/user/user-set/change-userinfo/change-username/change-username.js
+const https = require('../../../../../utils/https.js');
 Page({
 
   /**
@@ -7,7 +8,42 @@ Page({
   data: {
     titleTxt: '修改用户名',
     inputValue: '',
-    disabledButton: true
+    disabledButton: false
+  },
+  getInputValue(e){
+    this.setData({
+      inputValue:e.detail.value
+    })
+  },
+  updateName(){
+    if (this.data.inputValue==""){
+      wx.showToast({
+        title: "请输入用户名",
+        icon: "none",
+        duration: 2000
+      })
+    }
+    let query = {
+      clientbm: 15627,
+      nickname: this.data.inputValue
+    }
+    https.wxRequest({
+      url: "/member_modify_nickname/",
+      data: query,
+      success: res => {
+        let r = res.data;
+        if (r.returnvalue) {
+          wx.showToast({
+            title: "成功",
+            icon: "none",
+            duration: 2000
+          })
+        }
+        wx.navigateTo({
+          url: '/pages/user/user-set/change-userinfo/change-userinfo',
+        })
+      }
+    })
   },
   clearInput() {
     this.setData({
