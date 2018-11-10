@@ -1,6 +1,8 @@
 // pages/login/login.js
 const app = getApp();
 const config = require('../../../../utils/config.js');
+const https = require('../../../../utils/https.js');
+const utils = require('../../../../utils/util.js');
 const rgexpPhone = /^1\d{10}$/
 
 
@@ -38,28 +40,42 @@ Page({
         })
         return
       }
-
-
-
-      this.setData({
-        codeStatus: false,
-        txtMsg: this.currentTime + 's后重发'
-      });
-      this.interval = setInterval(() => {
-        if (this.currentTime > 1) {
-          this.currentTime--;
-          this.setData({
-            txtMsg: this.currentTime + 's后重发'
-          });
+    
+      utils.getPhoneCode('member_modify_mobile_send_code/', this.phoneNum).then((res) => {
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') { 
+            this.setData({
+              codeStatus: false,
+              txtMsg: this.currentTime + 's后重发'
+            });
+            this.interval = setInterval(() => {
+              if (this.currentTime > 1) {
+                this.currentTime--;
+                this.setData({
+                  txtMsg: this.currentTime + 's后重发'
+                });
+              } else {
+                clearInterval(this.interval);
+                this.currentTime = this.maxTime;
+                this.setData({
+                  codeStatus: true,
+                  txtMsg: '免费获取'
+                });
+              }
+            }, 1000);
+          } else {
+            wx.showToast({
+              title: '获取验证码失败',
+              icon: 'none'
+            })
+          }
         } else {
-          clearInterval(this.interval);
-          this.currentTime = this.maxTime;
-          this.setData({
-            codeStatus: true,
-            txtMsg: '免费获取'
-          });
+          wx.showToast({
+            title: '获取验证码失败',
+            icon: 'none'
+          })
         }
-      }, 1000);
+      })
     }
   },
   getPhoneNum(e) {
@@ -102,6 +118,29 @@ Page({
       })
       return
     }
+    https.wxRequest({
+      url: 'member_modify_mobile_confirm/',
+      data: {
+        mobile: phoneNum,
+        checkcode: code,
+        clientbm: app.globalData.clentbm
+      },
+      success: res => {
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          } else {  
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

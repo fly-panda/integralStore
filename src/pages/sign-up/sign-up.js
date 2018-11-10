@@ -2,6 +2,7 @@
 const app = getApp();
 const config = require('../../utils/config.js');
 const utils = require('../../utils/util.js');
+const https = require('../../utils/https.js');
 
 const rgexpPhone = /^1\d{10}$/
 
@@ -44,37 +45,48 @@ Page({
 
 
 
-      utils.getPhoneCode(this.phoneNum).then((res) => {
+      utils.getPhoneCode('reg_get_checkcode/', this.phoneNum).then((res) => {
         console.log(res)
-      }) 
 
-
-
-      this.setData({
-        codeStatus: false,
-        txtMsg: this.currentTime + 's后重发'
-      });
-      this.interval = setInterval(() => {
-        if (this.currentTime > 1) {
-          this.currentTime--;
-          this.setData({
-            txtMsg: this.currentTime + 's后重发'
-          });
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            this.setData({
+              codeStatus: false,
+              txtMsg: this.currentTime + 's后重发'
+            });
+            this.interval = setInterval(() => {
+              if (this.currentTime > 1) {
+                this.currentTime--;
+                this.setData({
+                  txtMsg: this.currentTime + 's后重发'
+                });
+              } else {
+                clearInterval(this.interval);
+                this.currentTime = this.maxTime;
+                this.setData({
+                  codeStatus: true,
+                  txtMsg: '免费获取'
+                });
+              }
+            }, 1000);
+          } else {
+            wx.showToast({
+              title: '获取验证码失败',
+              icon: 'none'
+            })
+          }
         } else {
-          clearInterval(this.interval);
-          this.currentTime = this.maxTime;
-          this.setData({
-            codeStatus: true,
-            txtMsg: '免费获取'
-          });
+          wx.showToast({
+            title: '获取验证码失败',
+            icon: 'none'
+          })
         }
-      }, 1000);
+      })
     }
   },
   getPhoneNum(e) {
     this.phoneNum = e.detail.value
     let submitDisabled = this.phoneNum != '' && this.code != '' && this.phoneNum1 != '' ? false : true
-    console.log(submitDisabled)
     this.setData({
       submitDisabled
     })
@@ -97,7 +109,7 @@ Page({
     console.log(e)
     let phoneNum = e.detail.value.phoneNum
     let code = e.detail.value.code
-    let phoneNum1 = e.detail.value.getPhoneNum1
+    let phoneNum1 = e.detail.value.phoneNum1
 
     if (!phoneNum) {
       wx.showToast({
@@ -138,6 +150,28 @@ Page({
       })
       return
     }
+
+    https.wxRequest({
+      url: 'reg_send_message/',
+      data: {
+        mobile: phoneNum,
+        checkcode: code,
+        tjrmobile: phoneNum1
+      },
+      success: res => {
+        console.log(res)
+        if (res.statusCode == '200') {
+          wx.hideLoading()
+          if (res.data.returnvalue == 'true') {
+
+          }
+        }
+        wx.navigateTo({
+          url: '/pages/sign-up/sign-up-info/sign-up-info?phoneNum=' + phoneNum + '&phoneNum1=' + phoneNum1,
+        })
+      }
+    })
+
 
   },
   /**

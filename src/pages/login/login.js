@@ -1,6 +1,8 @@
 // pages/login/login.js
 const app = getApp();
 const config = require('../../utils/config.js');
+const https = require('../../utils/https.js');
+const utils = require('../../utils/util.js');
 const rgexpPhone = /^1\d{10}$/
 
 
@@ -39,27 +41,41 @@ Page({
         return
       }
 
-
-
-      this.setData({
-        codeStatus: false,
-        txtMsg: this.currentTime + 's后重发'
-      });
-      this.interval = setInterval(() => {
-        if (this.currentTime > 1) {
-          this.currentTime--;
-          this.setData({
-            txtMsg: this.currentTime + 's后重发'
-          });
-        } else {
-          clearInterval(this.interval);
-          this.currentTime = this.maxTime;
-          this.setData({
-            codeStatus: true,
-            txtMsg: '免费获取'
-          });
+      utils.getPhoneCode('login_send_code/', this.phoneNum).then((res) => {
+        console.log(res)
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            console.log('成功')
+            this.setData({
+              codeStatus: false,
+              txtMsg: this.currentTime + 's后重发'
+            });
+            this.interval = setInterval(() => {
+              if (this.currentTime > 1) {
+                this.currentTime--;
+                this.setData({
+                  txtMsg: this.currentTime + 's后重发'
+                });
+              } else {
+                clearInterval(this.interval);
+                this.currentTime = this.maxTime;
+                this.setData({
+                  codeStatus: true,
+                  txtMsg: '免费获取'
+                });
+              }
+            }, 1000);
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: "none"
+            })
+          }
         }
-      }, 1000);
+      })
+
+
+
     }
   },
   getPhoneNum(e) {
@@ -102,6 +118,33 @@ Page({
       })
       return
     }
+    wx.showLoading({
+      title: '注册中',
+      mask: true
+    })
+    https.wxRequest({
+      url: 'login/',
+      data: {
+        mobile: phoneNum,
+        checkcode: code
+      },
+      success: res => {
+        wx.hideLoading()
+        console.log(res)
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              mask: true
+            })
+          }
+        }
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载

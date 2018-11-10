@@ -50,12 +50,12 @@ Page({
         console.log(res)
         if (res.statusCode == '200') {
           wx.hideLoading()
-          if (res.data.returnvalue) {
+          if (res.data.returnvalue == 'true') {
             let vipData = res.data.levellist
             let prodlist = res.data.prodlist
-
+            let videoSrc = res.data.adlink
             this.setData({
-              vipData, prodlist,
+              vipData, prodlist, videoSrc,
               isShowLoading: false
             })
           }

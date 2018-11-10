@@ -56,3 +56,16 @@ swiper image {
 .vip .prize .icon {
   font-size: 12px;
 }
+
+.name-1004 {
+  color: #F26132;
+}
+.name-1003 {
+  color: #118BD9;
+}
+.name-1002 {
+  color: #B7905A;
+}
+.name-1001 {
+  color: #06865D;
+}

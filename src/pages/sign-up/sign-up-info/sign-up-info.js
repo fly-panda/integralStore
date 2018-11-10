@@ -9,16 +9,19 @@ Page({
    */
   name: '',
   address: '',
+  phoneNum: '',
+  phoneNum1: '',
+  sex: '0',
   data: {
     region: ['地址', '信', '息'],
     items: [
       { value: '先生', name: '0', checked: 'true' },
-      { value: '女士', name: '1' },      
+      { value: '女士', name: '1' },  
+      { value: '保密', name: '2' },                
     ],
     buttonDisabled: true
   },
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
@@ -28,10 +31,12 @@ Page({
       })
     }
   },
+  radioChange(e) {
+    this.sex = e.detail.value
+  },
   getInputValue(e) {
     let type = e.currentTarget.dataset.type 
     let value = e.detail.value.trim()
-    console.log(value)
     if(type == 'name') {
       this.name = value
     }
@@ -47,7 +52,7 @@ Page({
 
   },
   getUserInfo(e) {
-    console.log(e)
+    this.submitInfo()
     // 授权
     if (e.detail.errMsg == "getUserInfo:ok") {
 
@@ -57,14 +62,47 @@ Page({
 
     }
   },
-  submitInfo() {
+  submitInfo(e) {
+    console.log(this.name)
+    console.log(this.data.region)
+    console.log(this.address)
+    console.log(this.sex)
+
+    https.wxRequest({
+      url: 'reg_send_message/',
+      data: {
+        mobile: this.phoneNum,
+        tjrmobile: this.phoneNum1,
+        nickname: this.name,
+        sex: this.sex,
+        province: this.data.region[0],
+        city: this.data.region[1],
+        county: this.data.region[2],
+        address: this.address        
+      },
+      suceess: res => {
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            app.globalData.clentbm = res.data.clentbm
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
+      }
+    })
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.phoneNum = options.phoneNum ? options.phoneNum : ''
+    this.phoneNum1 = options.phoneNum1 ? options.phoneNum1 : ''
   },
 
   /**

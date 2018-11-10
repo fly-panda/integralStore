@@ -30,7 +30,7 @@
             wx:key="{{ index }}">
         <image class='icon' src='{{ item.levellogo }}'></image>
         <view class='mid'>
-          <view class='name' style='color: {{ item.color }};'>{{ item.levelname }}</view>
+          <view class='name-{{ item.levelid }}'>{{ item.levelname }}</view>
           <text class='tip'>{{ item.descr }}</text>
         </view>
         <view class='prize'>

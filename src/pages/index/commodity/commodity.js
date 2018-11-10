@@ -32,15 +32,15 @@ Page({
     this.prodcode = options.prodcode ? options.prodcode : ''
     let vipData = JSON.parse(options.vipData)
 
-    // https.wxRequest({
-    //   url: 'index_showprod_show/',
-    //   data: {
-    //     prodcode: this.prodcode
-    //   },
-    //   success: res => {
-    //     console.log(res)
-    //   }
-    // })
+    https.wxRequest({
+      url: 'index_showprod_show/',
+      data: {
+        prodcode: this.prodcode
+      },
+      success: res => {
+        console.log(res)
+      }
+    })
 
     this.setData({
       vipData

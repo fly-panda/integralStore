@@ -42,7 +42,7 @@ Page({
         console.log(res)
         if (res.statusCode == '200') {
           wx.hideLoading()
-          if (res.data.returnvalue) {
+          if (res.data.returnvalue == 'true') {
             let info = res.data
 
             this.setData({
