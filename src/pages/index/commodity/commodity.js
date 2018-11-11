@@ -20,7 +20,8 @@ Page({
     indicatorActiveColor: '#fff',
     autoplay: false,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    info: {}
   },
 
   /**
@@ -30,20 +31,27 @@ Page({
     console.log(options)
     
     this.prodcode = options.prodcode ? options.prodcode : ''
-    let vipData = JSON.parse(options.vipData)
+    // let vipData = JSON.parse(options.vipData)
 
     https.wxRequest({
-      url: 'index_showprod_show/',
+      url: 'prod_show/',
       data: {
         prodcode: this.prodcode
       },
       success: res => {
         console.log(res)
-      }
-    })
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            let resInfo = res.data
 
-    this.setData({
-      vipData
+
+            this.setData({
+              vipData: resInfo.levellist,
+              info: resInfo
+            })
+          }
+        }
+      }
     })
   },
 

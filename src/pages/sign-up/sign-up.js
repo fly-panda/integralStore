@@ -152,7 +152,7 @@ Page({
     }
 
     https.wxRequest({
-      url: 'reg_send_message/',
+      url: 'reg_check_code/',
       data: {
         mobile: phoneNum,
         checkcode: code,
@@ -163,12 +163,16 @@ Page({
         if (res.statusCode == '200') {
           wx.hideLoading()
           if (res.data.returnvalue == 'true') {
-
+            wx.navigateTo({
+              url: '/pages/sign-up/sign-up-info/sign-up-info?phoneNum=' + phoneNum + '&phoneNum1=' + phoneNum1,
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
           }
         }
-        wx.navigateTo({
-          url: '/pages/sign-up/sign-up-info/sign-up-info?phoneNum=' + phoneNum + '&phoneNum1=' + phoneNum1,
-        })
       }
     })
 

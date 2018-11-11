@@ -1,20 +1,23 @@
 <view wx:if="{{ isShowLoading }}"></view>
 <view wx:else>
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{ indicatorColor }}" indicator-active-color="{{ indicatorActiveColor }}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" width="355" height="150" />
+        <view class='back' catchtap='backPage'>
+          <view class='iconfont icon-jiantouzuo'></view>
+        </view>
       </swiper-item>
     </block>
-    <view class='back' catchtap='backPage'>
-      <view class='iconfont icon-jiantouzuo'></view>
-    </view>
   </swiper>
 
   <view class='info'>
     <view class='name'>{{ info.levelname }}</view>
     <view class='tip'>{{ info.jddescr }}</view>
-    <view class='prize'><text class='icon'>￥</text><text>{{ info.needmoney }}</text></view>
+    <view class='prize'>
+      <text class='icon'>￥</text>
+      <text>{{ info.needmoney }}</text>
+    </view>
     <view class='jf'>返积分：{{ info.sendintegral }}</view>
   </view>
 

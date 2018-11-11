@@ -69,3 +69,8 @@ swiper image {
 .name-1001 {
   color: #06865D;
 }
+
+.content-box {
+  padding: 32rpx;
+  overflow: hidden;
+}

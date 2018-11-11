@@ -16,9 +16,9 @@ Page({
   },
   commodity(e) {
     let prodcode = e.currentTarget.dataset.prodcode
-    let vipData = JSON.stringify(this.data.vipData)  
+    // let vipData = JSON.stringify(this.data.vipData)  
     wx.navigateTo({
-      url: '/pages/index/commodity/commodity?prodcode=' + prodcode + '&vipData=' + vipData
+      url: '/pages/index/commodity/commodity?prodcode=' + prodcode
     })
   },
   vipDetail(e) {

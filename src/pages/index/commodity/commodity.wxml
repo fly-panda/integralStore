@@ -2,7 +2,7 @@
 </navigation-bar>
 <view>
   <view class='txt-title'>
-    巨掌牌 舒适露的功效原理
+    {{ info.prodname }}
   </view>
   <swiper indicator-dots="{{indicatorDots}}" 
           autoplay="{{autoplay}}" 
@@ -10,15 +10,15 @@
           duration="{{duration}}"
           indicator-color="{{ indicatorColor }}"
           indicator-active-color="{{ indicatorActiveColor }}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" width="355" height="150" />
       </swiper-item>
     </block>
   </swiper>
-  <view class='content'>
+  <view class='content-box'>
     <view class='item'>
-      111
+      {{ info.proddescr }}
     </view>
   </view>
   <view class='vip'>

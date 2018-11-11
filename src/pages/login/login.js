@@ -133,7 +133,7 @@ Page({
         console.log(res)
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
-
+            wx.setStorageSync('clientbm', res.data.clientbm)
           } else {
             wx.showToast({
               title: res.data.msg,
