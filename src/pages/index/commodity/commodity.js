@@ -21,7 +21,8 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
-    info: {}
+    info: {},
+    isShowLoading: true
   },
 
   /**
@@ -32,7 +33,10 @@ Page({
     
     this.prodcode = options.prodcode ? options.prodcode : ''
     // let vipData = JSON.parse(options.vipData)
-
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     https.wxRequest({
       url: 'prod_show/',
       data: {
@@ -40,6 +44,7 @@ Page({
       },
       success: res => {
         console.log(res)
+        wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             let resInfo = res.data
@@ -47,7 +52,8 @@ Page({
 
             this.setData({
               vipData: resInfo.levellist,
-              info: resInfo
+              info: resInfo,
+              isShowLoading: false
             })
           }
         }
