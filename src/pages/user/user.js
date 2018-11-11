@@ -9,13 +9,15 @@ Page({
   data: {
     headImg: config.imgUrl+"ico_touxiang@2x.png",
     ewmImg: config.imgUrl +"ico_erweima@2x.png",
-    userName:"杨先生",
+    userName:"",
     isLogin:true,
     cash:0,//现金积分
     ordinary:0,//普通积分
     icon1: config.imgUrl +"ico_wodetuandui_dis@2x.png",
     icon2: config.imgUrl +"ico_wodedingdan_dis@2x.png",
     icon3: config.imgUrl +"group.png",
+    clientbm:""
+    
   },
   jumpLogin() {
     wx.navigateTo({
@@ -119,8 +121,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let clientbm = wx.getStorageSync("clientbm");
+    if (clientbm == null || clientbm == "" || clientbm==undefined){
+      this.setData({
+        isLogin:false
+      });
+      return false;
+    }else{
+      this.setData({
+        isLogin: true,
+        clientbm: clientbm
+      })
+    }
+    
     let query = {
-      clientbm: 15627
+      clientbm: clientbm
     }
     https.wxRequest({
       url: "/member_basic_info/",
@@ -135,7 +150,8 @@ Page({
         });
         wx.setStorageSync("userObj", r);
       }
-    })
+    });
+
   },
 
   /**

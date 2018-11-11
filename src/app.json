@@ -12,7 +12,6 @@
     "pages/user/user-set/change-phone/change-phone",
     "pages/user/user-set/change-address/change-address",
     "pages/user/user-set/change-userinfo/change-userinfo",
-    "pages/user/user-set/change-userinfo/change-nickname/change-nickname",
     "pages/user/user-set/change-userinfo/change-username/change-username",
     "pages/user/user-set/change-userinfo/change-sex/change-sex",
     "pages/user/user-set/change-userinfo/bank-card/bank-card",

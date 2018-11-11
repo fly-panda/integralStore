@@ -37,8 +37,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let clientbm = wx.getStorageSync("clientbm");
     let query = {
-      clientbm: 15627
+      clientbm: clientbm
     }
     https.wxRequest({
       url: "/member_basic_info/",

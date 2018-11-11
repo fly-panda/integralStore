@@ -67,8 +67,9 @@ Page({
   },
   updateAddress(){
     let datas=this.data;
+    let clientbm = wx.getStorageSync("clientbm");
     let query = {
-      clientbm: 15627,
+      clientbm: clientbm,
       shman: datas.name,
       shmobile: datas.phone,
       province: datas.region[0],
@@ -81,16 +82,23 @@ Page({
       data: query,
       success: res => {
         let r = res.data;
-        if (r.returnvalue) {
+        if (res.data.returnvalue == 'true') {
           wx.showToast({
-            title: "成功",
-            icon: "none",
+            title:"成功",
+            icon: 'none',
             duration: 2000
           })
+          wx.navigateTo({
+            url: '/pages/user/user-set/user-set',
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            mask: true
+          })
         }
-        wx.navigateTo({
-          url: '/pages/user/user-set/user-set',
-        })
+        
       }
     })
   },

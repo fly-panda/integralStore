@@ -33,9 +33,9 @@ Page({
   },
   updateBank(){
     let datas=this.data;
-    console.log(datas)
+    let clientbm = wx.getStorageSync("clientbm");
     let query = {
-      clientbm: 15627,
+      clientbm: clientbm,
       cardnumber: datas.cardNum,
       cardname: datas.name,
       cardbank: datas.bankInfo
@@ -45,16 +45,22 @@ Page({
       data: query,
       success: res => {
         let r = res.data;
-        if(r.returnvalue){
+        if (res.data.returnvalue == 'true') {
           wx.showToast({
             title: "成功",
-            icon: "none",
+            icon: 'none',
             duration: 2000
           })
+          wx.navigateTo({
+            url: '/pages/user/user-set/change-userinfo/change-userinfo',
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            mask: true
+          })
         }
-        wx.navigateTo({
-          url: '/pages/user/user-set/change-userinfo/change-userinfo',
-        })
       }
     })
   },

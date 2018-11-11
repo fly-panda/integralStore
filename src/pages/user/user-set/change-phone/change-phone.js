@@ -97,6 +97,7 @@ Page({
     console.log(e)
     let phoneNum = e.detail.value.phoneNum
     let code = e.detail.value.code
+    let clientbm = wx.getStorageSync("clientbm");
     if (!phoneNum) {
       wx.showToast({
         title: '手机号不能为空',
@@ -123,7 +124,7 @@ Page({
       data: {
         mobile: phoneNum,
         checkcode: code,
-        clientbm: app.globalData.clentbm
+        clientbm: clientbm
       },
       success: res => {
         if (res.statusCode == '200') {
