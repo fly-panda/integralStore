@@ -150,7 +150,10 @@ Page({
       })
       return
     }
-
+    wx.showLoading({
+      title: '提交中',
+      mask: true
+    })
     https.wxRequest({
       url: 'reg_check_code/',
       data: {
@@ -160,6 +163,7 @@ Page({
       },
       success: res => {
         console.log(res)
+        wx.hideLoading()
         if (res.statusCode == '200') {
           wx.hideLoading()
           if (res.data.returnvalue == 'true') {
