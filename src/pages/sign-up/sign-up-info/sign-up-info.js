@@ -67,7 +67,10 @@ Page({
     console.log(this.data.region)
     console.log(this.address)
     console.log(this.sex)
-
+    wx.showLoading({
+      title: '注册中',
+      mask: true
+    })
     https.wxRequest({
       url: 'reg_send_message/',
       data: {
@@ -81,6 +84,7 @@ Page({
         address: this.address        
       },
       suceess: res => {
+        wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             wx.setStorageSync('clentbm', res.data.clentbm)
