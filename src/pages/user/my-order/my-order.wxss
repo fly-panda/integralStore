@@ -23,6 +23,8 @@ page{
 }
 .list-view .img-view{
   padding: 16rpx;
+  align-self:center;
+
 }
 .flexCls{
   display: flex;

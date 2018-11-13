@@ -17,6 +17,8 @@
       <view class="titleCls">{{item.title}}</view>
       <view class="typeCls">付款方式：{{item.type}}</view>
       <view class="statusCls">发货状态：{{item.status}}</view>
+      <!-- {{item.kdnum!=''}} -->
+      <view class="statusCls" wx:if="{{item.kdnum!=''}}">快递编号：{{item.kdname}} {{item.kdnum}}</view>
       <view class="flexCls">
         <view>已付款￥{{item.price}}</view>
         <view>付款时间{{item.date}}</view>
