@@ -21,7 +21,8 @@
     "pages/user/normal-integration/normal-integration",
     "pages/user/my-code/my-code",
     "pages/confirmation-oder/confirmation-oder",
-    "pages/sign-up/sign-up-info/sign-up-info"
+    "pages/sign-up/sign-up-info/sign-up-info",
+    "pages/index/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",

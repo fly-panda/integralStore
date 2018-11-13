@@ -1,12 +1,11 @@
 <navigation-bar title="掌灸积分商城" 
                 isShowBack="{{ false }}"
-                navBorderBottom="{{ false }}"
-                imgUrl="{{ navImgUrl }}"></navigation-bar>
+                navBorderBottom="{{ false }}"></navigation-bar>
 <view wx:if="{{ isShowLoading }}"></view>
 <view wx:else class='page'>
   <!-- banner -->
-  <view class='banner'>
-    <video src="{{ videoSrc }}" autoplay="{{ false }}" show-fullscreen-btn="{{ false }}" enable-progress-gesture="{{ false }}"></video>
+  <view class='banner' catchtap='adLinkVideo'>
+    <image src="{{ adLink }}"></image>
   </view>
   <!-- 高端商品 -->
   <view class='commodity'>

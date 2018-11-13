@@ -2,9 +2,10 @@ page {
   background: #fff;
 }
 
-video {
+.banner image {
   width: 100%;
   height: 364rpx;
+  background: #eee;
 }
 
 .commodity {

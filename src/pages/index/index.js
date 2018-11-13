@@ -6,9 +6,9 @@ const sysInfo = wx.getSystemInfoSync();
 const https = require('../../utils/https.js');
 
 Page({
+  videoSrc: '',
   data: {
     isShowLoading: true,
-    videoSrc: 'https://ziker-static.yun.pingan.com/static/share/wx-app/static-resource/imgs/huiduoduo/MidAutumnFestival/3b477cf8.mp4',
     imgUrl: config.imgUrl,
     navImgUrl: config.imgUrl + "Background_dis@2x.png",
     vipData: [],
@@ -54,10 +54,12 @@ Page({
           if (res.data.returnvalue == 'true') {
             let vipData = res.data.levellist
             let prodlist = res.data.prodlist
-            let videoSrc = res.data.adlink
+            let adLink = res.data.adimg
+            this.videoSrc = res.data.adlink
             this.setData({
-              vipData, prodlist, videoSrc,
-              isShowLoading: false
+              vipData, prodlist,
+              isShowLoading: false,
+              adLink
             })
           }
         }
@@ -65,6 +67,11 @@ Page({
       fail: res => {
 
       }
+    })
+  },
+  adLinkVideo() {
+    wx.navigateTo({
+      url: '/pages/index/video/video?videoSrc=' + this.videoSrc,
     })
   }
 })
