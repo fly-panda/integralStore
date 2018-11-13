@@ -1,21 +1,27 @@
 /* pages/index/vip/vip.wxss */
+
 page {
   background: #eee;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 428rpx;
 }
 
 swiper {
   width: 100%;
   height: 428rpx;
-  position: relative;
 }
 
-swiper .back {
+.banner .back {
   position: absolute;
   left: 32rpx;
   top: 68rpx;
   width: 48rpx;
   height: 48rpx;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -46,7 +52,7 @@ swiper image {
 
 .info .prize {
   font-size: 18px;
-  color: #E4141D;
+  color: #e4141d;
   margin-bottom: 20rpx;
   margin-top: 10rpx;
 }
@@ -78,7 +84,7 @@ swiper image {
 }
 
 .btn {
-  background: #E1C179;
+  background: #e1c179;
   border-radius: 12rpx;
   width: 308rpx;
   height: 72rpx;

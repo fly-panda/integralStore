@@ -23,7 +23,19 @@ Page({
     isShowLoading: true
   },
   backPage() {
-    wx.navigateBack(-1)
+    let pageList = getCurrentPages();
+    let pageLength = pageList.length;
+
+    // 如果pageLength 大于1时，跳转到前一页
+    if (pageLength > 1) {
+      let prevPage = pageList[pageLength - 2];
+      prevPage.onReady();
+      wx.navigateBack();
+    } else {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

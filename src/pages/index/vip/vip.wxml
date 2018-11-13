@@ -1,15 +1,18 @@
 <view wx:if="{{ isShowLoading }}"></view>
 <view wx:else>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{ indicatorColor }}" indicator-active-color="{{ indicatorActiveColor }}">
-    <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150" />
-        <view class='back' catchtap='backPage'>
-          <view class='iconfont icon-jiantouzuo'></view>
-        </view>
-      </swiper-item>
-    </block>
-  </swiper>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{ indicatorColor }}" indicator-active-color="{{ indicatorActiveColor }}">
+      <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='back' catchtap='backPage'>
+      <view class='iconfont icon-jiantouzuo'></view>
+    </view>
+
+  </view>
 
   <view class='info'>
     <view class='name'>{{ info.levelname }}</view>
