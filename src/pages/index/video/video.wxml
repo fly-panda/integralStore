@@ -1,1 +1,4 @@
+<navigation-bar title="视频" 
+                isShowBack="{{ false }}"
+                navBorderBottom="{{ false }}"></navigation-bar>
 <video src="{{ videoSrc }}"></video>
