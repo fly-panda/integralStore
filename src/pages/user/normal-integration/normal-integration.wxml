@@ -2,6 +2,7 @@
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"
                 backgroundColor="rgba(0,0,0,0)"
+                isPlaceholder = "{{  false }}"
                 ></navigation-bar>
                 
 <view>
@@ -15,16 +16,17 @@
     
   </view>
   <view class="inp-list">
-    <view>
-      <text>转让普通积分：</text>
-      <input type="number" bindinput="integra" placeholder='请输入普通积分'></input>
-    </view>
-     <view>
-      <text>接收人手机号：</text>
-      <input type="number" bindinput="phones" placeholder='请输入手机号码'></input>
+    <view wx:for="{{ listData }}"
+    wx:key="{{ index }}">
+      <view>
+        <text class="nameCls">{{item.name}}</text>
+        <text class="priceCls" wx:if="{{item.type=='add'}}">+{{item.price}}</text>
+        <text class="priceClss" wx:elif="{{item.type=='reduce'}}">-{{item.price}}</text>
+      </view>
+      <view>{{item.date}}</view>
     </view>
   </view>
 </view>
 <view class="list-btn">
-  <button bindtap="confirm">确认转让</button>
+  <button bindtap="confirm">转让积分</button>
 </view>

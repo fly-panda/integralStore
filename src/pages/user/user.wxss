@@ -3,9 +3,9 @@ page{
 }
 .heads{
   display: flex;
-  padding: 160rpx 32rpx 100rpx 32rpx;
+  padding: 200rpx 32rpx 120rpx 32rpx;
   background-image: linear-gradient(-10deg, #40392D 0%, #020100 100%);
-  margin-top:-128rpx;
+  /* margin-top:-128rpx; */
 }
 .headImgCls image{
   width:92rpx;

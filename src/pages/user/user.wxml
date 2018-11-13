@@ -2,6 +2,7 @@
                 isShowBack="{{ false }}"
                 backgroundColor="rgba(0,0,0,0)"
                 navBorderBottom="{{ false }}"
+                isPlaceholder = "{{  false }}"
                 ></navigation-bar>
 <view>
   <view class="heads">

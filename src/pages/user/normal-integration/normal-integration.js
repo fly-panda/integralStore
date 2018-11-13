@@ -10,44 +10,43 @@ Page({
     normal: 0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     integra:"",
-    phones:""
-  },
-  integra(e){
-    this.data.integra = e.detail.value;
-  },
-  phones(e) {
-    this.data.phones = e.detail.value;
+    phones:"",
+    listData:[
+      { name: "购买-天使合伙人", price: "20", date: "2018/10/29",type:"add" },
+      { name: "购买-天使合伙人", price: "20", date: "2018/10/29", type: "reduce" },
+      { name: "转让-李先生", price: "20", date: "2018/10/30", type: "add" }
+    ]
   },
   confirm(){
     let self=this.data;
-    console.log(self.integra)
-    if (self.integra==""){
-      wx.showToast({
-        title: "请输入积分",
-        icon: "none",
-        duration: 2000
-      })
-      return false;
-    }
-    if (self.phones == "") {
-      wx.showToast({
-        title: "请输入手机号",
-        icon: "none",
-        duration: 2000
-      })
-      return false;
-    }else{
-      if (!reg.test(self.phones)){
-        wx.showToast({
-          title: "手机号格式有误，请重新输入",
-          icon: "none",
-          duration: 2000
-        })
-        return false;
-      }else{
-        console.log("可以提交")
-      }
-    }
+    // console.log(self.integra)
+    // if (self.integra==""){
+    //   wx.showToast({
+    //     title: "请输入积分",
+    //     icon: "none",
+    //     duration: 2000
+    //   })
+    //   return false;
+    // }
+    // if (self.phones == "") {
+    //   wx.showToast({
+    //     title: "请输入手机号",
+    //     icon: "none",
+    //     duration: 2000
+    //   })
+    //   return false;
+    // }else{
+    //   if (!reg.test(self.phones)){
+    //     wx.showToast({
+    //       title: "手机号格式有误，请重新输入",
+    //       icon: "none",
+    //       duration: 2000
+    //     })
+    //     return false;
+    //   }else{
+    //     console.log("可以提交")
+    //   }
+    // }
   },
   /**
    * 生命周期函数--监听页面加载

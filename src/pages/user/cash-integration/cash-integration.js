@@ -8,7 +8,7 @@ Page({
     bgImg: config.imgUrl +"head-bg.png",
     integral:0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
-    isCard:"",
+    suImg: config.imgUrl + "Groupsuc.png",
     listData:[
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
       { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },

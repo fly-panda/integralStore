@@ -1,7 +1,9 @@
 <navigation-bar title="现金积分" 
                 isShowBack="{{ true }}"
                 backgroundColor="rgba(0,0,0,0)"
-                navBorderBottom="{{ false }}"></navigation-bar>
+                navBorderBottom="{{ false }}"
+                isPlaceholder = "{{  false }}"
+                ></navigation-bar>
 <view>
   <view class="headbg" style="background:url('{{bgImg}}')">
     <view>
@@ -20,9 +22,11 @@
         <view class="titleCls">{{item.title}}</view>
         <view class="priceCls">您获得现金{{item.price}}元</view>
         <view class="dateCls">{{item.date}}</view>
+        
       </view>
       <view class="right">
-        <image src="{{hbImg}}"></image>
+        <!-- <image src="{{hbImg}}"></image> -->
+        <image src="{{suImg}}"></image>
       </view>
     </view>
   </view>
