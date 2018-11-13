@@ -1,4 +1,4 @@
 <navigation-bar title="视频" 
-                isShowBack="{{ false }}"
+                isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
-<video src="{{ videoSrc }}"></video>
+<video src="{{ videoSrc }}" style="height: {{ videoHeight }}px;"></video>

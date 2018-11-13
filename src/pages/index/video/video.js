@@ -1,4 +1,6 @@
 // pages/index/video/video.js
+const app = getApp();
+
 Page({
 
   /**
@@ -13,9 +15,12 @@ Page({
    */
   onLoad: function (options) {
     let videoSrc = options.videoSrc ? options.videoSrc : ''
+    const sysInfo = wx.getSystemInfoSync();
+    
+    let videoHeight = sysInfo.screenHeight - app.globalData.navigationBarHeight
 
     this.setData({
-      videoSrc
+      videoSrc, videoHeight
     })
   },
 

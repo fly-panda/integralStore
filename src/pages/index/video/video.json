@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "视频",
+  "disableScroll": true,  
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar"
   }
