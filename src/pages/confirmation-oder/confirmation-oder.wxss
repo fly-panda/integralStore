@@ -138,6 +138,7 @@ page {
 .radio {
   width: 36rpx;
   height: 36rpx;
+  border-radius: 50%;
 }
 
 .yue {

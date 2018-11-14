@@ -1,8 +1,7 @@
 <navigation-bar title="确认订单" isShowBack="{{ true }}" navBorderBottom="{{ false }}"></navigation-bar>
-<view>
-  <view class='address-box' 
-        catchtap='changeAddress'
-        style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
+<view wx:if="{{ isShowLoading }}"></view>
+<view wx:else>
+  <view class='address-box' catchtap='changeAddress' style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
       <view class='name'>{{ jcInfo.shman }}</view>
       <view class='phone'>{{ jcInfo.shmobile }}</view>
@@ -43,27 +42,27 @@
       <view class='pay-type' catchtap='selectPayType' data-type="0">
         <image class='wx-pay' src='{{ imgUrl }}ico_weixinzhifu_dis@2x.png'></image>
         <text>微信支付</text>
-        <image wx:if="{{ payType == 0 }}"  class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
-        <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>        
+        <image wx:if="{{ payType == 0 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
+        <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
       </view>
       <view class='pay-type' catchtap='selectPayType' data-type="1">
         <image class='xj-pay' src='{{ imgUrl }}ico_xianjinzhifu_dis@2x.png'></image>
         <text>现金支付</text>
         <view class='flexRow center'>
           <view class='yue'>当前可用现金余额{{ jcInfo.nowyue }}元</view>
-          <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>      
-          <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
-        </view>         
+          <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
+          <image style='background: {{ isShowXj ? "" : "#999" }};' wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
+        </view>
       </view>
     </view>
   </view>
-</view>
-
-<view class='bottom-nav'>
-  <view class='prize'>
-    <text>￥</text><text>399</text>
-  </view>
-  <view class='pay-btn'>
-    立即支付
+  <view class='bottom-nav'>
+    <view class='prize'>
+      <text>￥</text>
+      <text>{{ totalPrice }}</text>
+    </view>
+    <view class='pay-btn'>
+      立即支付
+    </view>
   </view>
 </view>

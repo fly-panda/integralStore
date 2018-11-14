@@ -13,19 +13,34 @@ Page({
     imgUrl: config.imgUrl,
     payType: 0, // 支付方式 0-微信支付，1-现金支付
     isUserJf: false,
-    jcInfo: {}
+    jcInfo: {},
+    totalPrice: 399,
+    isShowXj: true,
+    isShowLoading: true
   },
+  // 选择支付方式
   selectPayType(e) {
-    let type = e.currentTarget.dataset.type
-    
-    this.setData({
-      payType: type
-    })
+    let type = e.currentTarget.dataset.type 
+
+    if (type == '1' && this.data.isShowXj) {
+      this.setData({
+        payType: type
+      })
+    }
+    if(type == '0') {
+      this.setData({
+        payType: type
+      })
+    }
   },
+  // 是否使用积分
   selectJf() {
     let isUserJf = !this.data.isUserJf
+    // 积分抵扣的部分
+    let kyjf = this.data.jcInfo.nowintegral * 0.01    
+    let totalPrice = isUserJf ? this.data.totalPrice - kyjf : this.data.totalPrice + kyjf
     this.setData({
-      isUserJf
+      isUserJf, totalPrice
     })
   },
   changeAddress() {
@@ -34,17 +49,27 @@ Page({
     })
   },
   getAddress() {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     https.wxRequest({
       url: 'member_basic_info/',
       data: { clientbm: this.clientbm},
       success: res => {
         console.log(res)
+        wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             let jcInfo = res.data
             jcInfo.shmobile = jcInfo.shmobile.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+
+            let isShowXj = jcInfo.nowintegral * 0.01 + jcInfo.nowyue > this.data.totalPrice ? true : false
+            
             this.setData({
-              jcInfo
+              jcInfo,
+              isShowXj,
+              isShowLoading: false
             })
           }
         }
