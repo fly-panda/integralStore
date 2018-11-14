@@ -1,4 +1,5 @@
 const config = require('../../../utils/config.js');
+const https = require('../../../utils/https.js');
 const reg = /^1\d{10}$/;
 Page({
 
@@ -12,41 +13,16 @@ Page({
     integra:"",
     phones:"",
     listData:[
-      { name: "购买-天使合伙人", price: "20", date: "2018/10/29",type:"add" },
-      { name: "购买-天使合伙人", price: "20", date: "2018/10/29", type: "reduce" },
-      { name: "转让-李先生", price: "20", date: "2018/10/30", type: "add" }
+      // { name: "购买-天使合伙人", price: "20", date: "2018/10/29",type:"add" },
+      // { name: "购买-天使合伙人", price: "20", date: "2018/10/29", type: "reduce" },
+      // { name: "转让-李先生", price: "20", date: "2018/10/30", type: "add" }
     ]
   },
   confirm(){
     let self=this.data;
-    // console.log(self.integra)
-    // if (self.integra==""){
-    //   wx.showToast({
-    //     title: "请输入积分",
-    //     icon: "none",
-    //     duration: 2000
-    //   })
-    //   return false;
-    // }
-    // if (self.phones == "") {
-    //   wx.showToast({
-    //     title: "请输入手机号",
-    //     icon: "none",
-    //     duration: 2000
-    //   })
-    //   return false;
-    // }else{
-    //   if (!reg.test(self.phones)){
-    //     wx.showToast({
-    //       title: "手机号格式有误，请重新输入",
-    //       icon: "none",
-    //       duration: 2000
-    //     })
-    //     return false;
-    //   }else{
-    //     console.log("可以提交")
-    //   }
-    // }
+    wx.navigateTo({
+      url: '/pages/user/cash-integration/assign-cash/assign-cash?type=1',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,10 +42,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let userObj=wx.getStorageSync("userObj");
-    this.setData({
-      normal:userObj.nowintegral
-    })
+    let clientbm = wx.getStorageSync("clientbm");
+    let query = {
+      clientbm: clientbm
+    }
+    https.wxRequest({
+      url: "/member_integral_list/",
+      data: query,
+      success: res => {
+        let r = res.data;
+        this.setData({
+          normal:r.nowintegral,
+          listData: r.integrallist  
+        });
+        // "itage"//类型（1、购买会员级别获得 2、积分转入获得 3、积分转出扣除 4、购买会员抵扣使用）
+
+      }
+    });
   },
 
   /**

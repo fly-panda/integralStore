@@ -14,14 +14,31 @@
       <image src="{{orderImg}}"></image>
     </view>
     <view class="flex1">
-      <view class="titleCls">{{item.title}}</view>
-      <view class="typeCls">付款方式：{{item.type}}</view>
-      <view class="statusCls">发货状态：{{item.status}}</view>
-      <!-- {{item.kdnum!=''}} -->
-      <view class="statusCls" wx:if="{{item.kdnum!=''}}">快递编号：{{item.kdname}} {{item.kdnum}}</view>
+      <view class="titleCls">{{item.levelname}}</view>
+      <view class="typeCls">
+        付款方式：
+        <text wx:if="{{item.PayType==1}}">微信</text>
+        <text wx:elif="{{item.PayType==2}}">余额</text>
+        <text wx:elif="{{item.PayType==3}}">微信+积分</text>
+        <text wx:elif="{{item.PayType==4}}">余额+积分</text>
+      </view>
+      <view class="statusCls">
+        发货状态：
+        <text wx:if="{{item.zhuangtai==0}}">未支付</text>
+        <text wx:elif="{{item.zhuangtai==1}}">已支付</text>
+        <text wx:elif="{{item.zhuangtai==2}}">已发货</text>
+        <text wx:elif="{{item.zhuangtai==3}}">已完成</text>
+      </view>
+      <view class="statusCls" wx:if="{{item.wuliudanhao!=''}}">快递编号：{{item.wuliuCorp}} {{item.wuliudanhao}}</view>
       <view class="flexCls">
-        <view>已付款￥{{item.price}}</view>
-        <view>付款时间{{item.date}}</view>
+        <view>
+        <text>{{item.IsPay==0?'未支付':'已支付'}}</text>
+          ￥<text wx:if="{{item.PayType==1}}">{{item.needPay}}</text>
+          <text wx:elif="{{item.PayType==2}}">{{item.yuePay}}</text>
+          <text wx:elif="{{item.PayType==3}}">{{item.needPay}}+{{integralPay}}分</text>
+          <text wx:elif="{{item.PayType==4}}">{{item.yuePay}}+{{integralPay}}分</text>
+        </view>
+        <view>订单时间{{item.indbdate}}</view>
       </view>
     </view>
   </view>

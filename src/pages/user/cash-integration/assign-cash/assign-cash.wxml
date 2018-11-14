@@ -1,4 +1,4 @@
-<navigation-bar title="转让现金积分" 
+<navigation-bar title="转让{{titles}}积分" 
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"
                 ></navigation-bar>
@@ -6,8 +6,8 @@
 <view>
   <view class="inp-list">
     <view>
-      <text>转让现金积分：</text>
-      <input type="number" bindinput="integra" placeholder='请输入金额'></input>
+      <text>转让{{titles}}积分：</text>
+      <input type="number" bindinput="integra" placeholder='请输入积分'></input>
     </view>
      <view>
       <text>接收人手机号：</text>

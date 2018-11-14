@@ -1,4 +1,5 @@
 const config = require('../../../utils/config.js');
+const https = require('../../../utils/https.js');
 Page({
 
   /**
@@ -9,18 +10,19 @@ Page({
     integral:0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     suImg: config.imgUrl + "Groupsuc.png",
+    isCard:"",
     listData:[
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" },
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
-      { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" }
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" },
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
+      // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" }
     ]
   },
   goAssign(){
     wx.navigateTo({
-      url: '/pages/user/cash-integration/assign-cash/assign-cash',
+      url: '/pages/user/cash-integration/assign-cash/assign-cash?type=2',
     })
   },
   goWithdraw(){
@@ -48,16 +50,41 @@ Page({
   onReady: function () {
 
   },
-
+  getData() {
+    wx: wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    let clientbm = wx.getStorageSync("clientbm");
+    let query = {
+      clientbm: clientbm
+    }
+    https.wxRequest({
+      url: "/member_money_list/",
+      data: query,
+      success: res => {
+        if (res.statusCode == '200') {
+          wx.hideLoading()
+          if (res.data.returnvalue == 'true') {
+            this.setData({
+              integral: res.data.nowyue,
+              listData: res.data.list
+            })
+          }
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     let userObj = wx.getStorageSync("userObj");
     this.setData({
-      integral: userObj.nowyue,
+      
       isCard: userObj.cardnumber
-    })
+    });
+    this.getData();
   },
 
   /**
