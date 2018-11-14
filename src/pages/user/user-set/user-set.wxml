@@ -27,5 +27,5 @@
       <view class="iconfont icon-jiantouzuo"></view>      
     </view>
   </view>
-  <view class='out' catchtap='link' data-url="/pages/login/login">退出登录</view>
+  <view class='out' catchtap='out' data-url="/pages/login/login">退出登录</view>
 </view>
