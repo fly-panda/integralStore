@@ -4,13 +4,13 @@
         catchtap='changeAddress'
         style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
-      <view class='name'>张先生</view>
-      <view class='phone'>131****1111</view>
+      <view class='name'>{{ jcInfo.shman }}</view>
+      <view class='phone'>{{ jcInfo.shmobile }}</view>
       <view class='tag'>默认</view>
     </view>
     <view class='flexRow between'>
       <view class='address-info'>
-        北京市朝阳区朝阳北路雅城一里天鹅湾小区一区2-1-402
+        {{ jcInfo.province }}{{ jcInfo.city }}{{ jcInfo.country }}{{ jcInfo.address }}
       </view>
       <view class='iconfont icon-jiantou-copy-copy1'></view>
     </view>
@@ -34,7 +34,7 @@
     <view class='title'>
       <view class='txt'>使用积分</view>
       <view class='flexRow center'>
-        <view class='jifen'>当前积分600，可用积分120</view>
+        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分120</view>
         <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}ico_shiyongjifen_pre@2x.png'></image>
         <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}/ico_shiyongjifen_nor@2x.png'></image>
       </view>
@@ -50,7 +50,7 @@
         <image class='xj-pay' src='{{ imgUrl }}ico_xianjinzhifu_dis@2x.png'></image>
         <text>现金支付</text>
         <view class='flexRow center'>
-          <view class='yue'>当前可用现金余额100元</view>
+          <view class='yue'>当前可用现金余额{{ jcInfo.nowyue }}元</view>
           <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>      
           <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
         </view>         
