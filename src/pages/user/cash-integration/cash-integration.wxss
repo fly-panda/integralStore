@@ -52,10 +52,17 @@ page{
 }
 .left .priceCls{
   font-size: 14px;
-  color: #EA3525;
+  
   letter-spacing: -0.06px;
   margin-top:4rpx;
 }
+.priceCls>.txt1{
+  color: #EA3525;
+}
+.priceCls>.txt2{
+  color: #363636;
+}
+
 .left .dateCls{
   font-size: 9px;
   color: #A1A1A1;

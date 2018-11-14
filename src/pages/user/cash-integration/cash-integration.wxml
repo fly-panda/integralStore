@@ -31,7 +31,11 @@
           <text wx:elif="{{item.mtype==8}}">转账取出</text>
           <text wx:elif="{{item.mtype==9}}">提现取出</text>
         </view>
-        <view class="priceCls">您获得现金{{item.cunru}}元</view>
+        <view class="priceCls">
+          <text class="txt1" wx:if="{{item.mtype!=8&&item.mtype!=9}}">您获得现金{{item.cunru}}元</text>
+          <text class="txt2" wx:elif="{{item.mtype==8||item.mtype==9}}">您转让现金{{item.quchu}}元</text>
+        </view>
+
         <view class="dateCls">{{item.indbdate}}</view>
         
       </view>
