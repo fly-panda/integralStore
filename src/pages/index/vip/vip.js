@@ -7,6 +7,7 @@ Page({
   /**
    * 页面的初始数据
    */
+  levelid: '',
   data: {
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
@@ -41,14 +42,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let levelid = options.levelid ? options.levelid : ''
+    this.levelid = options.levelid ? options.levelid : ''
     wx.showLoading({
       title: '加载中',
     })
     https.wxRequest({
       url: 'level_show/',
       data: {
-        levelid
+        levelid: this.levelid
       },
       success: res => {
         console.log(res)
@@ -56,17 +57,23 @@ Page({
           wx.hideLoading()
           if (res.data.returnvalue == 'true') {
             let info = res.data
-
+            let imgUrls =  res.data.imglist
             this.setData({
               info,
-              isShowLoading: false
+              isShowLoading: false,
+              imgUrls
             })
           }
         }
       }
     })
   },
-
+  goPay() {
+    let levelid = this.levelid
+    wx.navigateTo({
+      url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

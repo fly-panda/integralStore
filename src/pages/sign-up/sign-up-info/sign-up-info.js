@@ -29,6 +29,10 @@ Page({
       this.setData({
         buttonDisabled: false
       })
+    } else {
+      this.setData({
+        buttonDisabled: true
+      })
     }
   },
   radioChange(e) {
@@ -48,21 +52,28 @@ Page({
       this.setData({
         buttonDisabled: false
       })
+    } else {
+      this.setData({
+        buttonDisabled: true
+      })
     }
 
   },
   getUserInfo(e) {
-    this.submitInfo()
-    // 授权
+    console.log(e)
+    let photo = ''
+    // 授权获取头像
     if (e.detail.errMsg == "getUserInfo:ok") {
-
+      photo = e.detail.userInfo.avatarUrl
+      console.log(photo)
+      this.submitInfo(e, photo)      
     }
-    // 未授权
+    // 未授权获取不到头像
     if (e.detail.errMsg == "getUserInfo:fail auth deny") {
-
+      this.submitInfo(photo)            
     }
   },
-  submitInfo(e) {
+  submitInfo(e, photo) {
     console.log(this.name)
     console.log(this.data.region)
     console.log(this.address)
@@ -81,7 +92,8 @@ Page({
         province: this.data.region[0],
         city: this.data.region[1],
         county: this.data.region[2],
-        address: this.address        
+        address: this.address,
+        photo     
       },
       suceess: res => {
         wx.hideLoading()

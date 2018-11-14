@@ -48,12 +48,12 @@ Page({
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             let resInfo = res.data
-
-
+            let imgUrls = res.data.imglist            
             this.setData({
               vipData: resInfo.levellist,
               info: resInfo,
-              isShowLoading: false
+              isShowLoading: false,
+              imgUrls
             })
           }
         }

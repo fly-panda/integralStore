@@ -1,42 +1,47 @@
-<navigation-bar title="我的团队" 
-                isShowBack="{{ true }}"
-                navBorderBottom="{{ false }}">
+<navigation-bar title="我的团队" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
 </navigation-bar>
 
-<view class='noData' wx:if="{{ leftData.length == 0 }}">
-  <image src='{{ imgUrl }}'></image>
-  <view class='tip'>空空如也！</view>
-  <button class='add'>去添加</button>
-</view>
+<view wx:if="{{ isShowLoading }}"></view>
 
-<view class='container flexRow center' wx:else>
-  <scroll-view class='left' scroll-y style='height: {{ scrollViewHeight }}px;'>
-    <view class='title'>直接推荐</view>
-    <view class='list'>
-      <view class='item {{ index == 0 ? "select" : "" }}' 
-            wx:for="{{ leftData }}"
-            wx:key="{{ index }}"
-            data-index="{{ index }}">
-        <view class='top'>
-          <view class='name'>{{ item.name }}</view>
-          <view class='job'>{{ item.job }}</view>
+<block wx:else>
+  <view class='noData' wx:if="{{ leftData.length == 0 }}">
+    <image src='{{ imgUrl }}'></image>
+    <view class='tip'>空空如也！</view>
+    <button class='add'>去添加</button>
+  </view>
+
+  <view class='container flexRow center' wx:else>
+    <scroll-view class='left' scroll-y style='height: {{ scrollViewHeight }}px;'>
+      <view class='title'>直接推荐</view>
+      <view class='list'>
+        <view class='item {{ item.select ? "select" : "" }}' 
+              wx:for="{{ leftData }}" 
+              wx:key="{{ index }}" 
+              data-index="{{ index }}"
+              data-clientbm="{{ item.clientbm }}"
+              catchtap='secondData'>
+          <view class='top'>
+            <view class='name'>{{ item.nickname }}</view>
+            <view class='job name-{{ item.memberlevel }}'>{{ item.memberlevelname }}</view>
+          </view>
+          <view class='time'>注册时间：{{ item.indbdate }}</view>
         </view>
-        <view class='time'>注册时间：{{ item.time }}</view>
       </view>
-    </view>
-  </scroll-view>
-  <scroll-view class='right' scroll-y style='height: {{ scrollViewHeight }}px;'>
-    <view class='title'>二级推荐</view>
-    <view class='list'>
-      <view class='item' 
-            wx:for="{{ leftData }}"
-            wx:key="{{ index }}">
-        <view class='top'>
-          <view class='name'>{{ item.name }}</view>
-          <view class='job'>{{ item.job }}</view>
+    </scroll-view>
+    <scroll-view class='right' scroll-y style='height: {{ scrollViewHeight }}px;'>
+      <view class='title'>二级推荐</view>
+      <view class='list'>
+        <view class='item' 
+              wx:for="{{ rightData }}" 
+              wx:key="{{ index }}">
+          <view class='top'>
+            <view class='name'>{{ item.nickname }}</view>
+            <view class='job name-{{ item.memberlevel }}'>{{ item.memberlevelname }}</view>
+          </view>
+          <view class='time'>注册时间：{{ item.indbdate }}</view>
         </view>
-        <view class='time'>注册时间：{{ item.time }}</view>
       </view>
-    </view>
-  </scroll-view>
-</view>
+    </scroll-view>
+  </view>
+
+</block>

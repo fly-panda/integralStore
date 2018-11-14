@@ -29,7 +29,7 @@
     <view class='txt'>
       {{ info.descr }}
     </view>
-    <view class='btn'>
+    <view class='btn' catchtap='goPay'>
       去购买 >
     </view>
   </view>
