@@ -31,6 +31,7 @@ Page({
 
     this.getData(this.clientbm).then((res) => {
       console.log(res)
+      wx.hideLoading()
       if (res.statusCode == '200') {
         if (res.data.returnvalue == 'true') {
           let leftData = res.data.list
@@ -43,20 +44,29 @@ Page({
             leftData
           })
 
-          let secondClientbm = leftData[0].clientbm
-          this.getData(secondClientbm).then((res1) => {
-            console.log(res1)
-            if (res1.statusCode == '200') {
-              wx.hideLoading()
-              if (res1.data.returnvalue == 'true') {
-                let rightData = res1.data.list
-                this.setData({
-                  rightData,
-                  isShowLoading: false
-                })
+          if (res.data.listcount > 0) {
+            let secondClientbm = leftData[0].clientbm
+            this.getData(secondClientbm).then((res1) => {
+              console.log(res1)
+              this.setData({
+                isShowLoading: false
+              })
+              if (res1.statusCode == '200') {
+                wx.hideLoading()
+                if (res1.data.returnvalue == 'true') {
+                  let rightData = res1.data.list
+                  this.setData({
+                    rightData,
+                    isShowLoading: false
+                  })
+                }
               }
-            }
-          })
+            })
+          } else {
+            this.setData({
+              isShowLoading: false              
+            })
+          }
         }
       }
 

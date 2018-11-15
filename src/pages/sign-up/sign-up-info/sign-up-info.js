@@ -101,6 +101,11 @@ Page({
           if (res.data.returnvalue == 'true') {
             wx.setStorageSync('clentbm', res.data.clentbm)
             // app.globalData.clentbm = res.data.clentbm
+            wx.showToast({
+              title: '注册成功',
+              mask: true
+            })
+            wx.navigateBack(-2)
           } else {
             wx.showToast({
               title: res.data.msg,

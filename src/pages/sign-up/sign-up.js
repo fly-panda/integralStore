@@ -71,13 +71,13 @@ Page({
             }, 1000);
           } else {
             wx.showToast({
-              title: '获取验证码失败',
+              title: res.data.msg,
               icon: 'none'
             })
           }
         } else {
           wx.showToast({
-            title: '获取验证码失败',
+            title: res.data.msg,
             icon: 'none'
           })
         }

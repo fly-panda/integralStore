@@ -134,6 +134,7 @@ Page({
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             wx.setStorageSync('clientbm', res.data.clientbm)
+            wx.navigateBack(-1)
           } else {
             wx.showToast({
               title: res.data.msg,
