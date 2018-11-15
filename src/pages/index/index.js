@@ -37,7 +37,7 @@ Page({
       navImgUrl
     })
     this.getData()
-    wx.setStorageSync("clientbm", "15627");
+    // wx.setStorageSync("clientbm", "15627");
   },
   getData() {
     wx:wx.showLoading({
