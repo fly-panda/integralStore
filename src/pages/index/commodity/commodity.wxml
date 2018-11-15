@@ -6,12 +6,7 @@
   <view class='txt-title'>
     {{ info.prodname }}
   </view>
-  <swiper indicator-dots="{{indicatorDots}}" 
-          autoplay="{{autoplay}}" 
-          interval="{{interval}}" 
-          duration="{{duration}}"
-          indicator-color="{{ indicatorColor }}"
-          indicator-active-color="{{ indicatorActiveColor }}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{ indicatorColor }}" indicator-active-color="{{ indicatorActiveColor }}">
     <block wx:for="{{imgUrls}}" wx:key="{{ index }}">
       <swiper-item>
         <image src="{{item.prodimg}}" class="slide-image" width="355" height="150" />
@@ -19,17 +14,15 @@
     </block>
   </swiper>
   <view class='content-box'>
-    <rich-text nodes="{{detailInfo}}"></rich-text>  
+    <rich-text nodes="{{detailInfo}}"></rich-text>
   </view>
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between center' 
-            catchtap='vipDetail'
-            wx:for="{{ vipData }}"
-            wx:key="{{ index }}"
-            data-levelid="{{ item.levelid }}">
-        <image class='icon' src='{{ item.levellogo }}'></image>
+      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}" data-levelid="{{ item.levelid }}">
+        <view style='width: 88rpx;'>
+          <image class='icon-{{ index }}' src='{{ item.levellogo }}'></image>
+        </view>
         <view class='mid'>
           <view class='name-{{ item.levelid }}'>{{ item.levelname }}</view>
           <text class='tip'>{{ item.descr }}</text>

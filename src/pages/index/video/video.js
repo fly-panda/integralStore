@@ -7,9 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    videoSrc: ''
+    videoSrc: '',
+    videoHeight: ''
   },
-
+  playError(e) {
+    console.log(e)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
