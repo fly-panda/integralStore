@@ -88,7 +88,7 @@ Page({
             icon: 'none',
             duration: 2000
           })
-          wx.navigateBack(-1)
+          wx.navigateBack(1)
           // wx.navigateTo({
           //   url: '/pages/user/user-set/user-set',
           // })

@@ -105,7 +105,7 @@ Page({
               title: '注册成功',
               mask: true
             })
-            wx.navigateBack(-2)
+            wx.navigateBack(2)
           } else {
             wx.showToast({
               title: res.data.msg,
