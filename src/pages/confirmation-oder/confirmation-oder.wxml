@@ -33,7 +33,7 @@
     <view class='title'>
       <view class='txt'>使用积分</view>
       <view class='flexRow center'>
-        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分{{ jcInfo.nowintegral*0.1 }}</view>
+        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分{{ jcInfo.needmoney*0.1 >= jcInfo.nowintegral ? jcInfo.nowintegral : jcInfo.needmoney*0.1 }}</view>
         <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}ico_shiyongjifen_pre@2x.png'></image>
         <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}/ico_shiyongjifen_nor@2x.png'></image>
       </view>
