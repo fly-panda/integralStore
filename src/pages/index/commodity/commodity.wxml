@@ -19,9 +19,7 @@
     </block>
   </swiper>
   <view class='content-box'>
-    <view class='item'>
-      {{ info.proddescr }}
-    </view>
+    <rich-text nodes="{{detailInfo}}"></rich-text>  
   </view>
   <view class='vip'>
     <view class='title'>高端会员</view>

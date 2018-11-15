@@ -1,3 +1,4 @@
+<navigation-bar title="高端会员" isShowBack="{{ true }}" navBorderBottom="{{ false }}"></navigation-bar>
 <view wx:if="{{ isShowLoading }}"></view>
 <view wx:else>
   <view class='banner'>
@@ -8,9 +9,9 @@
         </swiper-item>
       </block>
     </swiper>
-    <view class='back' catchtap='backPage'>
+    <!-- <view class='back' catchtap='backPage'>
       <view class='iconfont icon-jiantouzuo'></view>
-    </view>
+    </view> -->
 
   </view>
 
@@ -27,7 +28,7 @@
   <view class='content'>
     <view class='title-content'>商品介绍</view>
     <view class='txt'>
-      {{ info.descr }}
+      <rich-text nodes="{{detailInfo}}"></rich-text>        
     </view>
     <view class='btn' catchtap='goPay'>
       去购买 >

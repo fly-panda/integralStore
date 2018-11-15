@@ -113,6 +113,12 @@ Page({
               duration: 2000
             })
           }
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
         }
       }
     })

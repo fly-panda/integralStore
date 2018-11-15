@@ -31,7 +31,7 @@ page {
   content: '';
   width: 6rpx;
   height: 30rpx;
-  background: #fb5f0a;
+  background: #E1C179;
 }
 
 .commodity .content {
@@ -48,9 +48,25 @@ page {
   margin-top: 20rpx;
 }
 
-.vip .icon {
+.vip .icon-0 {
+  width: 68rpx;
+  height: 54rpx;
+}
+
+.vip .icon-1 {
+  width: 60rpx;
+  height: 62rpx;
+}
+
+.vip .icon-2 {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.vip .icon-3 {
   width: 88rpx;
   height: 88rpx;
+  margin-left: -10rpx;
 }
 
 .vip .item {

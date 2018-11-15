@@ -10,9 +10,6 @@ Page({
   prodcode: '',
   data: {
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
     vipData: [],
     indicatorDots: true,
@@ -22,7 +19,8 @@ Page({
     interval: 5000,
     duration: 1000,
     info: {},
-    isShowLoading: true
+    isShowLoading: true,
+    detailInfo: ''
   },
 
   /**
@@ -49,12 +47,14 @@ Page({
           if (res.data.returnvalue == 'true') {
             let resInfo = res.data
             let imgUrls = res.data.imglist 
+            let detailInfo = res.data.proddescr
             console.log(res.data.imglist )        
             this.setData({
               vipData: resInfo.levellist,
               info: resInfo,
               isShowLoading: false,
-              imgUrls
+              imgUrls,
+              detailInfo
             })
           }
         }

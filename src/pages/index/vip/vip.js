@@ -13,11 +13,7 @@ Page({
   levelname: '',
   jddescr: '',
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ], 
+    imgUrls: [], 
     indicatorDots: true,
     indicatorColor: '#ccc',
     indicatorActiveColor: '#fff',
@@ -25,7 +21,8 @@ Page({
     interval: 5000,
     duration: 1000,
     info: {},
-    isShowLoading: true
+    isShowLoading: true,
+    detailInfo: ''
   },
   backPage() {
     let pageList = getCurrentPages();
@@ -66,10 +63,12 @@ Page({
             this.jddescr = res.data.jddescr
             this.levellogo = res.data.levellogo
             this.levelname = res.data.levelname
+            let detailInfo = res.data.descr
             this.setData({
               info,
               isShowLoading: false,
-              imgUrls
+              imgUrls,
+              detailInfo
             })
           }
         }

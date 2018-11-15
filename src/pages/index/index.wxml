@@ -1,6 +1,4 @@
-<navigation-bar title="掌灸积分商城" 
-                isShowBack="{{ false }}"
-                navBorderBottom="{{ false }}"></navigation-bar>
+<navigation-bar title="掌灸积分商城" isShowBack="{{ false }}" navBorderBottom="{{ false }}"></navigation-bar>
 <view wx:if="{{ isShowLoading }}"></view>
 <view wx:else class='page'>
   <!-- banner -->
@@ -11,11 +9,7 @@
   <view class='commodity'>
     <view class='title'>高端商品</view>
     <view class='content flexRow center between'>
-      <view class='item' 
-            catchtap='commodity' 
-            wx:for="{{ prodlist }}" 
-            wx:key="{{ index }}"
-            data-prodcode="{{ item.prodcode }}">
+      <view class='item' catchtap='commodity' wx:for="{{ prodlist }}" wx:key="{{ index }}" data-prodcode="{{ item.prodcode }}">
         <image class='img' src='{{ item.prodimg }}'></image>
         <view class='name' style='font-size: 13px;margin-bottom: 8rpx;'>{{ item.prodname }}</view>
         <view class='tip' style='font-size: 10px;'>{{ item.jddescr }}</view>
@@ -26,12 +20,10 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between center' 
-            catchtap='vipDetail' 
-            wx:for="{{ vipData }}" 
-            wx:key="{{ index }}"
-            data-levelid="{{ item.levelid }}">
-        <image class='icon' src='{{ item.levellogo }}'></image>
+      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}" data-levelid="{{ item.levelid }}">
+        <view style='width: 88rpx;'>
+          <image class='icon-{{ index }}' src='{{ item.levellogo }}'></image>
+        </view>
         <view class='mid'>
           <view class='name-{{ item.levelid }}' style='margin-bottom: 8rpx;font-size:14px;'>{{ item.levelname }}</view>
           <text class='tip text-overflow'>{{ item.descr }}</text>
