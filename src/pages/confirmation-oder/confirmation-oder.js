@@ -14,9 +14,11 @@ Page({
     payType: 0, // 支付方式 0-微信支付，1-现金支付
     isUserJf: false,
     jcInfo: {},
-    totalPrice: 399,
+    totalPrice: 0,
     isShowXj: true,
-    isShowLoading: true
+    isShowLoading: true,
+    sendintegral: '',
+    needmoney: ''
   },
   // 选择支付方式
   selectPayType(e) {
@@ -80,7 +82,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)    
+    let levellogo = options.levellogo ? options.levellogo : ''
+    let levelname = options.levelname 
+    let needmoney = options.needmoney
+    let jddescr = options.jddescr
+    let levelid = options.levelid
+    let sendintegral = options.sendintegral
+    this.setData({
+      levellogo, levelname, needmoney, jddescr, levelid, sendintegral,
+      totalPrice: needmoney
+    })
   },
 
   /**

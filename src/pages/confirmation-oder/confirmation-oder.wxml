@@ -3,7 +3,7 @@
 <view wx:else>
   <view class='address-box' catchtap='changeAddress' style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
-      <view class='name'>{{ jcInfo.shman }}</view>
+      <view class='name'>{{ jcInfo.nickname }}</view>
       <view class='phone'>{{ jcInfo.shmobile }}</view>
       <view class='tag'>默认</view>
     </view>
@@ -16,17 +16,17 @@
   </view>
   <view class='shop'>
     <view class='info flexRow between center'>
-      <image src='{{ imgUrl }}ico_vip_dis@2x.png'></image>
+      <image src='{{ levellogo }}'></image>
       <view class='mid'>
-        <text class='txt'>价值1299的红酒一瓶\n获得20%的销售返利</text>
+        <text class='txt'>{{ jddescr }}</text>
         <view class='prize'>
           <text>￥</text>
-          <text>399</text>
+          <text>{{ needmoney }}</text>
         </view>
       </view>
       <view class='num'>X1</view>
     </view>
-    <view class='jf'>返积分：798</view>
+    <view class='jf'>返积分：{{ sendintegral }}</view>
   </view>
   <!-- 支付 -->
   <view class='pay-box'>

@@ -8,6 +8,10 @@ Page({
    * 页面的初始数据
    */
   levelid: '',  
+  needmoney: '',
+  levellogo: '',
+  levelname: '',
+  jddescr: '',
   data: {
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
@@ -58,6 +62,10 @@ Page({
           if (res.data.returnvalue == 'true') {
             let info = res.data
             let imgUrls =  res.data.imglist
+            this.needmoney = res.data.needmoney
+            this.jddescr = res.data.jddescr
+            this.levellogo = res.data.levellogo
+            this.levelname = res.data.levelname
             this.setData({
               info,
               isShowLoading: false,
@@ -70,8 +78,9 @@ Page({
   },
   goPay() {
     let levelid = this.levelid
+    let needmoney = this.needmoney
     let clientbm = wx.getStorageSync("clientbm");
-
+    let sendintegral = this.data.info.sendintegral
     if(!clientbm) {
       wx.navigateTo({
         url: '/pages/login/login',
@@ -80,7 +89,7 @@ Page({
     }
 
     wx.navigateTo({
-      url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid,
+      url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid + '&needmoney=' + needmoney + '&jddescr=' + this.jddescr + '&levellogo=' + this.levellogo + '&levelname=' + this.levelname + '&sendintegral=' + sendintegral,
     })
   },
   /**
