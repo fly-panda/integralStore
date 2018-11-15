@@ -134,7 +134,20 @@ Page({
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             wx.setStorageSync('clientbm', res.data.clientbm)
-            wx.navigateBack(-1)
+            // 获取前一个页面，调用onLoad和onReady方法
+            let pageList = getCurrentPages();
+            let pageLength = pageList.length;
+
+            // 如果pageLength 大于1时，跳转到前一页
+            if (pageLength > 1) {
+              let prevPage = pageList[pageLength - 2];
+              prevPage.onReady();
+              wx.navigateBack();
+            } else {
+              wx.switchTab({
+                url: '/pages/index/index'
+              })
+            }
           } else {
             wx.showToast({
               title: res.data.msg,
