@@ -17,8 +17,8 @@
             wx:key="{{ index }}"
             data-prodcode="{{ item.prodcode }}">
         <image class='img' src='{{ item.prodimg }}'></image>
-        <view class='name'>{{ item.prodname }}</view>
-        <view class='tip'>{{ item.jddescr }}</view>
+        <view class='name' style='font-size: 13px;margin-bottom: 8rpx;'>{{ item.prodname }}</view>
+        <view class='tip' style='font-size: 10px;'>{{ item.jddescr }}</view>
       </view>
     </view>
   </view>
@@ -33,12 +33,12 @@
             data-levelid="{{ item.levelid }}">
         <image class='icon' src='{{ item.levellogo }}'></image>
         <view class='mid'>
-          <view class='name-{{ item.levelid }}' style='color: {{ item.color }};'>{{ item.levelname }}</view>
+          <view class='name-{{ item.levelid }}' style='margin-bottom: 8rpx;font-size:14px;'>{{ item.levelname }}</view>
           <text class='tip text-overflow'>{{ item.descr }}</text>
         </view>
         <view class='prize'>
           <text class='icon'>￥</text>
-          <text class='num'>{{ item.price }}</text>
+          <text class='num' style='font-weight: 600;'>{{ item.price }}</text>
         </view>
       </view>
     </view>

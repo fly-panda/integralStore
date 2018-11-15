@@ -66,6 +66,7 @@ page {
 .mid {
   flex: 1;
   margin-left: 44rpx;
+  font-size: 14px;
 }
 
 .prize {
