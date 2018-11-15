@@ -42,6 +42,15 @@ Page({
    */
   onShow: function () {
     let clientbm = wx.getStorageSync("clientbm");
+    console.log(clientbm)
+
+    if (!clientbm) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+
     let query = {
       clientbm: clientbm
     }
