@@ -7,7 +7,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  levelid: '',
+  levelid: '',  
   data: {
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
@@ -70,6 +70,15 @@ Page({
   },
   goPay() {
     let levelid = this.levelid
+    let clientbm = wx.getStorageSync("clientbm");
+
+    if(!clientbm) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+
     wx.navigateTo({
       url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid,
     })
