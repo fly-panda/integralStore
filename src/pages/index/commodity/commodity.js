@@ -22,7 +22,13 @@ Page({
     isShowLoading: true,
     detailInfo: ''
   },
-
+  vipDetail(e) {
+    console.log(e)
+    let levelid = e.currentTarget.dataset.levelid
+    wx.navigateTo({
+      url: '/pages/index/vip/vip?levelid=' + levelid
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

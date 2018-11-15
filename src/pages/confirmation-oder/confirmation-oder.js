@@ -39,7 +39,7 @@ Page({
   selectJf() {
     let isUserJf = !this.data.isUserJf
     // 积分抵扣的部分
-    let kyjf = this.data.jcInfo.nowintegral * 0.01    
+    let kyjf = this.data.jcInfo.needmoney * 0.01    
     let totalPrice = isUserJf ? this.data.totalPrice - kyjf : this.data.totalPrice + kyjf
     this.setData({
       isUserJf, totalPrice
@@ -66,7 +66,7 @@ Page({
             let jcInfo = res.data
             jcInfo.shmobile = jcInfo.shmobile.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
 
-            let isShowXj = jcInfo.nowintegral * 0.01 + jcInfo.nowyue > this.data.totalPrice ? true : false
+            let isShowXj = jcInfo.needmoney * 0.01 + jcInfo.nowyue > this.data.totalPrice ? true : false
             
             this.setData({
               jcInfo,

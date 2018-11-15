@@ -27,7 +27,8 @@
       <view class='item flexRow between center' 
             catchtap='vipDetail'
             wx:for="{{ vipData }}"
-            wx:key="{{ index }}">
+            wx:key="{{ index }}"
+            data-levelid="{{ item.levelid }}">
         <image class='icon' src='{{ item.levellogo }}'></image>
         <view class='mid'>
           <view class='name-{{ item.levelid }}'>{{ item.levelname }}</view>
