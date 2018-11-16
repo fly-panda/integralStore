@@ -51,9 +51,7 @@ Page({
             icon: 'none',
             duration: 2000
           })
-          wx.navigateTo({
-            url: '/pages/user/user-set/change-userinfo/change-userinfo',
-          })
+          wx.navigateBack(1)
         } else {
           wx.showToast({
             title: res.data.msg,

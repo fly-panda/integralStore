@@ -1,9 +1,11 @@
 const config = require('../../../../utils/config.js');
+const https = require('../../../../utils/https.js');
 Page({
 
   /**
    * 页面的初始数据
    */
+  clientbm: wx.getStorageSync("clientbm"),
   data: {
     cardNum: "6222231399234234234",
     names: "杨先生",
@@ -29,6 +31,14 @@ Page({
       })
       return false;
     }
+    if (this.data.price == "0") {
+      wx.showToast({
+        title: "转让金额不能为0！",
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }
     if (this.data.price > this.data.balance){
       wx.showToast({
         title: "余额不足",
@@ -38,6 +48,34 @@ Page({
       return false;
     }
     console.log(this.data.price)
+    wx.showLoading({
+      title: '提现中',
+      mask: true
+    })
+    https.wxRequest({
+      url: 'member_apply_cash/',
+      data: {
+        clientbm: this.clientbm,
+        money: this.data.price
+      },
+      success: res => {
+        wx.hideLoading()
+        console.log(res)
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            wx.showToast({
+              title: res.data.msg,
+              mask: true
+            })
+          }
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            mask: true
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -58,11 +96,34 @@ Page({
    */
   onShow: function (e) {
     console.log(e)
-    let userObj = wx.getStorageSync("userObj");
-    this.setData({
-      names: userObj.cardname,
-      balance: userObj.nowyue,//余额
+    // let userObj = wx.getStorageSync("userObj");
+    // console.log(userObj)
+    // this.setData({
+    //   names: userObj.cardname,
+    //   balance: userObj.nowyue,//余额
+    //   cardNum: userObj.cardnumber
+    // })
+    wx.showLoading({
+      title: '加载中',
+      mask: true
     })
+    https.wxRequest({
+      url: "/member_basic_info/",
+      data: {
+        clientbm: this.clientbm
+      },
+      success: res => {
+        wx.hideLoading()
+        let r = res.data;
+        this.setData({
+          names: r.cardname,
+          balance: r.nowyue,//余额
+          cardNum: r.cardnumber
+        });
+        wx.setStorageSync("userObj", r);
+      }
+    })
+
   },
 
   /**
