@@ -28,7 +28,7 @@ Page({
       url: '/pages/index/vip/vip?levelid=' + levelid
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     let scrollViewHeight = sysInfo.screenHeight - app.globalData.navigationBarHeight
     let navImgUrl = app.globalData.navigationBarHeight == 64 ? config.imgUrl + "Background_dis@2x.png" : config.imgUrl + "Background_dis Copy@2x.png"
 
@@ -40,7 +40,7 @@ Page({
     // wx.setStorageSync("clientbm", "15627");
   },
   getData() {
-    wx:wx.showLoading({
+    wx: wx.showLoading({
       title: '加载中',
       mask: true
     })
@@ -57,7 +57,8 @@ Page({
             let adLink = res.data.adimg
             this.videoSrc = res.data.adlink
             this.setData({
-              vipData, prodlist,
+              vipData,
+              prodlist,
               isShowLoading: false,
               adLink
             })
@@ -73,5 +74,11 @@ Page({
     wx.navigateTo({
       url: '/pages/index/video/video?videoSrc=' + this.videoSrc,
     })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
   }
 })
