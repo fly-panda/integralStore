@@ -11,7 +11,7 @@
   <view class='title'>请输入开户行信息</view>
   <view class='cell flexRow center border-bottom'>
     <view class='txt'>姓名</view>
-    <input type='text' placeholder='杨**（请输入完整姓名）' name="name" value="{{name}}"  bindinput="getName"></input>
+    <input type='text' placeholder='请输入完整姓名' name="name" value="{{name}}"  bindinput="getName"></input>
   </view>
   <view class='cell flexRow center'>
     <view class='txt'>开户行</view>

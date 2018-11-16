@@ -73,6 +73,11 @@ Page({
     })
 
   },
+  goAdd() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   secondData(e) {
     console.log(e)
     let clientbm = e.currentTarget.dataset.clientbm

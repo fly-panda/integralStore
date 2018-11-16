@@ -19,7 +19,7 @@
   <view class='vip'>
     <view class='title'>高端会员</view>
     <view class='content'>
-      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}" data-levelid="{{ item.levelid }}">
+      <view class='item flexRow between center' catchtap='vipDetail' wx:for="{{ vipData }}" wx:key="{{ index }}" data-levelid="{{ item.levelid }}" data-class="icon-{{ index }}">
         <view style='width: 88rpx;'>
           <image class='icon-{{ index }}' src='{{ item.levellogo }}'></image>
         </view>

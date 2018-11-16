@@ -4,7 +4,7 @@
   <view class='address-box' catchtap='changeAddress' style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
       <view class='name'>{{ jcInfo.nickname }}</view>
-      <view class='phone'>{{ jcInfo.shmobile }}</view>
+      <view class='phone'>{{ jcInfo.mobile }}</view>
       <view class='tag'>默认</view>
     </view>
     <view class='flexRow between'>
@@ -16,7 +16,7 @@
   </view>
   <view class='shop'>
     <view class='info flexRow between center'>
-      <image src='{{ levellogo }}'></image>
+      <image class='icon-{{ levelid }}' src='{{ levellogo }}'></image>
       <view class='mid'>
         <text class='txt'>{{ jddescr }}</text>
         <view class='prize'>
@@ -33,7 +33,7 @@
     <view class='title'>
       <view class='txt'>使用积分</view>
       <view class='flexRow center'>
-        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分{{ jcInfo.needmoney*0.1 >= jcInfo.nowintegral ? jcInfo.nowintegral : jcInfo.needmoney*0.1 }}</view>
+        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分{{ needmoney*0.1 >= jcInfo.nowintegral ? jcInfo.nowintegral : needmoney*0.1 }}</view>
         <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}ico_shiyongjifen_pre@2x.png'></image>
         <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}/ico_shiyongjifen_nor@2x.png'></image>
       </view>
@@ -51,7 +51,10 @@
         <view class='flexRow center'>
           <view class='yue'>当前可用现金余额{{ jcInfo.nowyue }}元</view>
           <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
-          <image style='background: {{ isShowXj ? "" : "#999" }};' wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
+          <view wx:else>
+            <image wx:if="{{ isShowXj }}" class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
+            <view wx:else class='radio-disable'></view>
+          </view>
         </view>
       </view>
     </view>
@@ -61,7 +64,7 @@
       <text>￥</text>
       <text>{{ totalPrice }}</text>
     </view>
-    <view class='pay-btn'>
+    <view class='pay-btn' catchtap='pay'>
       立即支付
     </view>
   </view>

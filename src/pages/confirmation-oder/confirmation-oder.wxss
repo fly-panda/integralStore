@@ -48,10 +48,10 @@ page {
   padding: 0 40rpx;
 }
 
-.shop image {
+/* .shop image {
   width: 68rpx;
   height: 54rpx;
-}
+} */
 .shop .info {
   padding: 24rpx 0;
   padding-left: 24rpx;
@@ -172,4 +172,31 @@ page {
   background: #E1C179;
   color: #fff;
   text-align: center;
+}
+
+.radio-disable {
+    width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1rpx solid #e9e9e9;
+}
+.icon-1004 {
+  width: 68rpx;
+  height: 54rpx;
+}
+.icon-1003 {
+  width: 60rpx;
+  height: 62rpx;
+}
+
+.icon-1002 {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.icon-1001 {
+  width: 88rpx;
+  height: 88rpx;
+  margin-left: -10rpx;
 }

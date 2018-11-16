@@ -18,7 +18,7 @@ Page({
     isShowXj: true,
     isShowLoading: true,
     sendintegral: '',
-    needmoney: ''
+    needmoney: 0
   },
   // 选择支付方式
   selectPayType(e) {
@@ -35,12 +35,70 @@ Page({
       })
     }
   },
+  pay() {
+    let PayType = ''
+    let payType = this.data.payType
+    let isUserJf = this.data.isUserJf
+
+    if (payType == "0" && !isUserJf) { PayType = '1' }
+    if (payType == "1" && !isUserJf) { PayType = '2' }
+    if (payType == "0" && isUserJf) { PayType = '3' }
+    if (payType == "1" && isUserJf) { PayType = '4' }
+    console.log(PayType)
+    wx.showLoading({
+      title: '支付中',
+      mask: true
+    })
+    https.wxRequest({
+      url: 'member_confirm_order/',
+      data: {
+        clientbm: this.clientbm,
+        levelId: this.data.levelid,
+        PayType: PayType
+      },
+      success: res => {
+        wx.hideLoading()
+        if (res.statusCode == '200') {
+          if (res.data.returnvalue == 'true') {
+            let orderbm = res.data.orderbm
+            wx.showToast({
+              title: res.data.msg,
+              mask: true
+            })
+            // 支付api
+            // wx.requestPayment({
+            //   timeStamp: '',
+            //   nonceStr: '',
+            //   package: '',
+            //   signType: 'MD5',
+            //   paySign: '',
+            //   success(res) { },
+            //   fail(res) { }
+            // })
+
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              mask: true
+            })
+          }
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            mask: true
+          })
+        }
+      }
+    })
+  },
   // 是否使用积分
   selectJf() {
     let isUserJf = !this.data.isUserJf
+    // if (this.data.jcInfo.nowintegral <= 0) { return }
     // 积分抵扣的部分
-    let kyjf = this.data.jcInfo.needmoney * 0.01    
-    let totalPrice = isUserJf ? this.data.totalPrice - kyjf : this.data.totalPrice + kyjf
+    let kyjf = this.data.needmoney * 0.1 >= this.data.jcInfo.nowintegral ? this.data.jcInfo.nowintegral : this.data.needmoney * 0.1   
+    console.log(kyjf)   
+    let totalPrice = isUserJf ? this.data.needmoney - kyjf : this.data.needmoney
     this.setData({
       isUserJf, totalPrice
     })

@@ -25,8 +25,9 @@ Page({
   vipDetail(e) {
     console.log(e)
     let levelid = e.currentTarget.dataset.levelid
+    let classNme = e.currentTarget.dataset.class
     wx.navigateTo({
-      url: '/pages/index/vip/vip?levelid=' + levelid
+      url: '/pages/index/vip/vip?levelid=' + levelid + '&classNme=' + classNme
     })
   },
   /**

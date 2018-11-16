@@ -42,6 +42,8 @@ page {
 
 .icon-duihao {
   color: #E1C179;
+  font-weight: bolder;
+  font-size: 20px;
 }
 .txtColor{
   color:#FBE0AA;

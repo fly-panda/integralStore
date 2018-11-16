@@ -66,7 +66,8 @@ page{
   position: relative;
 }
 .num .icoCls,.num .icoClss{
-  font-size:20px;
+  font-weight: bold;
+  font-size: 16px;
   color:rgba(160,160,160,0.60);
   letter-spacing:0;
   line-height:20px;
@@ -98,11 +99,12 @@ page{
   color: #000000;
 }
 .myCls text:last-child{
-  font-size:20px;
+  font-size:16px;
   color:rgba(160,160,160,0.60);
   letter-spacing:0;
   line-height:20px;
   transform:rotate(180deg);
+  font-weight: bold;
 }
 .myCls>view image{
   width:36rpx;

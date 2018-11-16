@@ -124,7 +124,7 @@ Page({
     let userObj = wx.getStorageSync("userObj");
     this.setData({
       name: userObj.shman,
-      phone: userObj.shmobile,
+      phone: userObj.mobile,
       region: [userObj.province, userObj.city, userObj.country],
       address: userObj.address
     })
