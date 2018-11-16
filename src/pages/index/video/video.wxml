@@ -1,4 +1,4 @@
 <navigation-bar title="视频" 
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"></navigation-bar>
-<video src="https://ziker-static.yun.pingan.com/static/share/wx-app/static-resource/imgs/huiduoduo/MidAutumnFestival/3b477cf8.mp4" style="height: {{ videoHeight }}px;" binderror="playError" custom-cache="{{false}}"></video>
+<video src="https://zj.meych.com/uploadimg/test.mp4" style="height: {{ videoHeight }}px;" binderror="playError" custom-cache="{{false}}"></video>
