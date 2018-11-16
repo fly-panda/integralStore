@@ -74,6 +74,8 @@ Page({
     }
   },
   submitInfo(e, photo) {
+    wx.navigateBack(2)
+    
     console.log(this.name)
     console.log(this.data.region)
     console.log(this.address)
@@ -105,7 +107,9 @@ Page({
               title: '注册成功',
               mask: true
             })
-            wx.navigateBack(2)
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
           } else {
             wx.showToast({
               title: res.data.msg,
