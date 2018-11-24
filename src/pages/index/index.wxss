@@ -48,6 +48,10 @@ page {
   margin-top: 20rpx;
 }
 
+.commodity .content .des {
+  width: 332rpx;
+}
+
 .vip .icon-0 {
   width: 68rpx;
   height: 54rpx;

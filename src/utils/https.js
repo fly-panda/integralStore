@@ -32,9 +32,6 @@ const wxRequest = function (param) {
     header.Authorization = accessToken;
   }
 
-
-
-
   wx.request({
     url: url,
     method: 'GET',
