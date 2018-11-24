@@ -8,7 +8,7 @@
   <!-- 高端商品 -->
   <view class='commodity'>
     <view class='title'>高端商品</view>
-    <view class='content flexRow center between'>
+    <view class='content flexRow between'>
       <view class='item' catchtap='commodity' wx:for="{{ prodlist }}" wx:key="{{ index }}" data-prodcode="{{ item.prodcode }}">
         <image class='img' src='{{ item.prodimg }}'></image>
         <view class='name' style='font-size: 13px;margin-bottom: 8rpx;'>{{ item.prodname }}</view>
