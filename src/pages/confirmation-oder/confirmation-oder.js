@@ -98,7 +98,7 @@ Page({
   // 是否使用积分
   selectJf() {
     let isUserJf = !this.data.isUserJf
-    if (this.data.nowintegral + 8000 <= 0) { 
+    if (this.data.nowintegral <= 0) { 
       this.setData({
         isUserJf
       })
@@ -133,7 +133,7 @@ Page({
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             let jcInfo = res.data
-            let nowintegral = jcInfo.nowintegral + 8000
+            let nowintegral = jcInfo.nowintegral
             let keyongJf = 0
             jcInfo.shmobile = jcInfo.shmobile.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
 
