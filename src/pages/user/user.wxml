@@ -11,7 +11,13 @@
     </view>
     <view class="userMsg">
       <view wx:if="{{isLogin}}">
-        <text>尊敬的天使合伙人：</text>
+        <text>尊敬的<text wx:if="memberlevel==1001">事业合伙人</text>
+          <text wx:elif="memberlevel==1002">高级合伙人</text>
+          <text wx:elif="memberlevel==1003">天使合伙人</text>
+          <text wx:elif="memberlevel==1004">VIP会员</text>
+          <text wx:elif="memberlevel==0">注册会员</text>：
+        </text>
+        <!-- 1001=事业合伙人，1002=高级合伙人，1003=天使合伙人，1004=VIP会员，0=注册会员 -->
         <text class="nameCls">{{userName}}</text>
       </view>
       <view wx:else="{{isLogin}}">

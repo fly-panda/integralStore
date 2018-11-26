@@ -16,7 +16,8 @@ Page({
     icon1: config.imgUrl +"ico_wodetuandui_dis@2x.png",
     icon2: config.imgUrl +"ico_wodedingdan_dis@2x.png",
     icon3: config.imgUrl +"group.png",
-    clientbm:""
+    clientbm:"",
+    memberlevel:""
     
   },
   jumpLogin() {
@@ -145,6 +146,7 @@ Page({
         this.setData({
           userName: r.nickname,
           headImg: r.photo,
+          memberlevel: r.memberlevel,
           cash: r.nowyue,//现金积分
           ordinary: r.nowintegral,//普通积分
         });

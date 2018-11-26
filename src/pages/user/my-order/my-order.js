@@ -7,7 +7,10 @@ Page({
    */
   data: {
     bgImgUrl: config.imgUrl + "ico_kongzhuangtai_dis@2x.png",
-    orderImg: config.imgUrl + "ico_tianshihehuoren_dis@2x.png",
+    orderImg1001: "https://zj.meych.com/uploadimg/pimg/sy.png",
+    orderImg1002: "https://zj.meych.com/uploadimg/pimg/gj.png",
+    orderImg1003: "https://zj.meych.com/uploadimg/pimg/ts.png",
+    orderImg1004: "https://zj.meych.com/uploadimg/pimg/vip.png",
     listData:[
       // { title: "天使合伙人", type: "微信支付+积分", status: "已发货",kdname:"中通快递",kdnum:"283423423432034",price:"1300",date:"2018/10/31"},
       // { title: "天使合伙人", type: "微信支付+积分", status: "已发货", kdname: "", kdnum: "", price: "1300", date: "2018/10/31" },

@@ -7,7 +7,7 @@
       <view class='icon'>
         <image src='{{ imgUrl }}gerenshezhi copy@2x.png' class='icon-phone'></image>
       </view>
-      <view class='txt'>换绑手机</view>
+      <view class='txt'>换绑手机（{{mobile}}）</view>
       <view class="iconfont icon-jiantouzuo"></view>
     </view>
     <view class='cell flexRow center' catchtap='link'

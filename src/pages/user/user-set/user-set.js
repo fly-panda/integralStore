@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: config.imgUrl
+    imgUrl: config.imgUrl,
+    mobile:""
   },
   link(e) {
     let url = e.currentTarget.dataset.url
@@ -64,6 +65,7 @@ Page({
           headImg: r.photo,
           cash: r.nowyue,//现金积分
           ordinary: r.nowintegral,//普通积分
+          mobile: r.mobile
         });
         wx.setStorageSync("userObj", r);
       }

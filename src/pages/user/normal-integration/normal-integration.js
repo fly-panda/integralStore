@@ -13,9 +13,7 @@ Page({
     integra:"",
     phones:"",
     listData:[
-      // { name: "购买-天使合伙人", price: "20", date: "2018/10/29",type:"add" },
-      // { name: "购买-天使合伙人", price: "20", date: "2018/10/29", type: "reduce" },
-      // { name: "转让-李先生", price: "20", date: "2018/10/30", type: "add" }
+      
     ]
   },
   confirm(){
@@ -53,7 +51,7 @@ Page({
         let r = res.data;
         this.setData({
           normal:r.nowintegral,
-          listData: r.integrallist  
+          // listData: r.integrallist  
         });
         // "itage"//类型（1、购买会员级别获得 2、积分转入获得 3、积分转出扣除 4、购买会员抵扣使用）
 

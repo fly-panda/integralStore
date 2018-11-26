@@ -11,7 +11,12 @@
     wx:for="{{ listData }}"
     wx:key="{{ index }}">
     <view class="img-view">
-      <image src="{{orderImg}}"></image>
+      <image src="{{orderImg1001}}" wx:if="{{item.levelid==1001}}"></image>
+      <image src="{{orderImg1002}}" wx:elif="{{item.levelid==1002}}"></image>
+      <image src="{{orderImg1003}}" wx:elif="{{item.levelid==1003}}"></image>
+      <image src="{{orderImg1004}}" wx:elif="{{item.levelid==1004}}"></image>
+      <image src="{{orderImg1002}}" wx:else></image>
+      
     </view>
     <view class="flex1">
       <view class="titleCls">{{item.levelname}}</view>

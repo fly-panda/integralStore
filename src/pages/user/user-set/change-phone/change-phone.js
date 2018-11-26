@@ -133,6 +133,7 @@ Page({
               title: res.data.msg,
               icon: 'none'
             })
+            wx.navigateBack(1)
           } else {  
             wx.showToast({
               title: res.data.msg,

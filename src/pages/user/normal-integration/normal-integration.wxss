@@ -36,6 +36,7 @@ page{
   left:0;
   display: flex;
   padding: 34rpx 0;
+  background: #F6F6F6;
 }
 .list-btn>button{
   margin: 0 auto;
@@ -50,6 +51,7 @@ page{
 }
 .inp-list{
   padding: 8rpx 32rpx;
+  padding-bottom: 140rpx;
 }
 .inp-list>view{
   margin-top: 24rpx;
