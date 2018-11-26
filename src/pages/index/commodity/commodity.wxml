@@ -27,9 +27,14 @@
           <view class='name-{{ item.levelid }}'>{{ item.levelname }}</view>
           <text class='tip'>{{ item.descr }}</text>
         </view>
-        <view class='prize'>
-          <text class='icon'>￥</text>
-          <text class='num'>{{ item.price }}</text>
+        <view class='prize flexColumn between bottom'>
+          <view class='flexRow center'>
+            <text class='icon'>￥</text>
+            <text class='num' style='font-weight: 600;'>{{ item.price }}</text>
+          </view>
+          <view class='marke-price'>
+            市场价:RMB{{ item.marketprice }}元
+          </view>
         </view>
       </view>
     </view>

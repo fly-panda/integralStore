@@ -11,30 +11,33 @@ Page({
   clientbm: wx.getStorageSync("clientbm"),
   data: {
     imgUrl: config.imgUrl,
-    payType: 0, // 支付方式 0-微信支付，1-现金支付
-    isUserJf: false,
+    payType: 1, // 支付方式 0-微信支付，1-现金支付
+    isUserJf: true,
     jcInfo: {},
     totalPrice: 0,
     isShowXj: true,
     isShowLoading: true,
     sendintegral: '',
-    needmoney: 0
+    needmoney: 0, // 金额
+    levelname: '',
+    keyongJf: 0,  // 可以积分
+    nowintegral: 0,  // 总积分
   },
   // 选择支付方式
-  selectPayType(e) {
-    let type = e.currentTarget.dataset.type 
+  // selectPayType(e) {
+  //   let type = e.currentTarget.dataset.type 
 
-    if (type == '1' && this.data.isShowXj) {
-      this.setData({
-        payType: type
-      })
-    }
-    if(type == '0') {
-      this.setData({
-        payType: type
-      })
-    }
-  },
+  //   if (type == '1' && this.data.isShowXj) {
+  //     this.setData({
+  //       payType: type
+  //     })
+  //   }
+  //   if(type == '0') {
+  //     this.setData({
+  //       payType: type
+  //     })
+  //   }
+  // },
   pay() {
     let PayType = ''
     let payType = this.data.payType
@@ -44,6 +47,7 @@ Page({
     if (payType == "1" && !isUserJf) { PayType = '2' }
     if (payType == "0" && isUserJf) { PayType = '3' }
     if (payType == "1" && isUserJf) { PayType = '4' }
+
     console.log(PayType)
     wx.showLoading({
       title: '支付中',
@@ -94,13 +98,20 @@ Page({
   // 是否使用积分
   selectJf() {
     let isUserJf = !this.data.isUserJf
-    // if (this.data.jcInfo.nowintegral <= 0) { return }
+    if (this.data.nowintegral + 8000 <= 0) { 
+      this.setData({
+        isUserJf
+      })
+      return 
+    }
+    let needmoney = parseInt(this.data.needmoney)
     // 积分抵扣的部分
-    let kyjf = this.data.needmoney * 0.1 >= this.data.jcInfo.nowintegral ? this.data.jcInfo.nowintegral : this.data.needmoney * 0.1   
-    console.log(kyjf)   
-    let totalPrice = isUserJf ? this.data.needmoney - kyjf : this.data.needmoney
+    let keyongJf = this.keyongJfTools(needmoney) * 0.1 > this.data.nowintegral ? this.data.nowintegral : this.keyongJfTools(needmoney) * 0.1   
+    // console.log(keyongJf)
+    let totalPrice = isUserJf ? this.data.needmoney - keyongJf : this.data.needmoney
     this.setData({
-      isUserJf, totalPrice
+      isUserJf, 
+      totalPrice
     })
   },
   changeAddress() {
@@ -122,19 +133,42 @@ Page({
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
             let jcInfo = res.data
+            let nowintegral = jcInfo.nowintegral + 8000
+            let keyongJf = 0
             jcInfo.shmobile = jcInfo.shmobile.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
 
-            let isShowXj = jcInfo.needmoney * 0.01 + jcInfo.nowyue > this.data.totalPrice ? true : false
-            
+            // let isShowXj = jcInfo.needmoney * 0.01 + jcInfo.nowyue > this.data.totalPrice ? true : false
+
+            if (nowintegral > 0) {
+              let needmoney = parseInt(this.data.needmoney)
+              keyongJf = this.keyongJfTools(needmoney) * 0.1 > nowintegral ? nowintegral : this.keyongJfTools(needmoney) * 0.1
+              let totalPrice = this.data.needmoney - keyongJf
+              this.setData({
+                totalPrice,
+                keyongJf
+              })
+            }
+
             this.setData({
               jcInfo,
-              isShowXj,
+              keyongJf,
+              nowintegral,
               isShowLoading: false
             })
           }
         }
       }
     })
+  },
+  keyongJfTools(str) {
+    let str1 = str + ''
+    if (str1.length > 0) {
+      let arr = str1.split('')
+      arr.map((v, i) => {
+        arr[i] = i > 0 ? 0 : v 
+      })
+      return parseInt(arr.join(''))
+    }
   },
   /**
    * 生命周期函数--监听页面加载

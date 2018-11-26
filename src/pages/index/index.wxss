@@ -117,3 +117,8 @@ page {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.marke-price {
+  font-size: 10px;
+  color: #999;
+}

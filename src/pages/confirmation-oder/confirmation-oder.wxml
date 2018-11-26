@@ -3,8 +3,8 @@
 <view wx:else>
   <view class='address-box' catchtap='changeAddress' style='background-image: url({{ imgUrl }}head_logo_dis@2x.png);background-repeat: no-repeat;background-size: 100%;background-position: top center;'>
     <view class='top flexRow center'>
-      <view class='name'>{{ jcInfo.nickname }}</view>
-      <view class='phone'>{{ jcInfo.mobile }}</view>
+      <view class='name'>{{ jcInfo.shman }}</view>
+      <view class='phone'>{{ jcInfo.shmobile }}</view>
       <view class='tag'>默认</view>
     </view>
     <view class='flexRow between'>
@@ -33,28 +33,28 @@
     <view class='title'>
       <view class='txt'>使用积分</view>
       <view class='flexRow center'>
-        <view class='jifen'>当前积分{{ jcInfo.nowintegral }}，可用积分{{ needmoney*0.1 >= jcInfo.nowintegral ? jcInfo.nowintegral : needmoney*0.1 }}</view>
+        <view class='jifen'>当前积分{{ nowintegral }}，可用积分{{ keyongJf }}</view>
         <image catchtap='selectJf' wx:if="{{ isUserJf }}" class='jf-pay' src='{{ imgUrl }}ico_shiyongjifen_pre@2x.png'></image>
         <image catchtap='selectJf' wx:else class='jf-pay' src='{{ imgUrl }}/ico_shiyongjifen_nor@2x.png'></image>
       </view>
     </view>
     <view>
-      <view class='pay-type' catchtap='selectPayType' data-type="0">
+      <!-- <view class='pay-type' catchtap='selectPayType' data-type="0">
         <image class='wx-pay' src='{{ imgUrl }}ico_weixinzhifu_dis@2x.png'></image>
         <text>微信支付</text>
         <image wx:if="{{ payType == 0 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
         <image wx:else class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
-      </view>
+      </view> -->
       <view class='pay-type' catchtap='selectPayType' data-type="1">
         <image class='xj-pay' src='{{ imgUrl }}ico_xianjinzhifu_dis@2x.png'></image>
         <text>现金支付</text>
         <view class='flexRow center'>
-          <view class='yue'>当前可用现金余额{{ jcInfo.nowyue }}元</view>
-          <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
+          <view class='yue'>当前可用现金余额{{ jcInfo.nowyue }}元，{{ jcInfo.nowyue > needmoney ? '够买' +levelname : '不够买' + levelname  }}</view>
+          <!-- <image wx:if="{{ payType == 1 }}" class='radio' src='{{ imgUrl }}ico_xuanze_pre@2x.png'></image>
           <view wx:else>
             <image wx:if="{{ isShowXj }}" class='radio' src='{{ imgUrl }}ico_xuanze_nor@2x.png'></image>
             <view wx:else class='radio-disable'></view>
-          </view>
+          </view> -->
         </view>
       </view>
     </view>

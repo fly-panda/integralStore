@@ -29,10 +29,10 @@ swiper image {
   color: #363636;
 }
 
-.vip .icon {
+/* .vip .icon {
   width: 88rpx;
   height: 88rpx;
-}
+} */
 
 .vip .item {
   padding: 24rpx 0;
@@ -94,4 +94,8 @@ swiper image {
   width: 88rpx;
   height: 88rpx;
   margin-left: -10rpx;
+}
+.marke-price {
+  font-size: 10px;
+  color: #999;
 }

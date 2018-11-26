@@ -74,7 +74,7 @@ Page({
     }
   },
   submitInfo(e, photo) {
-    wx.navigateBack(2)
+    // wx.navigateBack(2)
     
     console.log(this.name)
     console.log(this.data.region)
@@ -98,6 +98,7 @@ Page({
         photo     
       },
       suceess: res => {
+        console.log(res)
         wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {

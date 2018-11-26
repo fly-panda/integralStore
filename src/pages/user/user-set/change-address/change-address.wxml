@@ -19,7 +19,7 @@
   </view>
   <view class='cell'>
     <view class='right'>详细地址：</view>
-    <input type='number' placeholder='请输入详细地址' name='address' value="{{address}}" bindinput='getaddress'></input>
+    <input type='text' placeholder='请输入详细地址' name='address' value="{{address}}" bindinput='getaddress'></input>
   </view>
 
   <button formType="submit">保存</button>

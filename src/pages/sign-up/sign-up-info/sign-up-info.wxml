@@ -27,7 +27,7 @@
   </view>
   <view class='cell'>
     <view class='right'>详细地址：</view>
-    <input type='number' placeholder='街道门牌信息' name='address' data-type="address" bindinput='getInputValue'></input>
+    <input type='text' placeholder='街道门牌信息' name='address' data-type="address" bindinput='getInputValue'></input>
   </view>
 
   <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled='{{ buttonDisabled }}'>授权并注册</button>
