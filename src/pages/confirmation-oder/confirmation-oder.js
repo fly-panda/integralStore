@@ -8,7 +8,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  clientbm: wx.getStorageSync("clientbm"),
+  clientbm: '',
   data: {
     imgUrl: config.imgUrl,
     payType: 1, // 支付方式 0-微信支付，1-现金支付
@@ -181,6 +181,7 @@ Page({
     let jddescr = options.jddescr
     let levelid = options.levelid
     let sendintegral = options.sendintegral
+    this.clientbm = options.clientbm
     this.setData({
       levellogo, levelname, needmoney, jddescr, levelid, sendintegral,
       totalPrice: needmoney

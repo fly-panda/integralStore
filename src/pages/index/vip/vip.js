@@ -7,6 +7,7 @@ Page({
   /**
    * 页面的初始数据
    */
+  clientbm: '',
   levelid: '',  
   needmoney: '',
   levellogo: '',
@@ -44,6 +45,36 @@ Page({
    */
   onLoad: function (options) {
     this.levelid = options.levelid ? options.levelid : ''
+
+  },
+  goPay() {
+    let levelid = this.levelid
+    let needmoney = this.needmoney
+    
+    let sendintegral = this.data.info.sendintegral
+    if(!this.clientbm) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+
+    wx.navigateTo({
+      url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid + '&needmoney=' + needmoney + '&jddescr=' + this.jddescr + '&levellogo=' + this.levellogo + '&levelname=' + this.levelname + '&sendintegral=' + sendintegral + '&clientbm=' + this.clientbm,
+    })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.clientbm = wx.getStorageSync("clientbm");
     wx.showLoading({
       title: '加载中',
     })
@@ -58,7 +89,7 @@ Page({
           wx.hideLoading()
           if (res.data.returnvalue == 'true') {
             let info = res.data
-            let imgUrls =  res.data.imglist
+            let imgUrls = res.data.imglist
             this.needmoney = res.data.needmoney
             this.jddescr = res.data.jddescr
             this.levellogo = res.data.levellogo
@@ -74,35 +105,6 @@ Page({
         }
       }
     })
-  },
-  goPay() {
-    let levelid = this.levelid
-    let needmoney = this.needmoney
-    let clientbm = wx.getStorageSync("clientbm");
-    let sendintegral = this.data.info.sendintegral
-    if(!clientbm) {
-      wx.navigateTo({
-        url: '/pages/login/login',
-      })
-      return
-    }
-
-    wx.navigateTo({
-      url: '/pages/confirmation-oder/confirmation-oder?levelid=' + levelid + '&needmoney=' + needmoney + '&jddescr=' + this.jddescr + '&levellogo=' + this.levellogo + '&levelname=' + this.levelname + '&sendintegral=' + sendintegral,
-    })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
