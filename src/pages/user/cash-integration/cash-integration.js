@@ -6,12 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bgImg: config.imgUrl +"head-bg.png",
-    integral:0,//当前积分
+    bgImg: config.imgUrl + "head-bg.png",
+    integral: 0,//当前积分
     hbImg: config.imgUrl + "ico_hongbao_dis@2x.png",
     suImg: config.imgUrl + "Groupsuc.png",
-    isCard:"",
-    listData:[
+    isCard: "",
+    listData: [
       // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/28" },
       // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/29" },
       // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" },
@@ -20,22 +20,22 @@ Page({
       // { title: "悠果果成为事业合伙人", price: 20, date: "2018/10/30" }
     ]
   },
-  goAssign(){
+  goAssign() {
     wx.navigateTo({
       url: '/pages/user/cash-integration/assign-cash/assign-cash?type=2',
     })
   },
-  goWithdraw(){
-    if (this.data.isCard==""){
+  goWithdraw() {
+    if (this.data.isCard == "") {
       wx.navigateTo({
         url: '/pages/user/user-set/change-userinfo/bank-card/bank-card',
       })
-    }else{
+    } else {
       wx.navigateTo({
         url: '/pages/user/cash-integration/withdraw/withdraw',
       })
     }
-    
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -79,11 +79,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let userObj = wx.getStorageSync("userObj");
-    this.setData({
-      
-      isCard: userObj.cardnumber
+    // let userObj = wx.getStorageSync("userObj");
+    // this.setData({
+
+    //   isCard: userObj.cardnumber
+    // });
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    let clientbm = wx.getStorageSync("clientbm");
+    let query = {
+      clientbm: clientbm
+    }
+    https.wxRequest({
+      url: "/member_basic_info/",
+      data: query,
+      success: res => {
+        wx.hideLoading()
+        let r = res.data;
+        wx.setStorageSync("userObj", r);
+        this.setData({
+          isCard: r.cardnumber ? r.cardnumber : ''
+        });
+      }
     });
+
+
     this.getData();
   },
 
