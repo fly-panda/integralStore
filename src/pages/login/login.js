@@ -119,7 +119,7 @@ Page({
       return
     }
     wx.showLoading({
-      title: '注册中',
+      title: '登录中',
       mask: true
     })
     https.wxRequest({

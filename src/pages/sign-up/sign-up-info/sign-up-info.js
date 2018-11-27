@@ -101,7 +101,8 @@ Page({
         wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
-            wx.setStorageSync('clentbm', res.data.clentbm)
+            wx.setStorageSync('clentbm', res.data.clientbm)
+            console.log(res.data.clientbm)
             // app.globalData.clentbm = res.data.clentbm
             wx.showToast({
               title: '注册成功',
