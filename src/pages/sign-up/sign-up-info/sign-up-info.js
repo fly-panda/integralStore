@@ -12,6 +12,7 @@ Page({
   phoneNum: '',
   phoneNum1: '',
   sex: '0',
+  photo: '',
   data: {
     region: ['地址', '信', '息'],
     items: [
@@ -61,19 +62,17 @@ Page({
   },
   getUserInfo(e) {
     console.log(e)
-    let photo = ''
     // 授权获取头像
     if (e.detail.errMsg == "getUserInfo:ok") {
-      photo = e.detail.userInfo.avatarUrl
-      console.log(photo)
-      this.submitInfo(e, photo)      
+      this.photo = e.detail.userInfo.avatarUrl
+      this.submitInfo()      
     }
     // 未授权获取不到头像
     if (e.detail.errMsg == "getUserInfo:fail auth deny") {
-      this.submitInfo(photo)            
+      this.submitInfo()            
     }
   },
-  submitInfo(e, photo) {
+  submitInfo(e) {
     // wx.navigateBack(2)
     
     console.log(this.name)
@@ -95,9 +94,9 @@ Page({
         city: this.data.region[1],
         county: this.data.region[2],
         address: this.address,
-        photo     
+        photo: this.photo
       },
-      suceess: res => {
+      success: res => {
         console.log(res)
         wx.hideLoading()
         if (res.statusCode == '200') {
@@ -108,9 +107,11 @@ Page({
               title: '注册成功',
               mask: true
             })
-            wx.switchTab({
-              url: '/pages/index/index'
-            })
+            setTimeout(()=>{
+              wx.switchTab({
+                url: '/pages/index/index'
+              })
+            }, 1500)
           } else {
             wx.showToast({
               title: res.data.msg,
