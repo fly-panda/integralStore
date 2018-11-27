@@ -66,9 +66,9 @@ Page({
     if (e.detail.errMsg == "getUserInfo:ok") {
       this.photo = e.detail.userInfo.avatarUrl
       this.submitInfo()      
-    }
-    // 未授权获取不到头像
-    if (e.detail.errMsg == "getUserInfo:fail auth deny") {
+    } else if (e.detail.errMsg == "getUserInfo:fail auth deny") {
+      this.submitInfo()            
+    } else {
       this.submitInfo()            
     }
   },
