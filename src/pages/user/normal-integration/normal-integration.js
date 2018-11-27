@@ -51,7 +51,7 @@ Page({
         let r = res.data;
         this.setData({
           normal:r.nowintegral,
-          // listData: r.integrallist  
+          listData: r.integrallist
         });
         // "itage"//类型（1、购买会员级别获得 2、积分转入获得 3、积分转出扣除 4、购买会员抵扣使用）
 

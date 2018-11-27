@@ -9,8 +9,9 @@ Page({
   data: {
     integra: "",
     phones: "",
-    titles:"",
-    types:""
+    titles: "",
+    types: "",
+    nickName: ''
   },
   integra(e) {
     this.data.integra = e.detail.value;
@@ -18,7 +19,7 @@ Page({
   phones(e) {
     this.data.phones = e.detail.value;
   },
-  ajaxTo(urls, query,pages){
+  ajaxTo(urls, query, pages) {
     https.wxRequest({
       url: urls,
       data: query,
@@ -30,9 +31,11 @@ Page({
           duration: 2000
         });
         if (r.returnvalue == "true") {
-          wx.navigateTo({
-            url: pages,
-          })
+          setTimeout(() => {
+            wx.navigateTo({
+              url: pages,
+            })
+          }, 2000)
         }
 
       }
@@ -66,23 +69,55 @@ Page({
       })
       return false;
     }
-    if (self.types==1){
-      let query = {
-        clientbm: clientbm,
-        transmobile: self.phones,
-        integral: self.integra
-      }
-      this.ajaxTo("/member_integral_send/", query, '/pages/user/normal-integration/normal-integration');
-    } else if (self.types ==2){
-      console.log("转让现金积分")
-      let query = {
-        clientbm: clientbm,
-        transmobile: self.phones,
-        money: self.integra
-      }
-      this.ajaxTo("/member_money_send/", query, '/pages/user/cash-integration/cash-integration')
-    }
 
+    this.getNickname(self.phones).then((res) => {
+      if (res.statusCode == '200') {
+        if (res.data.returnvalue == 'true') {
+          let nickName = res.data.nickname
+          let type = self.types == 1 ? '普通积分' : '现金积分'
+          wx.showModal({
+            title: '提示',
+            content: '确认给' + nickName + '转账' + self.integra + type,
+            success: (res) => {
+              if (res.confirm) {
+                if (self.types == 1) {
+                  let query = {
+                    clientbm: clientbm,
+                    transmobile: self.phones,
+                    integral: self.integra
+                  }
+                  this.ajaxTo("/member_integral_send/", query, '/pages/user/normal-integration/normal-integration');
+                } else if (self.types == 2) {
+                  console.log("转让现金积分")
+                  let query = {
+                    clientbm: clientbm,
+                    transmobile: self.phones,
+                    money: self.integra
+                  }
+                  this.ajaxTo("/member_money_send/", query, '/pages/user/cash-integration/cash-integration')
+                }
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            mask: true,
+            duration: 2000,
+            icon: 'none'
+          })
+        }
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          mask: true,
+          duration: 2000,
+          icon: 'none'
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -91,11 +126,23 @@ Page({
     console.log(options);
     this.setData({
       types: options.type,
-      titles: options.type==1?'普通':'现金'
+      titles: options.type == 1 ? '普通' : '现金'
     });
-    
-  },
 
+  },
+  // 获取昵称
+  getNickname(mobile) {
+    return new Promise((resolve, reject) => {
+      https.wxRequest({
+        url: 'get_nickname/',
+        data: {
+          mobile
+        },
+        success: res => { resolve(res) },
+        fail: res => { reject(res) }
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -107,7 +154,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -141,7 +188,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  }
+  // }
 })
