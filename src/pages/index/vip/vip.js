@@ -52,6 +52,7 @@ Page({
     let needmoney = this.needmoney
     
     let sendintegral = this.data.info.sendintegral
+    console.log(this.clientbm)
     if(!this.clientbm) {
       wx.navigateTo({
         url: '/pages/login/login',
@@ -75,6 +76,7 @@ Page({
    */
   onShow: function () {
     this.clientbm = wx.getStorageSync("clientbm");
+    console.log(this.clientbm)
     wx.showLoading({
       title: '加载中',
     })

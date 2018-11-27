@@ -101,7 +101,7 @@ Page({
         wx.hideLoading()
         if (res.statusCode == '200') {
           if (res.data.returnvalue == 'true') {
-            wx.setStorageSync('clentbm', res.data.clientbm)
+            wx.setStorageSync('clientbm', res.data.clentbm)
             console.log(res.data.clientbm)
             // app.globalData.clentbm = res.data.clentbm
             wx.showToast({

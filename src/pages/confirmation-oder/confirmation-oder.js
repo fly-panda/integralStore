@@ -67,6 +67,7 @@ Page({
             let orderbm = res.data.orderbm
             wx.showToast({
               title: res.data.msg,
+              icon: 'none',
               mask: true
             })
             // 支付api
@@ -83,12 +84,14 @@ Page({
           } else {
             wx.showToast({
               title: res.data.msg,
+              icon: 'none',
               mask: true
             })
           }
         } else {
           wx.showToast({
             title: res.data.msg,
+            icon: 'none',
             mask: true
           })
         }
