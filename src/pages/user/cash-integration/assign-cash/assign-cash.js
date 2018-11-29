@@ -74,7 +74,7 @@ Page({
       if (res.statusCode == '200') {
         if (res.data.returnvalue == 'true') {
           let nickName = res.data.nickname
-          let type = self.types == 1 ? '普通积分' : '现金积分'
+          let type = self.types == 1 ? '产品积分' : '现金积分'
           wx.showModal({
             title: '提示',
             content: '确认给' + nickName + '转账' + self.integra + type,
@@ -126,7 +126,7 @@ Page({
     console.log(options);
     this.setData({
       types: options.type,
-      titles: options.type == 1 ? '普通' : '现金'
+      titles: options.type == 1 ? '产品' : '现金'
     });
 
   },
