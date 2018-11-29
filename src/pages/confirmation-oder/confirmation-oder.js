@@ -20,8 +20,8 @@ Page({
     sendintegral: '',
     needmoney: 0, // 金额
     levelname: '',
-    keyongJf: 0,  // 可以积分
-    nowintegral: 0,  // 总积分
+    keyongJf: 0, // 可以积分
+    nowintegral: 0, // 总积分
   },
   // 选择支付方式
   // selectPayType(e) {
@@ -43,56 +43,62 @@ Page({
     let payType = this.data.payType
     let isUserJf = this.data.isUserJf
 
-    if (payType == "0" && !isUserJf) { PayType = '1' }
-    if (payType == "1" && !isUserJf) { PayType = '2' }
-    if (payType == "0" && isUserJf) { PayType = '3' }
-    if (payType == "1" && isUserJf) { PayType = '4' }
+    if (payType == "0" && !isUserJf) {
+      PayType = '1'
+    }
+    if (payType == "1" && !isUserJf) {
+      PayType = '2'
+    }
+    if (payType == "0" && isUserJf) {
+      PayType = '3'
+    }
+    if (payType == "1" && isUserJf) {
+      PayType = '4'
+    }
 
     console.log(PayType)
-    wx.showLoading({
-      title: '支付中',
-      mask: true
-    })
-    https.wxRequest({
-      url: 'member_confirm_order/',
-      data: {
-        clientbm: this.clientbm,
-        levelId: this.data.levelid,
-        PayType: PayType
-      },
-      success: res => {
-        wx.hideLoading()
-        if (res.statusCode == '200') {
-          if (res.data.returnvalue == 'true') {
-            let orderbm = res.data.orderbm
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              mask: true
-            })
-            // 支付api
-            // wx.requestPayment({
-            //   timeStamp: '',
-            //   nonceStr: '',
-            //   package: '',
-            //   signType: 'MD5',
-            //   paySign: '',
-            //   success(res) { },
-            //   fail(res) { }
-            // })
 
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none',
-              mask: true
-            })
-          }
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
+    wx.showModal({
+      title: '提示',
+      content: '确认支付吗？',
+      success: res => {
+        if (res.confirm) {
+          wx.showLoading({
+            title: '支付中',
             mask: true
+          })
+          https.wxRequest({
+            url: 'member_confirm_order/',
+            data: {
+              clientbm: this.clientbm,
+              levelId: this.data.levelid,
+              PayType: PayType
+            },
+            success: res => {
+              wx.hideLoading()
+              if (res.statusCode == '200') {
+                if (res.data.returnvalue == 'true') {
+                  let orderbm = res.data.orderbm
+                  wx.showToast({
+                    title: res.data.msg,
+                    icon: 'none',
+                    mask: true
+                  })
+                } else {
+                  wx.showToast({
+                    title: res.data.msg,
+                    icon: 'none',
+                    mask: true
+                  })
+                }
+              } else {
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'none',
+                  mask: true
+                })
+              }
+            }
           })
         }
       }
@@ -101,19 +107,19 @@ Page({
   // 是否使用积分
   selectJf() {
     let isUserJf = !this.data.isUserJf
-    if (this.data.nowintegral <= 0) { 
+    if (this.data.nowintegral <= 0) {
       this.setData({
         isUserJf
       })
-      return 
+      return
     }
     let needmoney = parseInt(this.data.needmoney)
     // 积分抵扣的部分
-    let keyongJf = this.keyongJfTools(needmoney) * 0.1 > this.data.nowintegral ? this.data.nowintegral : this.keyongJfTools(needmoney) * 0.1   
+    let keyongJf = this.keyongJfTools(needmoney) * 0.1 > this.data.nowintegral ? this.data.nowintegral : this.keyongJfTools(needmoney) * 0.1
     // console.log(keyongJf)
     let totalPrice = isUserJf ? this.data.needmoney - keyongJf : this.data.needmoney
     this.setData({
-      isUserJf, 
+      isUserJf,
       totalPrice
     })
   },
@@ -129,7 +135,9 @@ Page({
     })
     https.wxRequest({
       url: 'member_basic_info/',
-      data: { clientbm: this.clientbm},
+      data: {
+        clientbm: this.clientbm
+      },
       success: res => {
         console.log(res)
         wx.hideLoading()
@@ -168,7 +176,7 @@ Page({
     if (str1.length > 0) {
       let arr = str1.split('')
       arr.map((v, i) => {
-        arr[i] = i > 0 ? 0 : v 
+        arr[i] = i > 0 ? 0 : v
       })
       return parseInt(arr.join(''))
     }
@@ -176,17 +184,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(options)    
+  onLoad: function(options) {
+    console.log(options)
     let levellogo = options.levellogo ? options.levellogo : ''
-    let levelname = options.levelname 
+    let levelname = options.levelname
     let needmoney = options.needmoney
     let jddescr = options.jddescr
     let levelid = options.levelid
     let sendintegral = options.sendintegral
     this.clientbm = options.clientbm
     this.setData({
-      levellogo, levelname, needmoney, jddescr, levelid, sendintegral,
+      levellogo,
+      levelname,
+      needmoney,
+      jddescr,
+      levelid,
+      sendintegral,
       totalPrice: needmoney
     })
   },
@@ -194,42 +207,42 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.getAddress()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 

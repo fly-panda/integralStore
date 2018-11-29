@@ -65,7 +65,7 @@
       <text>{{ totalPrice }}</text>
     </view>
     <view class='pay-btn' catchtap='pay'>
-      确认立即支付
+      立即支付
     </view>
   </view>
 </view>
