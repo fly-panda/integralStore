@@ -40,7 +40,7 @@
       </view>
       <view class="lineCls"></view>
       <view class="flex1">
-        <view class="integralTitle">普通积分</view>
+        <view class="integralTitle">产品积分</view>
         <view bindtap="jumpOrdinary" class="num nums">
           {{ordinary}}
           <text class="icoCls iconfont icon-jiantouzuo"></text>

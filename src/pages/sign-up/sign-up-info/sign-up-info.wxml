@@ -1,8 +1,8 @@
 <navigation-bar title="个人信息" isShowBack="{{ true }}" navBorderBottom="{{ false }}"></navigation-bar>
 <form>
   <view class='cell'>
-    <view class='right'>昵称</view>
-    <input type='text' placeholder='名字' name='name' bindinput='getInputValue' data-type="name"></input>
+    <view class='right'>真实姓名</view>
+    <input type='text' placeholder='必须填写真实姓名，否则无法提现' name='name' bindinput='getInputValue' data-type="name"></input>
   </view>
   <view class='cell'>
     <view class='right'>性别</view>

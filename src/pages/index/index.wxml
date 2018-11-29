@@ -33,9 +33,9 @@
             <text class='icon'>￥</text>
             <text class='num' style='font-weight: 600;'>{{ item.price }}</text>
           </view>
-          <view class='marke-price' wx:if="{{ item.marketprice }}">
+          <!-- <view class='marke-price' wx:if="{{ item.marketprice }}">
             市场价:RMB{{ item.marketprice }}元
-          </view>
+          </view> -->
         </view>
       </view>
     </view>

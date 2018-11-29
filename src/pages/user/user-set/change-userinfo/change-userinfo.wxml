@@ -8,7 +8,7 @@
       <view class="iconfont icon-jiantouzuo"></view>
     </view> -->
     <view class='cell flexRow center' catchtap='link' data-url="/pages/user/user-set/change-userinfo/change-username/change-username">
-      <view class='txt'>昵称</view>
+      <view class='txt'>真实姓名</view>
       <view class='content'>{{username}}</view>
       <view class="iconfont icon-jiantouzuo"></view>
     </view>

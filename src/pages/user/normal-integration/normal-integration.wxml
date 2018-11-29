@@ -1,4 +1,4 @@
-<navigation-bar title="普通积分" 
+<navigation-bar title="产品积分" 
                 isShowBack="{{ true }}"
                 navBorderBottom="{{ false }}"
                 backgroundColor="rgba(0,0,0,0)"
