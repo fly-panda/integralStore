@@ -20,8 +20,8 @@
       wx:key="{{ index }}">
       <view class="left">
         <view class="titleCls">
-          
-          <text wx:if="{{item.mtype==1}}">直接推荐奖励</text>
+          <text>{{item.tip1}}</text>
+          <!-- <text wx:if="{{item.mtype==1}}">直接推荐奖励</text>
           <text wx:elif="{{item.mtype==2}}">平级推荐奖励</text>
           <text wx:elif="{{item.mtype==3}}">天使合伙人奖励</text>
           <text wx:elif="{{item.mtype==4}}">高级合伙人奖励</text>
@@ -29,11 +29,15 @@
           <text wx:elif="{{item.mtype==6}}">永续奖励</text>
           <text wx:elif="{{item.mtype==7}}">转账存入</text>
           <text wx:elif="{{item.mtype==8}}">转账取出</text>
-          <text wx:elif="{{item.mtype==9}}">提现取出</text>
+          <text wx:elif="{{item.mtype==9}}">提现取出</text> -->
         </view>
         <view class="priceCls">
-          <text class="txt1" wx:if="{{item.mtype!=8&&item.mtype!=9}}">您获得现金{{item.cunru}}元</text>
-          <text class="txt2" wx:elif="{{item.mtype==8||item.mtype==9}}">您转让现金{{item.quchu}}元</text>
+          <text class="txt2" wx:if="{{item.mtype==8||item.mtype==9}}">{{item.tip2}}</text>
+          <text class="txt1" wx:else>{{item.tip2}}</text>
+          <!-- <text class="txt2" wx:if="{{item.mtype==7}}">您收到{{item.nickname}}转来{{item.quchu}}元</text>
+          <text class="txt2" wx:elif="{{item.mtype==8}}">您转给{{item.nickname}}{{item.quchu}}元</text>
+          <text class="txt2" wx:elif="{{item.mtype==9}}">您提现{{item.quchu}}元</text>
+          <text class="txt1" wx:else>您获得奖励{{item.cunru}}元</text> -->
         </view>
 
         <view class="dateCls">{{item.indbdate}}</view>

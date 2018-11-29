@@ -19,10 +19,11 @@
     <view wx:for="{{ listData }}"
     wx:key="{{ index }}">
       <view>
-        <text class="nameCls" wx:if="{{item.itage==1}}">购买会员级别获得</text>
+      <text class="nameCls">{{item.tip1}}</text>
+        <!-- <text class="nameCls" wx:if="{{item.itage==1}}">购买会员级别获得</text>
         <text class="nameCls" wx:elif="{{item.itage==2}}">积分转入获得({{item.othermobile}})</text>
         <text class="nameCls" wx:elif="{{item.itage==3}}">积分转出扣除({{item.othermobile}})</text>
-        <text class="nameCls" wx:elif="{{item.itage==4}}">购买会员抵扣使用</text>
+        <text class="nameCls" wx:elif="{{item.itage==4}}">购买会员抵扣使用</text> -->
 
 
         <text class="priceCls" wx:if="{{item.itage=='1'||item.itage=='2'}}">+{{item.depositintegral}}</text>

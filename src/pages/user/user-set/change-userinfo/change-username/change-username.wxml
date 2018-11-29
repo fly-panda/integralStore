@@ -7,7 +7,7 @@
     <!-- <view class='clearInput' catchtap='clearInput' wx:if="{{inputValue!=''}}">X</view> -->
   </view>
   <view class='tip'>
-    4-20个字符，可由中英文、数字、”-”、组成
+    真实姓名不能修改
   </view>
   <button bindtap='updateName'>
     返回
