@@ -88,7 +88,7 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: '分享标题',
+      title: '肽完美',
       path: '/pages/index/index',
       imageUrl: '',
     }
