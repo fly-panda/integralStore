@@ -25,16 +25,17 @@
       <view class="statusCls">发货状态：<text wx:if="{{item.zhuangtai==0||item.zhuangtai==1}}">未发货</text><text wx:elif="{{item.zhuangtai==2}}">已发货</text><text wx:elif="{{item.zhuangtai==3}}">已完成</text>
       </view>
       <view class="statusCls" wx:if="{{item.wuliudanhao!=''}}">快递编号：{{item.wuliuCorp}} {{item.wuliudanhao}}</view>
+      <view class="timeCls">订单时间{{item.indbdate}}</view>
       <view class="flexCls">
         <view><text>{{item.IsPay==0?'未支付':'已支付'}}</text>
-          ￥<text wx:if="{{item.PayType==1}}">{{item.needPay}}</text>
-          <text wx:elif="{{item.PayType==2}}">{{item.yuePay}}</text>
-          <text wx:elif="{{item.PayType==3}}">{{item.needPay}}+{{integralPay}}积分</text>
-          <text wx:elif="{{item.PayType==4}}">{{item.yuePay}}+{{integralPay}}积分</text>
+          ￥<text class="fontBold" wx:if="{{item.PayType==1}}">{{item.needPay}}</text>
+          <text class="fontBold" wx:elif="{{item.PayType==2}}">{{item.yuePay}}</text>
+          <text class="fontBold" wx:elif="{{item.PayType==3}}">{{item.needPay}}+{{item.integralPay==""?0:item.integralPay}}积分</text>
+          <text class="fontBold" wx:elif="{{item.PayType==4}}">{{item.yuePay}}+{{item.integralPay==""?0:item.integralPay}}积分</text>
         </view>
         
       </view>
-      <view class="timeCls">订单时间{{item.indbdate}}</view>
+     
     </view>
     
   </view>

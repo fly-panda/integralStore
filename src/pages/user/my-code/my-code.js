@@ -32,7 +32,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let userObj = wx.getStorageSync('userObj');
+    this.setData({
+      headImg: userObj.photo,
+      username: userObj.nickname,
+      address: userObj.province + " " + userObj.country
+    })
   },
 
   /**

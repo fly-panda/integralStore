@@ -26,19 +26,25 @@ page{
   align-self:center;
 
 }
+.fontBold{
+  font-weight: 600;
+}
 .flexCls{
   display: flex;
   align-items: center;
+  font-family: PingFang-SC-Bold;
 }
 .flexCls>view{
   flex:1;
   font-size: 14px;
   color: #6B6B6B;
   letter-spacing: 0;
+  margin-top: 20rpx;
 }
 
 .flex1>view{
-  margin-top: 8rpx;
+  margin-top: 6rpx;
+  
 }
 .titleCls{
   font-size: 16px;
@@ -46,20 +52,20 @@ page{
   letter-spacing: -0.06px;
   font-family: PingFangSC-Semi;
   font-weight: bold;
+  padding-bottom: 16rpx;
 }
 .typeCls{
   font-size: 12px;
   color: #6B6B6B;
   letter-spacing: -0.04px;
-  
+  /* margin-top: 16rpx; */
 }
 .timeCls{
-  margin-top:16rpx;
+  margin-top:6rpx;
   font-family: PingFang-SC-Medium;
-  font-size: 9px;
-  color: #A1A1A1;
+  font-size:12px;
+  color: #6B6B6B;
   letter-spacing: -0.04px;
-  padding-top: 6rpx;
 }
 .statusCls{
   font-size: 12px;

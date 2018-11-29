@@ -13,6 +13,7 @@ page {
   border-bottom: 1rpx solid #f1f1f1;
   box-sizing: border-box;
   padding: 44rpx 0 26rpx 0;
+  font-size: 29rpx;
 }
 
 .box .cell .txt {
@@ -36,6 +37,6 @@ page {
 
 .content {
   color: #A7A7A7;
-  font-size: 18rpx;
+  
   margin-right: 26rpx;
 }
