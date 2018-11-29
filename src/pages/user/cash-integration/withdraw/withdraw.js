@@ -5,7 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  clientbm: wx.getStorageSync("clientbm"),
+  clientbm: '',
   data: {
     cardNum: "6222231399234234234",
     names: "杨先生",
@@ -47,33 +47,52 @@ Page({
       })
       return false;
     }
+    if (this.data.price < 300) {
+      wx.showToast({
+        title: "提现金额必须为300元以上",
+        icon: "none",
+        duration: 2000
+      })
+      return false;
+    }
     console.log(this.data.price)
-    wx.showLoading({
-      title: '提现中',
-      mask: true
-    })
-    https.wxRequest({
-      url: 'member_apply_cash/',
-      data: {
-        clientbm: this.clientbm,
-        money: this.data.price
-      },
+    wx.showModal({
+      title: '提示',
+      content: '确认提现' + this.data.price + '元',
       success: res => {
-        wx.hideLoading()
-        console.log(res)
-        if (res.statusCode == '200') {
-          if (res.data.returnvalue == 'true') {
-            wx.showToast({
-              title: res.data.msg,
-              mask: true
-            })
-          }
-        } else {
-          wx.showToast({
-            title: res.data.msg,
+        if (res.confirm) {
+          wx.showLoading({
+            title: '提现中',
             mask: true
           })
+          https.wxRequest({
+            url: 'member_apply_cash/',
+            data: {
+              clientbm: this.clientbm,
+              money: this.data.price
+            },
+            success: res => {
+              wx.hideLoading()
+              console.log(res)
+              if (res.statusCode == '200') {
+                if (res.data.returnvalue == 'true') {
+                  wx.showToast({
+                    title: res.data.msg,
+                    mask: true
+                  })
+                }
+              } else {
+                wx.showToast({
+                  title: res.data.msg,
+                  mask: true
+                })
+              }
+            }
+          })
         }
+      },
+      fail: res => {
+
       }
     })
   },
@@ -103,6 +122,8 @@ Page({
     //   balance: userObj.nowyue,//余额
     //   cardNum: userObj.cardnumber
     // })
+    this.clientbm = wx.getStorageSync("clientbm")
+    // console.log(clientbm)
     wx.showLoading({
       title: '加载中',
       mask: true

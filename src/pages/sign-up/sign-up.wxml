@@ -17,5 +17,6 @@
       <input type='number' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
     </view>
     <button formType="submit" disabled='{{ submitDisabled }}'>下一步</button>
+    <view class='login' catchtap='login'>登录</view>
   </form>
 </view>

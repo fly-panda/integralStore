@@ -39,6 +39,14 @@ Page({
     this.getData()
     // wx.setStorageSync("clientbm", "15627");
   },
+  onShow: function() {
+    let clientbm = wx.getStorageSync("clientbm");
+    if (!clientbm) {
+      wx.reLaunch({
+        url: '/pages/sign-up/sign-up',
+      })
+    }
+  },
   getData() {
     wx: wx.showLoading({
       title: '加载中',
