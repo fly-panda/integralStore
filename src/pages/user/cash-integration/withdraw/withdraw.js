@@ -9,7 +9,7 @@ Page({
   data: {
     cardNum: "6222231399234234234",
     names: "杨先生",
-    balance: "230",//余额
+    balance: "",//余额
     price: "",
   },
   getPrice(e){
@@ -58,7 +58,7 @@ Page({
     console.log(this.data.price)
     wx.showModal({
       title: '提示',
-      content: '确认提现' + this.data.price + '元',
+      content: '确认提现' + this.data.price + '元，提现收取千分之五手续费',
       success: res => {
         if (res.confirm) {
           wx.showLoading({
@@ -78,13 +78,18 @@ Page({
                 if (res.data.returnvalue == 'true') {
                   wx.showToast({
                     title: res.data.msg,
-                    mask: true
+                    mask: true,
+                    icon: 'none'
+                  })
+                  this.setData({
+                    balance: this.data.balance - this.data.price
                   })
                 }
               } else {
                 wx.showToast({
                   title: res.data.msg,
-                  mask: true
+                  mask: true,
+                  icon: 'none'
                 })
               }
             }
