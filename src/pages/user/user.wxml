@@ -1,4 +1,4 @@
-<navigation-bar title="掌灸积分商城" 
+<navigation-bar title="肽完美" 
                 isShowBack="{{ false }}"
                 backgroundColor="rgba(0,0,0,0)"
                 navBorderBottom="{{ false }}"
