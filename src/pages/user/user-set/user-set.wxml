@@ -1,4 +1,4 @@
-<navigation-bar title="个人设置" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
+<navigation-bar title="肽完美" isShowBack="{{ true }}" navBorderBottom="{{ false }}">
 </navigation-bar>
 <view>
   <view class='box'>

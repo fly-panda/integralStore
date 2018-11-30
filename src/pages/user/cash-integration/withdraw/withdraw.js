@@ -47,9 +47,9 @@ Page({
       })
       return false;
     }
-    if (this.data.price < 300) {
+    if (this.data.price < 100) {
       wx.showToast({
-        title: "提现金额必须为300元以上",
+        title: "提现金额必须为100元以上",
         icon: "none",
         duration: 2000
       })
