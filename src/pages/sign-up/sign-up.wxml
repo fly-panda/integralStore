@@ -14,7 +14,7 @@
     </view>
     <view class='cell flexRow center'>
       <image class='icon-user' src='{{ imgUrl }}ico_tuijianren_dis@2x.png'></image>
-      <input type='number' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
+      <input type='number' value='{{ tjrMobile }}' placeholder='推荐人手机号' name="phoneNum1" bindinput='getPhoneNum1'></input>
     </view>
     <button formType="submit" disabled='{{ submitDisabled }}'>下一步</button>
     <view class='login' catchtap='login'>登录</view>

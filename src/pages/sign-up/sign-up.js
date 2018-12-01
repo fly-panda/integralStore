@@ -22,7 +22,8 @@ Page({
     txtMsg: '获取验证码',
     imgUrl: config.imgUrl,
     submitDisabled: true,
-    codeStatus: true
+    codeStatus: true,
+    tjrMobile: ''
   },
   // 获取验证码
   getCode() {
@@ -191,7 +192,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let tjrMobile = app.globalData.tjrMobileUrl
+    this.phoneNum1 = tjrMobile
+    this.setData({
+      tjrMobile
+    })
   },
 
   /**

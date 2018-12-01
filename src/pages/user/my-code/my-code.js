@@ -1,5 +1,5 @@
 // pages/user/my-code/my-code.js
-
+const app = getApp();
 const config = require('../../../utils/config.js');
 Page({
 
@@ -8,7 +8,7 @@ Page({
    */
   data: {
     headImg: config.imgUrl + "ico_touxiang@2x.png",
-    codeImg: config.imgUrl + "ico_erweima@2x.png",
+    codeImg: '',
     username: "杨先生",
     address: "北京朝阳"
 
@@ -33,10 +33,13 @@ Page({
    */
   onShow: function () {
     let userObj = wx.getStorageSync('userObj');
+    let clientbm = wx.getStorageSync("clientbm");
+    let codeImg = `https://zj.meych.com/erweima/${clientbm}.jpg`
     this.setData({
       headImg: userObj.photo,
       username: userObj.nickname,
-      address: userObj.province + " " + userObj.country
+      address: userObj.province + " " + userObj.country,
+      codeImg
     })
   },
 
