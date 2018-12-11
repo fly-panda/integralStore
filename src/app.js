@@ -15,6 +15,6 @@ App({
     userInfo: null,
     statusBarHeight,
     navigationBarHeight,
-    tjrMobileUrl: ''
+    hybmUrl: ''
   }
 })

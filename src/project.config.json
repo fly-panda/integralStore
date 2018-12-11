@@ -39,7 +39,7 @@
 					"id": 0,
 					"name": "首页",
 					"pathName": "pages/index/index",
-					"query": "",
+					"query": "scene=15675",
 					"scene": "1001"
 				},
 				{

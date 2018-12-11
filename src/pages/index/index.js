@@ -30,7 +30,7 @@ Page({
   },
   onLoad: function(query) {
     console.log(query)
-    app.globalData.tjrMobileUrl = query.scene ? decodeURIComponent(query.scene) : ''
+    app.globalData.hybmUrl = query.scene ? decodeURIComponent(query.scene) : ''
 
     let scrollViewHeight = sysInfo.screenHeight - app.globalData.navigationBarHeight
     let navImgUrl = app.globalData.navigationBarHeight == 64 ? config.imgUrl + "Background_dis@2x.png" : config.imgUrl + "Background_dis Copy@2x.png"

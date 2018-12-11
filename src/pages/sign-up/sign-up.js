@@ -192,11 +192,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let tjrMobile = app.globalData.tjrMobileUrl
-    this.phoneNum1 = tjrMobile
-    this.setData({
-      tjrMobile
-    })
+    let hybmUrl = app.globalData.hybmUrl
+    // this.phoneNum1 = tjrMobile
+    // this.setData({
+    //   tjrMobile
+    // })
+
+    // 是不是扫码进入
+    if (hybmUrl) {
+      wx.showLoading({
+        title: '加载中',
+        mask: true
+      })
+      https.wxRequest({
+        url: "/member_basic_info/",
+        data: {
+          clientbm: hybmUrl
+        },
+        success: res => {
+          wx.hideLoading()
+
+          let r = res.data.mobile;
+
+          this.phoneNum1 = r
+          this.setData({
+            tjrMobile: r
+          })
+        }
+      });
+    }
   },
 
   /**
